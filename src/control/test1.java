@@ -17,7 +17,7 @@ public class test1 {
         }
 
         if(a==b && b==c){
-            System.out.printf(" 1");
+            System.out.printf("1");
         } else{
             System.out.printf("0");
         }
