@@ -21,14 +21,16 @@ public class array9071_ex07 {
         int maxEven = outputArray[maxIndex];
         int minOdd = outputArray[minIndex];
 
-        while(maxEven%2 !=0) {
-            maxEven = outputArray[maxIndex - 1];
-
+        while(abs(maxEven)%2 !=0) {
+            maxIndex--;
+            maxEven = outputArray[maxIndex];
+           // System.out.println(maxEven);
         }
 
-        while(minOdd%2 != 1 ){
-            minOdd = outputArray[minIndex +1];
-
+        while(abs(minOdd)%2 != 1 ){
+            minIndex++;
+            minOdd = outputArray[minIndex];
+           // System.out.println(minOdd);
         }
 
         System.out.printf("%d %d",minOdd,maxEven);
