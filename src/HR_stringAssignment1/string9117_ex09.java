@@ -19,7 +19,7 @@ public class string9117_ex09 {
             tmpString = tmpString + tmpChar;
             OutputString =tmpString;
 
-            System.out.println(tmpString);
+            System.out.println(OutputString);
         }
     }
 }

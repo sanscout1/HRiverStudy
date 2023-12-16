@@ -6,7 +6,7 @@ public class Student {
     public String major;
 
     public  Student(){}  //기본 생성자  오버로딩 시에는 디폴트 생성자 작성해야할 것!
-
+////
     public Student(String name, String major){
         this.name=name;
         this.major=major;

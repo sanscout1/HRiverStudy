@@ -8,7 +8,7 @@ class bank  {
     private int balance;
     public void bankworkChoice(int choiceNum){
         switch (choiceNum) {
-            case 1 -> setDepositBalance(scan.nextInt());
+            case 1 ->setDepositBalance(scan.nextInt());
             case 2 ->withdrawBalance(scan.nextInt());
             case 3 ->getDepositBalance();
             case 4 ->exitBank();
