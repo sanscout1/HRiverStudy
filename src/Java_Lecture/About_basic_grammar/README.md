@@ -4,9 +4,7 @@
 
 - printf(“%%”) 이렇게 해야 % 출력
 - %.0f 하면 소수점 표현안하고 출력 가능
-
-![Untitled.png](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2FUntitled.png)
-
+---
 - 삼항 연산자는 조건식을 평가하고, 조건식이 true이면 첫 번째 표현식을 반환하고, false이면 두 번째 표현식을 반환합니다.
     - `(조건식) ? (첫 번째 표현식) : (두 번째 표현식)`
 
@@ -31,13 +29,20 @@ int numLetters = switch (day) {
 
 ---
 ### 논리연산자
-![Untitled (1).png](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2FUntitled%20%281%29.png)
+
+![Untitled (1).png](https://images.velog.io/images/falling_star3/post/355cf4e6-bb4b-4722-9181-6ff48fb85d46/0_YH506ZYL1rLNKQiK_.png)
+
 
 ---
 
+``` 
+Outter: for(){
+       ~~~~~  break Outter;
+}
+```
+
 - for문의 별명을 사용하면 해당 별명에 해당하는 반복문에서 break 문을 사용할 수 있습니다.
 
-![Untitled (2).png](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2FUntitled%20%282%29.png)
 
 ---
 

@@ -13,7 +13,7 @@
 
 - 변수 초기값
 
-    ![image (1) (1).png](..%2F..%2F..%2F..%2F..%2FDownloads%2Fimage%20%281%29%20%281%29.png)
+    ![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)
 
   - 참조형 변수 사이즈 `4byte`
   - double 이 float 보다 `정밀도`가 높다고 표현 (소수점 단위로 더 아래 표현 가능해서)
@@ -29,7 +29,7 @@
 - 모든 클래스는 Object 에 상속이 기본
 - 클래스와 객체의 차이는 실존 차이 (메모리 할당 차이)
 
-![Untitled (3).png](..%2F..%2F..%2F..%2F..%2FDownloads%2FUntitled%20%283%29.png)
+![Untitled (3).png](https://goldenrabbit.co.kr/wp-content/uploads/2021/11/%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1-%E1%84%86%E1%85%A6%E1%84%86%E1%85%A9%E1%84%85%E1%85%B5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF_02.png)
 
 - 클래스가 실체하면 instance (메모리 할당 한 상태)
 - 메소드 영역(스태틱 영역) —> 스레드가 정지 될 때까지 유지 되는 영역
