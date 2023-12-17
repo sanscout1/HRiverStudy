@@ -2,6 +2,7 @@
 
 ### 📝 기초 공부
   - [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture)
+  - [`OS`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem)
 
 
 
