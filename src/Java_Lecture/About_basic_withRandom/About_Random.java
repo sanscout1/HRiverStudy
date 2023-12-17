@@ -1,6 +1,6 @@
 package Java_Lecture.About_basic_withRandom;
 
-public class ifEx01 {
+public class About_Random {
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 //

@@ -1,6 +1,6 @@
 package Java_Lecture.About_String;
 
-public class ExamPro {
+public class About_isFinite_isNan {
     public static void main(String[] args) {
 
 //        byte b4 = 125;

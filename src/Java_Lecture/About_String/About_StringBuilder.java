@@ -1,6 +1,6 @@
 package Java_Lecture.About_String;
 
-public class BlankExample {
+public class About_StringBuilder {
     public static void main(String[] args) {
 
 

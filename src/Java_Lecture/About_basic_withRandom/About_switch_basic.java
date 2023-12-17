@@ -2,7 +2,7 @@ package Java_Lecture.About_basic_withRandom;
 
 import java.util.Scanner;
 
-public class ifTest {
+public class About_switch_basic {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();

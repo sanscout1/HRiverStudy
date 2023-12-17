@@ -1,6 +1,6 @@
 package Java_Lecture.About_String;
 import java.util.*;
-public class test1 {
+public class About_Ascii {
     public static void main(String[] args) {
 
 

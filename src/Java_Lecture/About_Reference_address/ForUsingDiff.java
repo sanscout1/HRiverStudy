@@ -1,6 +1,6 @@
 package Java_Lecture.About_Reference_address;
 
-public class ArrayTest1 {
+public class ForUsingDiff {
 
     public static void main(String[] args) {
         int[] intArray = null;

@@ -2,7 +2,7 @@ package Java_Lecture.About_String;
 
 import java.util.ArrayList;
 
-public class ArrayListExample {
+public class ArrayListExample_spilt_substring {
     public static void main(String[] args) {
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add("1 ");
