@@ -1,20 +1,20 @@
 # STUDY 
 
-### 📝 기초
-  - [`알고리즘`](https://github.com/JuHyun419/study/tree/master/Algorithm)
+### 📝 기초 공부
+  - [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture)
 
 
 
 <br>
 
-### 📗 도서 목록
+
+### ⌨️ 실습 과제
+  - [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_assignments)
+  - [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Test/shinsegaeTranning/javaBasic)
 
 <br>
 
-
-### ⌨️ 실습 예제
-  - [`Java Jsoup 크롤링`](https://github.com/JuHyun419/study/tree/master/java-example/inflearn-crawling-jsoup)
-
+### 📗 도서 목록 (추가 예정)
 
 <br>
 

@@ -1,4 +1,4 @@
-package Java_Lecture.About_basic_withRandom;
+package Java_Lecture.About_basic_grammar.About_basic_withRandom;
 
 public class About_Random {
     public static void main(String[] args) {
