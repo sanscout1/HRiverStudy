@@ -6,9 +6,11 @@
 
 - 운영체제는 하드웨어를 제어하는 소프트웨어이고 유저와 하드웨어 사이에서 중계자로써 응용 프로그램의 서비스를 제공하는 소프트웨어
 
-  ![OSimage01.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtuQUG%2Fbtrn4r08X1y%2FKZMcbGtq9D0ytbU3yj05c1%2Fimg.png)
 
-    - 컴퓨터 위에서 항상 실행되는 하나의 프로그램
+    
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtuQUG%2Fbtrn4r08X1y%2FKZMcbGtq9D0ytbU3yj05c1%2Fimg.png" width="60%"/>
+    
+- 컴퓨터 위에서 항상 실행되는 하나의 프로그램
     - Kernel로도 정의
     - 하드웨어를 제어하는 소프트웨어
     - 유저와 하드웨어 사이의 중계자
@@ -28,12 +30,14 @@
     1. 명령어 실행 사이클(Instruction-execution cycle)은 첫번째로 메모리에서 명령어를 인출(fetches)하고 명령어 레지스터(Instruction Register)에 명령어를 저장함
   2. 명령어는 그런다음 디코딩되어 메모리에서 피연산자(처리될 데이터 그자체)를 가져올 수 있습니다. 그리고 내부 레지스터(Internal Register)에 저장됩니다.
   3. 피연산자들에게서 명령어가 실행된 이후에 결과는 다시 메모리에 저장됩니다.
+  
 
-    
+
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FonoAH%2Fbtrn0WnM8A9%2FDnUm0UK61sxFGgKN0LUQb1%2Fimg.png" width="60%"/>
+
 - 저장장치 계층
-  ![OSimage02.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FonoAH%2Fbtrn0WnM8A9%2FDnUm0UK61sxFGgKN0LUQb1%2Fimg.png)
 
-    1. 용량
+      1. 용량
   2. 접근 속도
   
     - 위로 올라갈수록 속도는 빠르지만 저장용량이 적고 아래로 내려갈수록 속도는 느리지만 저장용량이 많아지게 됩니다.
