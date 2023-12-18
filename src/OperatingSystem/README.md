@@ -37,7 +37,7 @@
 
 - 저장장치 계층
 
-      1. 용량
+  1. 용량
   2. 접근 속도
   
     - 위로 올라갈수록 속도는 빠르지만 저장용량이 적고 아래로 내려갈수록 속도는 느리지만 저장용량이 많아지게 됩니다.
@@ -48,6 +48,29 @@
 
 - 입출력 구조
 
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6NUiO%2Fbtrn0X72r48%2FWCThtY1UgqoKiMEtWKKZe1%2Fimg.png" width="60%">
+
+    - CPU는 디바이스(키보드, 모니터 등)에게 입출력을 요청합니다.
+    - CPU와 디바이스는 서로 데이터를 통신합니다.
+    - 디바이스에서 CPU에게 인터럽트를 전송할 수 있습니다.
+    - CPU는 메모리로부터 명령어를 인출하고 실행하여 결과를 다시 메모리에 적재할 수 있습니다.
+    - 디바이스와 메모리는 DMA(Direct Memory Access)라는 것을 할 수 있습니다.
+
+- DMA(Direct Memory Access)
+  - 하드웨어(HDD, 그래픽 카드 등)들이 메모리에 직접 접근하여 읽거나 쓸 수 있도록 하는 기능
+  -  CPU의 개입이 없습니다.
+  -  CPU가 해야할 주변장치와의 전송을 DMA 장치가 대신 해줍니다. CPU의 효율을 향상
+
+---
+
+### 컴퓨터 시스템 구조
+
+ - #### 컴퓨터 시스템 부품 정의
+    - CPU : 명령어들을 실행시키는 하드웨어, 프로세서의 종류 중 하나
+    - Processor : 1개의 이상의 CPU가 포함된 물리적인 칩
+    - Core : CPU의 각종 연산을 수행하는 핵심 요소
+    - Multicore : 같은 CPU 위에 여러개의 계산용 코어가 포함되어 있는 것
+    - Multiprocessor : 프로세서가 여러개 인것
 
 
 
