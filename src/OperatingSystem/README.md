@@ -6,7 +6,7 @@
 
 - 운영체제는 하드웨어를 제어하는 소프트웨어이고 유저와 하드웨어 사이에서 중계자로써 응용 프로그램의 서비스를 제공하는 소프트웨어
 
-
+<br>
     
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtuQUG%2Fbtrn4r08X1y%2FKZMcbGtq9D0ytbU3yj05c1%2Fimg.png" width="60%"/>
     
@@ -31,7 +31,7 @@
   2. 명령어는 그런다음 디코딩되어 메모리에서 피연산자(처리될 데이터 그자체)를 가져올 수 있습니다. 그리고 내부 레지스터(Internal Register)에 저장됩니다.
   3. 피연산자들에게서 명령어가 실행된 이후에 결과는 다시 메모리에 저장됩니다.
   
-
+<br>
 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FonoAH%2Fbtrn0WnM8A9%2FDnUm0UK61sxFGgKN0LUQb1%2Fimg.png" width="60%"/>
 
