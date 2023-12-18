@@ -39,7 +39,8 @@ System.out.println("x와 Y 값 : "+ x +" "+ y);
 * 접근성을 설정하는 데 사용되는 키워드로 다른 클래스의 `클래스`, `생성자`, `데이터 멤버`, `메서드`의 접근을 제한함
 * 정보 은닉의 캡슐화
 
-<img src="https://github.com/sanscout1/javaStudy/tree/main/img/src/picture/modifier.png" width="80%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/modifier.png?raw=true" alt="--">
+
 
 
 ***
