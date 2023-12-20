@@ -13,7 +13,7 @@ public class OrderService {
     this.bookService = bookService;
   }
 
-  public void printMenu(){
+  public void printMenu()  {
     System.out.println();
     System.out.println("******************************");
     System.out.println("1. 고객 정보 확인하기");
