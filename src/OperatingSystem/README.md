@@ -82,5 +82,74 @@
 
 - #### 멀티프로그래밍
   - 메모리에 여러 개의 응용 프로그램을 적재하는 것
-  - 
+  - CPU가 하나의 프로그램이 대기중일때 다른 프로그램을 수행시켜 효율을 극대화
+  - 프로그램이란 명령어의 집합
+
+- #### 멀티태스킹=멀티프로세싱(Multitasking=Multiprocessing)
+  - 프로그램들을 동시에 사용할 수 있게 하는 기술을 멀티프로세싱
+  - CPU가 동시에 수행되는 것처럼 빈번하게 프로그램들을 교체
+  - 운영체제가 다음에 CPU의 의해 실행될 프로그램을 고르는 것을 `CPU 스케줄링`
+- #### 운영체제 연산의 2가지 모드
+  1. 유저모드
+     - 사용자가 접근할 수 있는 영역을 제한적
+     - 코드를 작성하고, 프로세스를 실행하는 등의 행동을 할 수 있음
+  2. 커널모드
+     - 잘못된 프로그램으로 인해 다른 프로그램이 잘못 실행되지 않도록 하기 위해 사용되는 모드
+     - 모든 자원(드라이버, 메모리, CPU 등)에 접근, 명령을 할 수 있음
+
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/kernel01.png" width="60%">
+
+### 가상화
+
+- 컴퓨터 하드웨어 위에서 여러개의 다른 운영체제를 실행하는 기술
+
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/VMM01.png" width="60%">
+
+
+---
+
+## 운영체제 구조
+
+### 1. 운영체제 제공 서비스
+
+- 유저 인터페이스(User Interface)
+- 프로그램의 실행(Program execution)
+- 입출력 연산(I/O operation)
+- 파일 시스템 조작(File-system manipulation)
+- 에러 탐색(Error detection)
+- 자원 할당(Resource allocation)
+- 로깅(Logging)
+- 보호 및 보안(Protection and security)
+
+### 2. 유저와 운영체제간의 인터페이스
+- CLI(Command Line Interface) : 쉘(shells)로 알려진 sh, bash, csh, tcsh, zsh 등이 존재함
+- GUI(Graphical User Interface) : Windows, MacOS 등
+- Touch-Screen Interface : Android UI, iPhone UI 등
+
+### 3. 시스템 콜
+- System Calls이란 응용 프로그램이 운영체제와 통신하기 위한 방법
+- read 함수를 통해서 시스템 콜을 호출하고 커널 모드로 들어가서 파일을 읽을 수 있습니다.
+
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/SystemCall01.png" width="60%">
+
+---
+
+## 프로세스
+
+### 1. 프로세스의 개념
+- #### 프로세스란?
+    - 프로세스는 운영체제에서 작업 단위
+    - 실행중인 프로그램 (필요 자원)
+        - CPU의 점유
+        - 메모리(memory)
+        - 파일(files)
+        - 입/출력 장치(I/O devices)
+- #### 프로세스의 구조
+  - Text Section : 실행가능한 코드를 저장하는 공간
+  - Data Section : 전역 변수를 저장하는 공간
+  - Heap Section : 프로그램 실행동안 동적으로 할당되는 변수가 저장되는 공간
+  - Stack Section : 함수가 실행되는 동안 지역변수가 저장되는 임시 공간, 대표적으로 함수 매개변수, 리턴 주소, 지역 변수 등이 포함됨
+
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/processMemory01.png" width="60%">
+
 
