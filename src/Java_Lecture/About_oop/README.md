@@ -91,3 +91,8 @@ ex) A 부모에 aa() 가 있을 때, B 자식에 aa() 함수명에 내용 다르
 
 - #### (외우자) 만약 `A a = new B()` 했더라도 a.aa() 하면 위에 내용대로면 A의 aa()를 출력해야 할 거 같지만, 여기서는 B의 aa()를 출력함
 - 메서드 오버라이딩의 특수한 기능임
+
+
+### 싱글톤
+
+https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%EC%8B%B1%EA%B8%80%ED%86%A4Singleton-%ED%8C%A8%ED%84%B4-%EA%BC%BC%EA%BC%BC%ED%95%98%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90

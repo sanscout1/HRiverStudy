@@ -4,15 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Order {
-    static String adName = "홍길동";
-    static String adPhone = "1234";
-
+    static Scanner sc = new Scanner(System.in);
     public void run() {
-        Scanner sc = new Scanner(System.in);
-        String name;
-        String tel;
 
-        int choiceNum; // 메뉴 선택번호
+        String inputName;
+        String inputTel;
 
         ArrayList<Book> bookMall = new ArrayList<>(); // 이 쇼핑몰 책리스트
 
@@ -24,21 +20,14 @@ public class Order {
         bookMall.add(book2);
         bookMall.add(book3);
 
-        User cus1 = null;
-        Admin admin = null;
-
         System.out.print("당신의 이름을 입력하세요 : ");
-        name = sc.nextLine();
+        inputName = sc.nextLine();
         System.out.print("연락처를 입력하세요 : ");
-        tel = sc.nextLine();
-        if (adName.equals(name) && adPhone.equals(tel)) {
-            admin = new Admin(adName, adPhone, "Admin", "Admin1234");
+        inputTel = sc.nextLine();
 
-        } else {
-            cus1 = new User(name, tel); // 고객생성
-        }
-
-        OrderService orderService = new OrderService(cus1);
+        User cus1 = new User(inputName, inputTel);
+        BookService bookService1 = new BookService();
+        OrderService orderService = new OrderService(cus1,bookService1);
 
         System.out.println("******************************\n");
         System.out.println("\tWelcom to Shopping Mall");
@@ -47,41 +36,31 @@ public class Order {
         while (true) {
             orderService.printMenu();
 
-            choiceNum = sc.nextInt();
-            sc.nextLine();
 
-            switch (choiceNum) {
+            switch (sc.nextInt()) {
                 case 1 -> {
-                    if (admin != null) {
-                        System.out.println("관리자 입니다 다시 선택해주세요");
-                    } else {
-                        orderService.serviceCustomerPrint();
-                    }
+
+                    orderService.serviceCustomerPrint();
+
                 }
                 case 2 -> {
-                    if (admin != null) {
-                        System.out.println("관리자 입니다 다시 선택해주세요");
-                    } else {
-                        orderService.servicePrintCartList();
-                    }
+
+                    orderService.servicePrintCartList();
+
                 }
                 case 4 -> {
-                    if (admin != null) {
-                        System.out.println("관리자 입니다 다시 선택해주세요");
-                    } else {
-                        orderService.serviceAddBook(bookMall);
-                    }
+
+                    orderService.serviceAddBook(bookMall);
+
                 }
                 case 8 -> {
                     System.out.println("종료");
                     System.exit(0);
                 }
                 case 9 -> {
-                    if (admin != null) {
-                        admin.menuAdminLogin();
-                    } else {
-                        System.out.println("관리자 권한이 없습니다. 다시 선택해주세요");
-                    }
+
+                    AdminService adminService = new AdminService();
+                    adminService.menuAdminLogin(cus1);
 
                 }
                 default -> {

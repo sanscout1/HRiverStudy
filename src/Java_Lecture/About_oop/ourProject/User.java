@@ -1,24 +1,7 @@
 package Java_Lecture.About_oop.ourProject;
 
-import java.util.ArrayList;
-
 public class User extends Person{
 
-  private ArrayList<Book> bookCart = new ArrayList<>();
-
-  public ArrayList<Book> getBookCart() {
-
-    return bookCart;
-  }
-
-  public void addBookCart(Book book){
-    this.bookCart.add(book);
-  }
-  public void printCartList(){
-    for (Book book: bookCart) {
-      book.bookPrint();
-    }
-  }
 
   public void printCustomerInform(){
     System.out.println("이름: "+getName());

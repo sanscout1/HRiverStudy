@@ -150,6 +150,15 @@
   - Heap Section : 프로그램 실행동안 동적으로 할당되는 변수가 저장되는 공간
   - Stack Section : 함수가 실행되는 동안 지역변수가 저장되는 임시 공간, 대표적으로 함수 매개변수, 리턴 주소, 지역 변수 등이 포함됨
 
-<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/processMemory01.png?raw=true" width="60%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/processMemory01.png?raw=true" width="40%">
+
+- #### 프로세스의 상태
+    - New : 프로세스가 생성된 상태
+  - Running : 프로세스가 수행되는 상태
+  - Waiting : 프로세스 이벤트가 발생되어 입/출력 완료를 기다리는 상태
+  - Ready : 프로세스가 프로세서에 의해 실행되기를 기다리는 상태(언제라도 실행 가능)
+  - Terminated : 프로세스 실행 종료 상태
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/processState.png?raw=true" width="50%">
 
 

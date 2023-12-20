@@ -2,15 +2,17 @@ package Java_Lecture.About_oop.ourProject;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class OrderService {
 
   private User cus1;
+  private BookService bookService;
 
-  OrderService(User cus1){
-
+  OrderService(){}
+  OrderService(User cus1, BookService bookService){
     this.cus1 = cus1;
+    this.bookService = bookService;
   }
+
   public void printMenu(){
     System.out.println();
     System.out.println("******************************");
@@ -30,20 +32,18 @@ public class OrderService {
 
   public void servicePrintCartList(){
     System.out.println("장바구니 상품목록 보기");
-    if (!cus1.getBookCart().isEmpty()) { // 장바구니가 비어있지 않으면 장바구니 리스트 출력
-      cus1.printCartList();
+    if (!bookService.getBookCart().isEmpty()) { // 장바구니가 비어있지 않으면 장바구니 리스트 출력
+      bookService.printCartList();
     } else {
       System.out.println("장바구니가 비었습니다.");
     }
   }
 
+
+  Scanner sc = new Scanner(System.in);
   public void serviceAddBook(ArrayList<Book> bookMall){
 
-    Scanner sc = new Scanner(System.in);
-
     String inputId = ""; // 입력받는 책아이디
-    String inputTF;   // 장바구니 추가하겠습니까? Y|N
-
     boolean bookIs = true;
 
     System.out.println();
@@ -63,24 +63,28 @@ public class OrderService {
       if (bookIs) { // 같은 이름이 없으면 true 니까 if 실행 그리고 while 반복
         System.out.println("목록에 그런 책이없습니다.");
       }
+      askAddBook(bookMall,inputId);
     }
 
+  }
+  private void askAddBook (ArrayList<Book> bookMall,String inputId){
+
+    String inputTF;   // 장바구니 추가하겠습니까? Y|N
 
     System.out.print("장바구니에 추가하시겟습니까? (Y|N) "); //
     inputTF = sc.nextLine();
     if (inputTF.equalsIgnoreCase("Y")) {
       for (Book book : bookMall) {
         if (book.getBookId().equals(inputId)) {
-          cus1.addBookCart(book); // Y면 장바구니에 추가
+          bookService.addBookCart(book); // Y면 장바구니에 추가
           System.out.println(book.getBookId() + " 도서가 장바구니에 추가되었습니다.");
         }
       }
-
     } else if (inputTF.equalsIgnoreCase("N")) {
       System.out.println("N입력");
     } else {
       System.out.println("다른 문자 입력,다시 입력 해주세요");
     }
   }
-
 }
+
