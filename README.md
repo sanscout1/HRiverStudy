@@ -25,6 +25,6 @@
 
 <img src="" alt="github에 이미지를 올려서 가져오자">
 
-<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/" alt="--">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/--?raw=true" alt="--">
 
 

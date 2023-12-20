@@ -31,26 +31,37 @@
 
 ### ex)
 
-<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/domainRequirement01.png" alt="--">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/domainRequirement01.png?raw=true" alt="--">
 
 
 
 주문
-배송지 정보 지정하기
-출고 상태로 변경
-담은 상품들 금액 더하기
-출고 상태에 따라 주문 취소
-고객 결제 완료 확인
+(상품,가격,수량,구매량)
+- 상품명 상품가격 구매개수 , 각 구매 항목에 구매 가격  
+- 배송지 정보 지정하기  
+- 출고 상태로 변경
+- 담은 상품들 금액 더하기
+- 출고 상태에 따라 주문 취소
+- 고객 결제 완료 확인
 
 ```
 public class Order {
     
-    public void changeDeparture(){}
-    public void changeShippingInfo(){}
-    public void costTotal(){}
-    public void cancelOrder(){}
-    public void checkPayment() {}
+    public void changeShipped(){}
+    public void changeShippingInfo(ShippingInfo newShipping){}
+    public void cancel(){}
+    public void completePayment() {}
 
 }
 ```
+### 소스파일
+* [`OrderLine`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/OrderLine.java)
+* [`Order`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/Order.java)
+* [`Money`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/Money.java)
+* [`Shippinginfo`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/ShippingInfo.java)
+* [`OrderState`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/OrderState.java)
+* [`Product`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/Product.java)
 
+
+  - IllegalArgumentException 설명
+> https://create-drop.tistory.com/entry/Java-javalangIllegalArgumentException-%ED%95%B4%EA%B2%B0%EB%B2%95

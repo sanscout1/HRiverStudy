@@ -97,13 +97,13 @@
      - 잘못된 프로그램으로 인해 다른 프로그램이 잘못 실행되지 않도록 하기 위해 사용되는 모드
      - 모든 자원(드라이버, 메모리, CPU 등)에 접근, 명령을 할 수 있음
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/kernel01.png" width="60%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/kernel01.png?raw=true" width="60%">
 
 ### 가상화
 
 - 컴퓨터 하드웨어 위에서 여러개의 다른 운영체제를 실행하는 기술
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/VMM01.png" width="60%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/VMM01.png?raw=true" width="60%">
 
 
 ---
@@ -130,7 +130,7 @@
 - System Calls이란 응용 프로그램이 운영체제와 통신하기 위한 방법
 - read 함수를 통해서 시스템 콜을 호출하고 커널 모드로 들어가서 파일을 읽을 수 있습니다.
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/SystemCall01.png" width="60%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/SystemCall01.png?raw=true" width="60%">
 
 ---
 
@@ -150,6 +150,6 @@
   - Heap Section : 프로그램 실행동안 동적으로 할당되는 변수가 저장되는 공간
   - Stack Section : 함수가 실행되는 동안 지역변수가 저장되는 임시 공간, 대표적으로 함수 매개변수, 리턴 주소, 지역 변수 등이 포함됨
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/processMemory01.png" width="60%">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/processMemory01.png?raw=true" width="60%">
 
 
