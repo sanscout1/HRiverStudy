@@ -12,7 +12,7 @@
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
 * [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test/shinsegaeTranning/javaBasic)
-* [`주간 과제 목록`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/ourProject)
+* [`Book Project`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/ourProject)
 
 
 
