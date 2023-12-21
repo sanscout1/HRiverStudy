@@ -6,6 +6,14 @@
 * [`도메인 모델, 유스케이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain)
 
 
+-- 목차
+1. UML
+2. 객체 지향 모델링
+3. 객체 지향 프로그래밍
+4. 생성자
+5. 상속
+6. 추상화
+
 ---
 #### UML(Unified Modeling Language)
 
@@ -92,7 +100,47 @@ ex) A 부모에 aa() 가 있을 때, B 자식에 aa() 함수명에 내용 다르
 - #### (외우자) 만약 `A a = new B()` 했더라도 a.aa() 하면 위에 내용대로면 A의 aa()를 출력해야 할 거 같지만, 여기서는 B의 aa()를 출력함
 - 메서드 오버라이딩의 특수한 기능임
 
+---
+
+## 추상화
+
+- 불필요한 정보를 숨기고 효율적으로 코드 짜기 위하여 구한하고자 하는 부분의 범위 축소하는 것
+- 코드의 중복을 막고 재사용성을 높일 수 있음, 응용 프로그램이나 프로그램의 보안에 도움이 됨
+
+
+#### 추상화 유형
+- 데이터 추상화 : 자료형을 만들고 구현을 숨기는 것
+- 제어추상화 : 작업의 단위 정의를 하고, 재사용 하는 것. 반복되는 코드를 수집하여 하나의 단위로 노출 (오버로딩,오버라이딩)
+
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/abstract01" width="80%" alt="">
+
+
+- 추상클래스를 상속 받는 다면, 추상 메소드를 반드시 정의 해야함
+- 상속 받는 자식 클래스가 추상 클래스라면 정의 안해도 됨
+
+## 인터페이스
+
+- 추상 클래스는 추상 메서드와 일반 메서드를 포함할 수 있지만 인터페이스는 추상메서드만 포함할 수 있음
+- 다중 상속을 구현할 수 있음
+- 두 객체를 연결하는 역할
+- default, public 가능
+
+
+```
+rc = new Television();  
+rc1 = new Audio();
+rc.turnOn();
+rc1.turnOn();
+```
+- 동일 인터페이스로 참조형을 결정하여 생성한 객체들은 생성한 클래스가 무엇이냐에 따라 함수 호출 가능
+- #### **인터페이스로 구현한 모든 객체들은 모두 인터페이스로 담을 수 있다**
+        
+
+
+
+
+---
 
 ### 싱글톤
 
-https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%EC%8B%B1%EA%B8%80%ED%86%A4Singleton-%ED%8C%A8%ED%84%B4-%EA%BC%BC%EA%BC%BC%ED%95%98%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
+> https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%EC%8B%B1%EA%B8%80%ED%86%A4Singleton-%ED%8C%A8%ED%84%B4-%EA%BC%BC%EA%BC%BC%ED%95%98%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
