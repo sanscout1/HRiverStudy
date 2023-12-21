@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class OrderService {
   Scanner sc;
-  User user;
+  private User user;
 
   public OrderService(User user, Scanner sc) {
     this.sc = sc;
@@ -24,7 +24,7 @@ public class OrderService {
     System.out.print("\n메뉴 번호를 선택해주세요 ");
   }
 
-  public void printSelectMenu() {
+  public void printSelectMenu() throws InterruptedException {
     UserService userService = new UserService(this.user);       //UserService 객체 생성
     BookService bookService = new BookService(this.user, sc);   //BookService 객체 생성
     //Scanner 중복 선언 방지를 위해 객체를 넘겨준다
@@ -38,12 +38,15 @@ public class OrderService {
       switch (choiceNum) {
         case 1 -> { //유저 정보 출력
           userService.userInfoPrint();
+          Thread.sleep(1000);
         }
         case 2 -> { //나의 장바구니 목록 출력
           bookService.bookListPrint(bookService.getMyCartBookList());
+          Thread.sleep(1000);
         }
         case 4 -> { //장바구니에 책 추가
           bookService.cartAddBook();
+          Thread.sleep(1000);
         }
         case 8 -> { //프로그램 종료
           System.out.println("종료");
@@ -52,6 +55,7 @@ public class OrderService {
         case 9 -> { //관리자 로그인
           AdminService adminService = new AdminService(user);
           adminService.menuAdminLogin();  //관리자 로그인 메뉴
+          Thread.sleep(1000);
         }
       }
     }

@@ -4,7 +4,7 @@ import Java_Lecture.About_oop.Project_mall.vo.User;
 
 public class UserService {
 
-  User user;
+  private User user;
 
   public UserService(User user) {
     this.user = user;

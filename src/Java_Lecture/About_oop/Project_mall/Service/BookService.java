@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 
 public class BookService {
-  User user;
-  Scanner sc;
-  ArrayList<Book> bookList = new ArrayList<>();         // 현재 쇼핑몰에 책리스트
-  ArrayList<Book> myCartBookList = new ArrayList<>();   // 내가 담은 장바구니 리스트
+  private User user;
+  private Scanner sc;
+  private ArrayList<Book> bookList = new ArrayList<>();         // 현재 쇼핑몰에 책리스트
+  private ArrayList<Book> myCartBookList = new ArrayList<>();   // 내가 담은 장바구니 리스트
   Book book1 = new Book("ISBN1234", "쉽게 배우는 JSP 웹 프로그래밍", 27000, "송미영", "단계별로 쇼핑몰을 구현하며 배우는 JSP 웹 프로그래밍", "IT전문서", "2018/10/06");
   Book book2 = new Book("ISBN1235", "안드로이드 프로그래밍", 33000, "우재남", "실습 단계별 명쾌한 멘토링!", "IT전문서", "2022/01/22");
   Book book3 = new Book("ISBN1236", "스크래치", 22000, "고광일", "컴퓨터 사고력 키우는 블록 코딩", "컴퓨터입문", "2019/06/10");
@@ -27,6 +27,9 @@ public class BookService {
   }
 
   public void bookListPrint (ArrayList<Book> bookList){ // Book 리스트 출력
+    if(bookList.isEmpty()){
+      System.out.println("장바구니가 비었습니다.");
+    }
     for(Book book : bookList){
       System.out.print(book.getBookId()+" | "+book.getBookName()+" | "+book.getBookPrice()+" | "+book.getBookAuthor()+" | "+book.getBookSubName()+" | "+book.getBookCategory()+" | "+book.getBookDate()+"\n");
     }

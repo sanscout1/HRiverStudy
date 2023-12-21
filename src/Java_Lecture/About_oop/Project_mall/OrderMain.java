@@ -6,7 +6,7 @@ import Java_Lecture.About_oop.Project_mall.vo.User;
 import java.util.Scanner;
 
 public class OrderMain {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
     String name;      //입력받을 이름
     String tel;       //입력받을 전화번호
