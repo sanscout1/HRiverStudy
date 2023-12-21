@@ -41,7 +41,7 @@ public class Order {
     private void setOrderLines(List<OrderLine> orderLines){
         verifyAtLeastOneorMoreOrderLines(orderLines);
         this.orderLines=orderLines;
-        calculateTotalAmoints();
+        calculateTotalAmounts();
     }
 
     private void setShippingInfo(ShippingInfo shippingInfo) {
@@ -51,7 +51,7 @@ public class Order {
     }
 
 
-    private void calculateTotalAmoints() {
+    private void calculateTotalAmounts() {
         int sum = orderLines.stream().mapToInt(x ->x.getAmounts()).sum();
         this.totalAmounts=new Money(sum);
     }

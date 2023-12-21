@@ -14,11 +14,11 @@ public class Admin extends Person {
   }
 
   // 클래스내 사용
-  protected String getId() {
+  public String getId() {
     return id;
   }
 
-  protected String getPassword() {
+  public String getPassword() {
     return password;
   }
 

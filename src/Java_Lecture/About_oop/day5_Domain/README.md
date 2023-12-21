@@ -62,9 +62,55 @@ public class Order {
 * [`OrderState`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/OrderState.java)
 * [`Product`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain/Product.java)
 
+***
 
-  - IllegalArgumentException 설명
-> https://create-drop.tistory.com/entry/Java-javalangIllegalArgumentException-%ED%95%B4%EA%B2%B0%EB%B2%95
+## 유스케이스 다이어그램
 
-- try catch 문
->https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%ACException-%EB%AC%B8%EB%B2%95-%EC%9D%91%EC%9A%A9-%EC%A0%95%EB%A6%AC
+- 누가 시스템을, 시스템은 사용자에게 무엇을 해야하며, 사용자와 상호작용을 위한 시스템이 제공해야 할 인터페이스는 무엇인가?
+- 인터페이스 --> 사용자와 시스템이 상호작용하기 위한 기능들
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/usecase01.png?raw=true" width="70%" alt="--">
+
+- 액터 : 시스템 외부의 존재, 이벤트를 시작하는 객체
+- 유스케이스 : 시스템 내부에 해당되는 단위 기능 (function 단위) , 사용자 관점에서 시스템 모델링
+
+### 액터와 유스케이스
+
+#### 유스케이스 간의 관계
+- 일반화 관계  (실선)
+  - 상속 관계
+  - 추상적인 엑터와 구체적인 엑터 사이에 관계를 맺어줌
+
+
+- 포함(include) 관계 (점선)
+  - 다른 유스케이스에서 기존 유스케이스를 사용
+  - 같은 기능이 있는 다른 유스케이스가 반드시 수행되는 관계
+  - 기준 유스케이스의 이벤트 (메소드 콜) 흐름에 영향을 줌
+  
+
+
+- 확장(extend) 관계 (점선)
+  - 기존 유스케이스에 더 추가하여 사용
+  - 상위 유스케이스로부터 특정 조건때 수행
+
+
+#### 엑터와 유스케이스 관계
+- 연관 관계 (실선)
+  - 액터와 정보를 주고받는 유스케이스
+
+#### 유스케이스 사이 관계
+- 중복 관계 
+  - 유스케이스의 흐름을 만들어 보고, 중복되는 케이스를 묶어본다
+  - 중복 케이스를 그림과 같이 분리 한다.
+  
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/usecase02.png?raw=true" width="70%" alt="--">
+
+
+
+
+
+
+
+
+
+

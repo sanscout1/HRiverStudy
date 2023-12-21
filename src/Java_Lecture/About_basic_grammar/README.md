@@ -331,7 +331,13 @@ outputIntstream.forEach(i->System.*out*.printf("%d ",i));
 #### LocalDate
 > https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 
+---
 
+- IllegalArgumentException 설명
+> https://create-drop.tistory.com/entry/Java-javalangIllegalArgumentException-%ED%95%B4%EA%B2%B0%EB%B2%95
+
+- try catch 문
+>https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%ACException-%EB%AC%B8%EB%B2%95-%EC%9D%91%EC%9A%A9-%EC%A0%95%EB%A6%AC
 
 
 
