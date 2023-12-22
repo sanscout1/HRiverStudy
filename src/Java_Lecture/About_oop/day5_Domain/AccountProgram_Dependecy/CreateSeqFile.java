@@ -13,7 +13,7 @@ public class CreateSeqFile extends Frame implements ActionListener {
     private DataOutputStream output;
 
     CreateSeqFile(){
-        super("고객 정보 파일 생성");
+        super("create customer file");
         try{
             output = new DataOutputStream(new FileOutputStream("client.doc"));
         } catch (FileNotFoundException e) {
@@ -28,23 +28,23 @@ public class CreateSeqFile extends Frame implements ActionListener {
 
         setSize(250,150);
         setLayout(new GridLayout(4,2));
-        add(new Label("계좌 번호"));
+        add(new Label("accountNumber"));
         account = new TextField();
         add(account);
-        add(new Label("이름"));
+        add(new Label("name"));
         name = new TextField(20);
         add(name);
 
         //balance Frame에 붙이기
-        add(new Label("잔고"));
+        add(new Label("balance"));
         balance = new TextField(20);
         add(balance);
 
-        enter = new Button("입력");
+        enter = new Button("inoyt");
         enter.addActionListener(this);
         add(enter);
 
-        done = new Button("종료");
+        done = new Button("exit");
         done.addActionListener(this);
         add(done);
         setVisible(true);
@@ -52,10 +52,37 @@ public class CreateSeqFile extends Frame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        addRecord();
+        if (e.getSource()==done)try {
+            output.close();
+        }catch (IOException io){
+            System.err.println(io.toString());
+        }
+        System.exit(0);
     }
 
     public void addRecord(){
+        String accountNo = "";
+        Double money = 0.0;
+        if(!account.getText().equals("")){
+            try {
+                accountNo = String.valueOf(account.getText());
+                if(accountNo != null) {
+                    output.writeUTF(accountNo);
+                    output.writeUTF(name.getText());
+                    //money = new Double(balance.getText());
+                    //output.writeDouble(balance.);
+                }
+            }catch (NumberFormatException e){
+                System.err.println(e.toString());
+            }catch (IOException e2) {
+                System.err.println(e2.toString());
+                System.exit(1);
+            }
+        }
+    }
 
+    public static void main(String[] args) {
+       new CreateSeqFile();
     }
 }
