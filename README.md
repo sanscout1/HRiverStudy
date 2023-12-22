@@ -12,7 +12,10 @@
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
 * [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test/shinsegaeTranning/javaBasic)
-* [`Book Project`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/ourProject)
+
+#### Book Project
+* [`My Book Project`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/ourProject)
+* [`Book Project Team`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/Project_mall)
 
 
 
@@ -24,9 +27,5 @@
 
 
 ***
-
-<img src="" alt="github에 이미지를 올려서 가져오자">
-
-<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/--?raw=true" alt="--">
 
 

@@ -105,6 +105,70 @@ public class Order {
   
 <img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/usecase02.png?raw=true" width="70%" alt="--">
 
+***
+
+### 클래스 다이어그램
+
+- 클래스 이름, 속성, 메서드로 구성
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/classDiagram01.png?raw=true" width="70%" alt="--">
+
+- public : +
+- private : -
+- protected : #
+
+
+### 객체와 클래스 사이 관계 표현
+
+- 객체를 생성하는 관계
+  - 연관 관계 : 멤버 변수를 참조 (강한 결합)
+  - 의존 관계 : 메서드로 참조 (약한 결합)
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/classDiagram02.png?raw=true" width="70%" alt="--">
+
+- 실선에 각 클래스의 역할을 명시 하거나, 몇 대 몇 관계 인지 숫자로 표현
+
+
+#### 다중성
+  - 클래스 사이에 연관 관계 객체의 수가 1개 이상인 경우
+  
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/classDiagram03.png?raw=true" width="70%" alt="--">
+
+
+#### 집합 관계의 복합 관계
+
+- 집합 관계는 하나의 객체가 독립적인 객체 여러개로 구성되는 경우
+- 한쪽의 객체가 없어도 다른 객체르 사용가능 (lifetime 독립적)
+--------------------
+- 복합 관계는 집합 관계보다 더 강한 관계로 구성 --> 단독 사용이 불가능, 반드시 슈퍼 클래스와 함께 사용
+- 한쪽의 객체가 없으면 다른 객체도 사용 불가능 상태 (lifetime 종속적)
+- 빈 네모 화살표가 집합, 검은색으로 칠해진 화살표가 복합
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/classDiagram05.png?raw=true" width="70%" alt="--">
+
+// os에서 인터럽션이 올때, 어댑션 리스너쪽에서 자기가 기다리는 인터럽션에 반응하여 작업
+
+#### 일반화 관계
+
+- a kind of 관계 (grouping)
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/classDiagram06.png?raw=true" width="70%" alt="--">
+
+#### 의존 관계
+- 하나의 클래스가 다른 클래스를 사용해 영향을 미치는 관계
+- 한 클래스의 메서드가 다른 클래스의 객체를 인자로 받아 메서드를 사용하는 경우
+- 한 클래스의 메서드 내부에서 다른 클래스의 객체를 생성하여 그 메서드를 사용하는 경우
+- 다른 클래스의 메서드가 또 다른 클래스의 객체를 반환하는 경우
+- 일번 실선 화살표
+
+
+***
+
+- 정리 : 
+- 연관 관계 (`일반 (상속의 느낌)`, `집합 (부품, 단독가능)`, `복합 (부품, 단독 불가능 슈퍼클래스 필요)`)   , 의존 관계
+- 일반 (맴버로 객체를 소유 x), 연관 (맴버로 객체를 소유 o) 
+- 집합(외부 생성 객체를 가져와 소유) , 복합 (내부에서 객체 생성해서 소유)
+
 
 
 
