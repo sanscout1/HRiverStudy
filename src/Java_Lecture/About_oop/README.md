@@ -2,7 +2,7 @@
 
 ---
 * [`Object필드 활용`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day3/ex1)
-* [`인터페이스 활용 및 Builder Pattern`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day2)
+* [`인터페이스 기본 코드 및 Builder Pattern`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day2)
 * [`도메인 모델, 유스케이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain)
 
 
