@@ -268,32 +268,52 @@ public class Test {
     }
 }
 ```
-- StringBuilder 이용한 예제
 
->https://itprogramming119.tistory.com/entry/JAVA-40-%EB%AC%B8%EC%9E%90%EC%97%B4%EC%97%90%EC%84%9C-%EB%B6%80%EB%B6%84-%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84-%EC%A0%9C%EA%B1%B0%ED%95%98%EB%8A%94-delete-%EB%A9%94%EC%86%8C%EB%93%9C-StringBuffer-%ED%81%B4%EB%9E%98%EC%8A%A4 delete() 함수
+***
+
+- StringBuilder 이용한 예제
+  - delete(startIndex,endIndex)   endIndex 앞까지 제거
+  - deleteCharAt(index)   해당 인덱스 문자 제거 
 
 ---
 
-Arrays 문법 정리할 것
->https://www.techiedelight.com/ko/sort-array-of-strings-java/
+### Arrays 
+- .sort(String[])  --> 문자열 오름차순 정렬, 퀵소트 이용
+- .sort(String[], comparator)  --> `Arrays.sort(s, Comparator.naturalOrder());` 오름차순 정렬
+- `Arrays.sort(s, Comparator.reverseOrder());` 내림차순정렬
+-  `s = Arrays.stream(s).sorted().toArray(String[]::new);` 스트림을 이용한 정렬
+### array 를 intstream 처리 방법
+``` 
+int[] outputIntArray = {95,75,85,100,50};
+outputIntArray= Arrays.stream(outputIntArray).sorted().toArray();
+IntStream outputIntstream = Arrays.stream(outputIntArray);
+outputIntstream.forEach(i->System.out.printf("%d ",i));
+```
 
+
+> https://codechacha.com/ko/java-sorting-array/
 
 ---
 
 - ArrayList <> (제너릭-->해당 내용물을 관리해서 저장하겠다)
 ---
 
->https://jamesdreaming.tistory.com/84 spilt 정리
+### spilt
+
+- `str.split("-")` 지정 문자를 기준으로 배열에 저장
+- `str.split("-",3)`  배열 3개까지 만드는 제한 걸고 나눔
+-  `str.split("\\.");` . 기준으로 자르기
 
 
 ---
 
->https://m.blog.naver.com/hyoun1202/222113488861 compareTo 정리
-
-
+### compareTo()
+- 문장열을 비교하다가 차이나는 부분에 반환값을 보여줌
 ---
 
->https://velog.io/@akwnsldj1/Java-%EC%9E%90%EB%B0%94-%EC%86%8C%EC%88%98%EC%A0%90-%EB%B0%98%EC%98%AC%EB%A6%BC format()
+### String.format()
+- `String result5 = String.format("%.1f", num);` 둘째자리 까지 반올림
+
 
 ----
 #### hasNext()
@@ -302,43 +322,21 @@ Arrays 문법 정리할 것
 
 ---
 
-#### str.split("\\.");
+
+### Optional 객체 처리
+- `.getAsInt()`, `getAsDouble()`
 
 ---
 
-> https://codechacha.com/ko/java-sorting-array/ sort 내림차순
-
----
-
-> https://www.tcpschool.com/java/java_stream_optional Optional 객체 처리
-
----
-
->https://cordcat.tistory.com/64 array 를 intstream 처리 방법
-``` 
-int[] outputIntArray = {95,75,85,100,50};
-outputIntArray= Arrays.*stream*(outputIntArray).sorted().toArray();
-IntStream outputIntstream = Arrays.*stream*(outputIntArray);
-outputIntstream.forEach(i->System.*out*.printf("%d ",i));
-```
-
----
-
-`replace() `  알아볼것
-
+### String.replace(기준, 바꿀문자) 
+- 우측 변수값으로 기준 값들을 바꿈
 ---
 
 #### LocalDate
+- `lengthOfMonth() ` 지정한 달의 길이 리턴
+- `	getDayOfWeek()` 그 주의 enum 값 리턴
+- 달력 정보를 제공 해줌
 > https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 
 ---
-
-- IllegalArgumentException 설명
-> https://create-drop.tistory.com/entry/Java-javalangIllegalArgumentException-%ED%95%B4%EA%B2%B0%EB%B2%95
-
-- try catch 문
->https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%ACException-%EB%AC%B8%EB%B2%95-%EC%9D%91%EC%9A%A9-%EC%A0%95%EB%A6%AC
-
-
-
 
