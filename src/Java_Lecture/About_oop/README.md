@@ -59,7 +59,7 @@
 3. 다형성
 
 * 사용방법은 동일하지만, 실행 결과가 다양하게 나오는 성질 다형성을 구현 하기 위해서 자동타입변환(프로모션), 재정의(오버라이딩)
-
+- 다형성을 제공 하기 위한 기술 (추상클래스, 인터페이스)
 ***
 
 ## 생성자
@@ -82,7 +82,7 @@
 
   - 코드의 재사용, 계층적 순서
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/extends01" width="80%" alt="">
+<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/extends01.png?raw=true" width="80%" alt="">
 
 
 * 다중 상속 허용하지 않음. extends 뒤에 하나의 부모 클래스만 상속
@@ -124,6 +124,7 @@ ex) A 부모에 aa() 가 있을 때, B 자식에 aa() 함수명에 내용 다르
 - 다중 상속을 구현할 수 있음
 - 두 객체를 연결하는 역할
 - default, public 가능
+- 인터페이스와 추상클래스는 기준 및 표준이 되기 위하여 정의를 하지 않고 기준만 잡아줌
 
 
 ```
@@ -136,10 +137,10 @@ rc1.turnOn();
 - #### **인터페이스로 구현한 모든 객체들은 모두 인터페이스로 담을 수 있다**
         
 
-
-
-
 ---
+
+
+
 
 ### 싱글톤
 
