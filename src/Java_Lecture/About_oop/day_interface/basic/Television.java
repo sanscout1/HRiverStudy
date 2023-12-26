@@ -1,4 +1,4 @@
-package Java_Lecture.About_oop.day_interface;
+package Java_Lecture.About_oop.day_interface.basic;
 
 public class Television implements  RemoteControl{
 

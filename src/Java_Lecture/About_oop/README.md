@@ -4,6 +4,8 @@
 * [`Object필드 활용`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day3/ex1)
 * [`인터페이스 기본 코드 및 Builder Pattern`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day2)
 * [`도메인 모델, 유스케이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain)
+* [`추상클래스의 이해`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day6_abstract)
+* [`인터페이스 활용 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface)
 
 
 -- 목차
@@ -120,14 +122,20 @@ ex) A 부모에 aa() 가 있을 때, B 자식에 aa() 함수명에 내용 다르
 
 ## 인터페이스
 
-- 추상 클래스는 추상 메서드와 일반 메서드를 포함할 수 있지만 인터페이스는 추상메서드만 포함할 수 있음
+- 추상 클래스는 추상 메서드와 일반 메서드를 포함할 수 있지만, 인터페이스는 추상메서드만 포함할 수 있음
+
+
 - 다중 상속을 구현할 수 있음
 - 두 객체를 연결하는 역할
 - default, public 가능
 - 인터페이스와 추상클래스는 기준 및 표준이 되기 위하여 정의를 하지 않고 기준만 잡아줌
 
+### 인터페이스 사용 이유
+- 완전한 추상화 구현 가능
+- 다중 상속 구현 가능
+- 느슨한 결합 형성 가능
 
-```
+```agsl
 rc = new Television();  
 rc1 = new Audio();
 rc.turnOn();
@@ -135,7 +143,17 @@ rc1.turnOn();
 ```
 - 동일 인터페이스로 참조형을 결정하여 생성한 객체들은 생성한 클래스가 무엇이냐에 따라 함수 호출 가능
 - #### **인터페이스로 구현한 모든 객체들은 모두 인터페이스로 담을 수 있다**
-        
+
+
+### 인터페이스에서 사용 가능한 것들
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/interface01.png?raw=true" width="70%" alt="--">
+
+
+- 상수 : public static --> 상수는 구현객체와 상관 없는 인터페이스 맴버로 바로 접근해서 읽을 수 있다.
+- 추상 메소드 : 바디가 없는 메소드 (메소드 선언부만 작성)
+- 
+
 
 ---
 
