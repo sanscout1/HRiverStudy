@@ -1,4 +1,4 @@
-package Java_Lecture.About_oop;
+package Java_Lecture.About_oop.day1;
 
 public class NutritionFacts {
     private final int servingSize;   //(m1, 1회 제공량) 필수

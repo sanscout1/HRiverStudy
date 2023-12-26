@@ -184,7 +184,7 @@ rc1.turnOn();
 
 #### 자동 변환 instanceof 유용 문법
 
-```agsl
+``` agsl
 public static void ride(Vehicle vehicle){
         if(vehicle instanceof  Bus){
             Bus bus = (Bus) vehicle;
