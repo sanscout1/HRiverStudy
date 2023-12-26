@@ -82,7 +82,7 @@
 
   - 코드의 재사용, 계층적 순서
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/extends01.png?raw=true" width="80%" alt="">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/extends01.png?raw=true" width="70%" alt="--">
 
 
 * 다중 상속 허용하지 않음. extends 뒤에 하나의 부모 클래스만 상속
@@ -112,7 +112,7 @@ ex) A 부모에 aa() 가 있을 때, B 자식에 aa() 함수명에 내용 다르
 - 데이터 추상화 : 자료형을 만들고 구현을 숨기는 것
 - 제어추상화 : 작업의 단위 정의를 하고, 재사용 하는 것. 반복되는 코드를 수집하여 하나의 단위로 노출 (오버로딩,오버라이딩)
 
-<img src="https://github.com/sanscout1/HRiverStudy/tree/main/src/picture/abstract01" width="80%" alt="">
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/abstract01.png?raw=true" width="70%" alt="--">
 
 
 - 추상클래스를 상속 받는 다면, 추상 메소드를 반드시 정의 해야함
