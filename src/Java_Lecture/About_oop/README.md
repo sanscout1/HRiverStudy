@@ -174,11 +174,27 @@ rc1.turnOn();
 
 #### 다중 상속
 - 인터페이스 두 개를 동시 적용 하고 싶다면, 두 인터페이스를 새로운 하나의 인터페이스에서 extend 하여 implements 하면 된다.
-  - [`다중 인터페이스 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
+  ### - [`다중 인터페이스 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
 
 #### 자동 타입 변환
 - 부모 클래스가 인터페이스를 구현하고 있다면 자식 클래스도 인터페이스 타입으로 자동 타입 변환될 수 있음
-  - [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
+- 자식이 인터페이스 같은 부모로 변환 될때 --> promotion
+- 부모를 자식으로 형 변활 할때 --> casting  보통 (타입) 함
+  ### - [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
+
+#### 자동 변환 instanceof 유용 문법
+
+```agsl
+public static void ride(Vehicle vehicle){
+        if(vehicle instanceof  Bus){
+            Bus bus = (Bus) vehicle;
+            bus.checkFare();
+        }
+        //위 아래가 동일 식임 ,,,, 자바 12버전부터 지원
+        if(vehicle instanceof Bus bus) bus.checkFare();
+        vehicle.run();
+    }
+```
 
 ---
 
