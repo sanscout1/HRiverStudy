@@ -167,6 +167,13 @@ rc1.turnOn();
     - private static 메소드
 
 - static은 static 끼리 사용가능한 점 알아 둘 것
+- 인터페이스는 super 사용 불가 --> 객체의 주소값을 불러오는 super가 불러올 주소값이 없기 떄문이다.
+
+#### 다중 상속
+- 인터페이스 두 개를 동시 적용 하고 싶다면, 두 인터페이스를 새로운 하나의 인터페이스에서 extend 하여 implements 하면 된다.
+* [`다중 인터페이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
+
+
 
 ---
 
