@@ -7,7 +7,7 @@
 * [`추상클래스의 이해`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day6_abstract)
 * [`인터페이스 코드 모음`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface)
 * [`다중 인터페이스 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
-* [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
+* [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample02)
 * [`인터페이스 퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Test/InterfaceQuiz1226)
 
 
