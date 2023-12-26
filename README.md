@@ -11,7 +11,7 @@
 ### ⌨️ 실습 과제
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
-* [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test/shinsegaeTranning/javaBasic)
+* [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test)
 * [`재고관리 유스케이스`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_assignments/HR_usecaseAssignment)
 
 #### Book Project
