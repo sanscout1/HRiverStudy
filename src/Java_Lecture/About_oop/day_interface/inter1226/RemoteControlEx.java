@@ -28,17 +28,33 @@ public class RemoteControlEx {
 
 
         System.out.println();
-
+        System.out.println("TV");
         // 오버라이딩은 마지막으로 자신을 구현한 오버라이딩 메소드를 추적해서 이용한다.
         RemoteControl remoteControl;
         remoteControl = new TV();
         remoteControl.turnOn();
         remoteControl.turnOff();
+        remoteControl.setVolume(25);
+        remoteControl.setMute(true);
+        System.out.println(remoteControl.getVolume());
+        remoteControl.setMute(false);
+        System.out.println(remoteControl.getVolume());
+        System.out.println();
+        System.out.println("RADIO");
         // 느슨한 결합이기 떄문에 확장성이 좋음
-        remoteControl = new Radio();
+        remoteControl = new Radio(); // radio객체를 생성하여 인터페이스 타입 변수에 주입(injection)
         remoteControl.turnOn();
         remoteControl.turnOff();
+        remoteControl.setVolume(15);
+        remoteControl.setMute(true);
+        System.out.println(remoteControl.getVolume());
+        remoteControl.setMute(false);
+        System.out.println(remoteControl.getVolume());
+        System.out.println();
         //
+
+        RemoteControl.changeBattery();   //정적 메소드 .. 직접 호출
+        //remoteControl.changeBattery();
 
 
     }

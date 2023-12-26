@@ -5,6 +5,7 @@ package Java_Lecture.About_oop.day_interface.inter1226;
 public class TV implements RemoteControl{
 
     private int volume;
+    private int saveVolume;
 
     @Override
     public void turnOn() { //추상메소드 재정의 : 오버라이딩
@@ -33,7 +34,28 @@ public class TV implements RemoteControl{
             this.volume=volume;
         }
     }
+
+    @Override
+    public int getVolume() {
+        return this.volume;
+    }
+
     public void printVolume(){
         System.out.println(this.volume);
+    }
+
+
+    // default 함수는 오버라이딩 할때 public 으로 해줘야함
+    @Override
+    public void setMute(boolean mute) {
+
+        if(mute) {
+            this.saveVolume=getVolume();
+            System.out.println("Mute Processing");
+            setVolume(MIN_VOLUME);
+        } else {
+            System.out.println("Mute Cancel");
+            this.volume=this.saveVolume;
+        }
     }
 }
