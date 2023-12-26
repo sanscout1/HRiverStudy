@@ -5,7 +5,10 @@
 * [`인터페이스 기본 코드 및 Builder Pattern`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day2)
 * [`도메인 모델, 유스케이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day5_Domain)
 * [`추상클래스의 이해`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day6_abstract)
-* [`인터페이스 활용 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface)
+* [`인터페이스 코드 모음`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface)
+* [`다중 인터페이스 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
+* [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
+
 
 
 -- 목차
@@ -151,7 +154,7 @@ rc1.turnOn();
 
 <img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/interface01.png?raw=true" width="70%" alt="--">
 
-* [`인터페이스 활용 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface)
+
 
 #### 인터페이스 선언 종류
 
@@ -171,9 +174,11 @@ rc1.turnOn();
 
 #### 다중 상속
 - 인터페이스 두 개를 동시 적용 하고 싶다면, 두 인터페이스를 새로운 하나의 인터페이스에서 extend 하여 implements 하면 된다.
-* [`다중 인터페이스`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
+  - [`다중 인터페이스 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample)
 
-
+#### 자동 타입 변환
+- 부모 클래스가 인터페이스를 구현하고 있다면 자식 클래스도 인터페이스 타입으로 자동 타입 변환될 수 있음
+  - [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
 
 ---
 

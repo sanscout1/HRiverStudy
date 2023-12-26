@@ -5,6 +5,7 @@ public class InterfaceMain {
         InterfaceImpl impl = new InterfaceImpl();
 
         InterfaceA interfaceA = impl;
+        // System.out.println(InterfaceA.toString());  인터페이스는 주소 출력 불가
         InterfaceB interfaceB = impl;
         InterfaceC interfaceC = impl;
 
