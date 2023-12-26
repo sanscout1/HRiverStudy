@@ -161,4 +161,54 @@
 
 <img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/processState.png?raw=true" width="50%">
 
+- #### 프로세스 제어 블록 PCB
+  - PCB는 하나의 프로세스에 연관된 정보들을 포함
+    - 프로세스 상태(Process State) : new, ready, running, waiting, terminated 상태 중 하나에 해당됨
+    - 프로그램 카운터(Program Counter) : 메모리의 다음 명령어 주소를 저장함
+    - CPU 레지스터(CPU registers) : IR(Instruction Register), DR(Data Register), PC(Program Counter)와 같은 저장공간이 포함됨
+    - CPU 스케줄링 정보(CPU-scheduling information) : 프로세스 실행 순서를 정하는 정보
+    - 메모리 관리 정보(Memory-management information)
+    - 통계 정보(Accounting Information) : 프로세스의 실행, 시간 제한, 실행 ID 등에 사용되는 CPU양의 정보
+    - 입/출력 상태 정보(I/O status information)
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/pcb01.png?raw=true" width="50%">
+
+
+- #### 프로세스(Process)와 쓰레드(Thread)의 구분
+  - 프로세스
+    - 하나의 싱글 쓰레드를 실행
+    - 한번에 하나의 최소 작업 단위(Task)만 실행이 가능함
+    - 운영체제의 핵심 기능은 멀티프로세싱(Multiprocessing)을 제공하는 것
+  - 쓰레드
+    - 프로세스 안에 또다른 작은 프로세스를 의미
+
+### 프로세스의 스케줄링
+- #### 멀티프로그래밍과 시분할 시스템의 목적
+  - 멀티프로그래밍의 목적
+    - 동시에 여러 프로세스를 실행하는 것
+    - CPU 효율 극대화
+  - 시분할 시스템(Time Sharing System)의 목적
+    - CPU Core가 빈번하게 프로세스들 사이에서 변경하여 사용자가 각각의 프로그램을 동시에 수행되는 것처럼 하기 위해서임
+
+- #### 스케줄링 큐
+  - 프로세스들이 Ready 상태이고 CPU Core 위에서 실행하기 위해서 기다리다면 프로세스들은 Ready Queue에 삽입됩니다.
+  - 특정한 이벤트가 발생되기를 기다리는 프로세스들은 Wait Queue에 위치합니다.
+  - Ready Queue 또는 Wait Queue와 같은 큐들은 일반적으로 PCB들의 연결리스트에서 구현됩니다.
+
+### 문맥 교환 (context switch)
+  - 프로세스에서 문맥(Context)이란 마지막에 수행했던 명령어 위치
+  - 프로세스의 문맥(Context)은 PCB에 표시
+  - 인터럽트가 발생했을 때 운영체제는 현재 수행중인 프로세스의 문맥을 저장, 그리고 후에 다시 그 프로세스를 수행할 때 저장했던 문맥을 복구
+
+    - Context Switch 
+      - CPU Core를 다른 프로세스에게 양도하는 것
+      - 현재 프로세스의 상태를 저장함
+      - Context Switch하게되면 다른 Process Context를 복원함
+    - 
+
+<img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/contextSwitch01.png?raw=true" width="50%">
+
+***
+* [`프로세스의 이해 2`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem/README2.md)
+
 
