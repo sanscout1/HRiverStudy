@@ -180,7 +180,7 @@ rc1.turnOn();
 - 부모 클래스가 인터페이스를 구현하고 있다면 자식 클래스도 인터페이스 타입으로 자동 타입 변환될 수 있음
 - 자식이 인터페이스 같은 부모로 변환 될때 --> promotion
 - 부모를 자식으로 형 변활 할때 --> casting  보통 (타입) 함
-  ### - [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/ssrc/Java_Lecture/About_oop/day_interface/interExample02)
+  ### - [`자동 타입 변환 코드`](https://github.com/sanscout1/javaStudy/tree/main/src/Java_Lecture/About_oop/day_interface/interExample02)
 
 #### 자동 변환 instanceof 유용 문법
 
