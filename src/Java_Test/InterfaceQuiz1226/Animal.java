@@ -2,8 +2,8 @@ package Java_Test.InterfaceQuiz1226;
 
 public abstract class Animal {
 
-     private int speed;
-     private double distance;
+     protected int speed;
+     protected double distance;
 
     Animal(int speed){
         this.speed=speed;

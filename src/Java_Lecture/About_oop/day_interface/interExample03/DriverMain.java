@@ -8,6 +8,7 @@ public class DriverMain {
 
         driver.drive(bus);  //자동타입변환 promotion --> 오버라이딩 메소드 호출 --> 다형성
         driver.drive(taxi);
+
     }
     //인터페이스 매개변수를 가지는 메소드
     public static void ride(Vehicle vehicle){

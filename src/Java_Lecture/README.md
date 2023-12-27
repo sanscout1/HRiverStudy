@@ -11,6 +11,7 @@
 
 ## 변수와 타입
 
+- 인스턴스 : 클래스의 내용을 메모리에 할당 한 것.
 - 변수 초기값
 
     ![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)

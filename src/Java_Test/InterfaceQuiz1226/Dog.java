@@ -9,6 +9,6 @@ public class Dog extends Animal{
 
     @Override
     void run(int hours) {
-        super.setDistance(super.getDistance()+super.getSpeed()*hours/2);
+        this.distance+=(speed*hours)/2;
     }
 }
