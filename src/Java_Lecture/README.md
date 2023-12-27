@@ -11,7 +11,9 @@
 
 ## 변수와 타입
 
+- 클래스(class): 사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로 객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.
 - 인스턴스 : 클래스의 내용을 메모리에 할당 한 것.
+
 - 변수 초기값
 
     ![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)
