@@ -22,7 +22,7 @@
 
 ***
 
-### 📗 도서 목록 (추가 예정)
+### 📗 도서 목록
 
 * [`객체지향의 사실과 오해`](https://github.com/sanscout1/javaStudy/tree/main/src/BookList/Book1)
 
