@@ -2,24 +2,25 @@ package Java_Lecture.About_API;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class exception01 {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("프로그램 시작");
-        printLength("자바프로그램입니다.");
-        printLength(null);
+//        printLength("자바프로그램입니다.");
+//        printLength(null);
 
         int[] array = new int[5];
-        ArrayIndexCheck(array);
+//        ArrayIndexCheck(array);
 
         FileInput();
 
 
         System.out.println("프로그램 종료");
     }
-
+/*
     static void printLength(String s){  //try catch 없으면 프로그램 종료 출력 못봄
         try {
             int result = s.length();
@@ -44,14 +45,27 @@ public class exception01 {
             e.printStackTrace();
         }
     }
-
-    static void FileInput()  {
+*/
+    static void FileInput() {
+        FileInputStream fis = null;
         try {
-            FileInputStream fis = new FileInputStream("src/Java_Lecture/About_API/data.txt");
+            fis = new FileInputStream("data.txt");
             System.out.println("파일 읽기 완료");
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("해당 파일이 존재하지 않습니다.");
+        } finally {
+            try{
+            if (fis != null){
+                fis.close();
+            }
+            } catch (IOException e1){
+                e1.printStackTrace();
+            }
+            System.out.println("finally문은 항상 수행됨");
         }
+        System.out.println("예외 처리 후 수행됨");
+
     }
+
 
 }
