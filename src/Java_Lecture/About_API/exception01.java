@@ -14,7 +14,7 @@ public class exception01 {
 
         int[] array = new int[5];
 //        ArrayIndexCheck(array);
-
+//
         FileInput();
 
 

@@ -29,13 +29,14 @@ public class FinallyTest {
         } catch (ArithmeticException e) {
             e.printStackTrace();
             return 1;
-        } finally {
+        }
+        finally {
             System.out.println(c);
             System.out.println("함수종료");
             return 2;
         }
 
-      //  return 3;
+     //   return 3;
     }
 }
 //static void returnintFinally(int number1,int number2) throws ArithmeticException{

@@ -38,5 +38,12 @@
 
 - 사용자 정의를 포함한 다른 예외 클래스도 throw new 가능하다
 
-https://devfalledinmac.tistory.com/14  
+
+***
+IDException, PasswordException 실습코드
+
+- [`PasswordException`](PasswordException)
+- [`IDException`](IDException)
+***
+
 //
