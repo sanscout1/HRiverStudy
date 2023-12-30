@@ -159,4 +159,73 @@ Message-Passing 기능의 두가지 기능
 - Zero capacity : 임시 대기열에 메세지 대기 불가능, 리시버가 메세지 받을 때까지 sender는 메세지 전송을 block 해야함
 - Bounded capacity : 최대 n개의 메시지를 저장할 수 있습니다. 새 메시지를 보낼 때 큐가 꽉 차 있지 않으면 메시지는 큐에 들어가고 sender는 기다리지 않고 전송 가능, 메세지가 가득 차면 sender는 메세지 전송을 차단해야합니다.
 - Unbounded capacity : sender는 절대 차단 하지 않습니다.
-- 
+
+
+## IPC(Inter-Process Coummunication)의 예제
+
+#### 1. Shared Memory 방식 : POSIX(Portable Operating System Interface) Shared Memory
+```agsl
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+
+
+int main()
+{
+    const int SIZE = 4096;                      // shared memory의 크기
+    const char* name = "OS";                    // shared memory의 이름
+    
+    int shm_fd; // shared memory의 file 설명자
+    char* ptr;  // shared memory의 pointer
+
+    // shared memory 객체 생성
+    shm_fd = shm_open(name, O_RDONLY, 0666);
+    
+    // shared memory 객체에 매핑
+    ptr = (char*) mmap(0, SIZE, PROT_READ, MAP_SHARED, shm_fd, 0);
+
+    // shared memory 객체 읽기
+    printf("%s", (char*)ptr);
+
+    // shared memory 제거
+    shm_unlink(name);
+
+    return 0;
+}
+```
+
+// mach message passing, windows 160p
+
+### 2. Message Passing 방식 : Pipes
+
+- 파이프는 두 프로세스가 통신할 수 있도록 하는 통로 역할을 수행
+
+#### 파이프(Pipe)를 구현하는데 고려할 4가지
+
+1. 파이프가 단방향(unidirectional) 또는 양방향(bidirectional) 통신을 할 것인가?
+2. 양방향(bidirectional) 통신의 경우 반이중(half-duplex)인가 전이중(full-duplex)인가?
+    - half-duplex : 한쪽 방향으로만 통신하는 파이프
+    - full-duplex : 두 방향을 동시간에 통신
+3. 통신하는 프로세스 사이에서 관계(relationship)가 존재해야 하는가?
+    - 예를 들어 부모(parent)-자식(child) 프로세스 관계
+4. 파이프가 네트워크를 통해 통신하는가?
+
+
+#### 파이브 종류
+
+1. 익명 파이프(Ordinary pipes)
+   - 익명 파이프는 생성된 프로세스의 외부에서 접근할 수 없음
+   - 단방향 통신, write end 에서 read end로 전송만 가능
+   - 양방향 통신이 필요하다면 파이프 2개를 이용해서 다른 방향으로 전송해야함
+   - 일반적으로 부모 프로세스는 파이프를 생성하여 생성한 자식 프로세스와 통신하기 위하여 사용됩니다.
+   - ![img.png](../picture/pipeimg01.png)
+2. 명명 파이프(Named pipes)
+   - 명명 파이프는 부모-자식 프로세스 관계없이 접근이 가능함
+
+// 181p 
+
