@@ -1,5 +1,6 @@
 package Java_Lecture.About_oop.day_interface.inter1226;
 
+//인터페이스를 활용하여 객체에 따라 출력 다르게 하기 위하여 같은 타입에 인스턴스만 바꿈
 public class RemoteControlEx {
     public static void main(String[] args) {
         //상수는 구현객체와 상관 없는 인터페이스 맴버로 바로 접근해서 읽을 수 있다.

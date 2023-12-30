@@ -1,5 +1,6 @@
 package Java_Lecture.About_oop.day_interface.inter1226;
 
+// 인터페이스를 활용하여 필요한 기능에 따라 타입을 바꾸며 사용
 public class MultiInterfaceMain {
     public static void main(String[] args) {
         RemoteControl remoteControl;

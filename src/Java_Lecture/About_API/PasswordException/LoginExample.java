@@ -17,9 +17,7 @@ public class LoginExample {
 
 
     static Scanner in = new Scanner(System.in);
-    public static <string> void main(String[] args) {
-        String id;
-        String pwd;
+    public static void main(String[] args) {
 
         IDFormatTest idCheck = new IDFormatTest();
         PasswordCheckMain pwdCheck = new PasswordCheckMain();
@@ -30,32 +28,17 @@ public class LoginExample {
             System.out.println("비밀번호를 입력하세요");
             pwdCheck.checkPassword(in.next());
             System.out.println("회원가입 성공");
-        } catch (PasswordCheckException | IDFormatException e) {
+            IsExistIDPWD isExistIDPWD = new IsExistIDPWD(idCheck.getUserID(), pwdCheck.getPassword());
+            isExistIDPWD.checkIDPWD();
+        } catch (PasswordCheckException | IDFormatException |NotExitIDWrongPasswordException e) {
             e.printStackTrace();
             System.out.println("회원가입 실패");
         } finally {
-            System.out.println("회원가입 종료");
+            System.out.println("아이디,비밀번호 체크 종료");
+
+
         }
 
-        String id2;
-        String pwd2;
-        try {
-            System.out.println("아이디를 확인해보세요");
-            id2 = in.next();
-            if(!id2.equals(idCheck.getUserID())) {
-                throw new NotExitIDWrongPasswordException("아이디가 틀립니다.");
-            }
-            System.out.println("비밀번호를 확인해보세요");
-            pwd2 = in.next();
-            if(!pwd2.equals(pwdCheck.getPassword()) ){
-                throw new NotExitIDWrongPasswordException("비밀번호가 틀립니다.");
-            }
-            System.out.println("둘다 동일 합니다.");
-        } catch (NotExitIDWrongPasswordException e) {
-            e.printStackTrace();
-        }
-        finally {
-            System.out.println("아이디,비밀번호 체크 종료");
-        }
+
     }
 }

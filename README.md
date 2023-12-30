@@ -15,10 +15,9 @@
 * [`재고관리 유스케이스`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_assignments/HR_usecaseAssignment)
 
 #### Book Project
-* [`My Book Project`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/ourProject)
-* [`Book Project Team`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_Lecture/About_oop/Project_mall)
 
-
+- [`My Book Project`](src%2FJava_Test%2FBookProjects%2FmyProject)
+- [`Book Project Team`](src%2FJava_Test%2FBookProjects%2FProject_mall)
 
 ***
 
