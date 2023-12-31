@@ -1,9 +1,11 @@
 ## 간단한 문법
-- continue
+- #### continue
     - 블록 내부에서 continue 문이 실행되면 for 문의 증감식 또는 while 문, do-while 문의 조건식으로 바로 이동
 
-- printf(“%%”) 이렇게 해야 % 출력
-- %.0f 하면 소수점 표현안하고 출력 가능
+- #### printf(“%%”) 
+  - 이렇게 해야 % 출력
+- #### %.0f 
+  - 하면 소수점 표현안하고 출력 가능
 ---
 - 삼항 연산자는 조건식을 평가하고, 조건식이 true이면 첫 번째 표현식을 반환하고, false이면 두 번째 표현식을 반환합니다.
     - `(조건식) ? (첫 번째 표현식) : (두 번째 표현식)`
@@ -12,6 +14,7 @@
 - `System.out.println((int)(Math.random()*6)+1);` // 경우의 수에 맞게 곱하면 됌 애는 6자리 주사위
 - `alt shift`를 누른 상태에서 좌클릭하면 코드를 동시에 작성할 수 있습니다.
 
+***
 
 ### Switch 문
 
@@ -35,7 +38,9 @@ int numLetters = switch (day) {
 
 ---
 
+### for문 별명
 ``` 
+
 Outter: for(){
        ~~~~~  break Outter;
 }
@@ -197,7 +202,7 @@ public class Lambda {
 `List<Character> r = IntStream.range(50, 80).mapToObj(a -> (char) a).collect(Collectors.toList());`
 -  mapToObj 통해 형변환 가능
 ---
-- for문의 다른 이용 법
+### for문의 다른 이용 법
 ```
 for(int i : intArray) {
 System.out.println(i);
@@ -271,7 +276,7 @@ public class Test {
 
 ***
 
-- StringBuilder 이용한 예제
+### StringBuilder 이용한 예제
   - delete(startIndex,endIndex)   endIndex 앞까지 제거
   - deleteCharAt(index)   해당 인덱스 문자 제거 
 
@@ -295,7 +300,8 @@ outputIntstream.forEach(i->System.out.printf("%d ",i));
 
 ---
 
-- ArrayList <> (제너릭-->해당 내용물을 관리해서 저장하겠다)
+#### ArrayList <> (제너릭-->해당 내용물을 관리해서 저장하겠다)
+
 ---
 
 ### spilt

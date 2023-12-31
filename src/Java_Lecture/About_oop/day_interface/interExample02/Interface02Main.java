@@ -3,7 +3,10 @@ package Java_Lecture.About_oop.day_interface.interExample02;
 public class Interface02Main {
     public static void main(String[] args) {
 
-        //구현 객체 생성
+        //구현 객체 생성a
+
+
+
         B b = new B();
         C c = new C();
         B bc = new C();
@@ -16,6 +19,8 @@ public class Interface02Main {
         //인터페이스 변수 선언
         A a;
         a = b;   // A <==== B (Promotion)
+
+        // type A 인데  == new B()
         B b1 = (B)a;  // A ====> B (Casting)
         a = c;      // A <==== C
         C c1 = (C)a;
