@@ -1,17 +1,17 @@
 ## 프로세스들의 연산들
 
-- ### 부모 프로세스와 자식 프로세스
+## 부모 프로세스와 자식 프로세스
 
-    - 프로세스는 고유 pid 를 가지고 있다.
+- 프로세스는 고유 pid 를 가지고 있다.
 
-1. 부모 프로세스 : 기존 프로세스
-2. 자식 프로세스 : 기존 프로세스에서 새롭게 생성된 프로세스
+  1. 부모 프로세스 : 기존 프로세스
+  2. 자식 프로세스 : 기존 프로세스에서 새롭게 생성된 프로세스
 
-#### 프로세스가 프로세스를 생성 시 존재하는 두가지 경우
+### 프로세스가 프로세스를 생성 시 존재하는 두가지 경우
 - 부모 프로세스는 자식 프로세스 실행중에 같이 실행중이다.
 - 부모 프로세스는 자식 프로세스 모두 종료 되기를 기다린다.
 
-#### 새로운 프로세스의 주소 공간의 두가지 가능성
+### 새로운 프로세스의 주소 공간의 두가지 가능성
 - 부모프로세스의 복제인 자식 프로세스 (같은 프로그램과 같은 데이터)
 - 자식 프로세스가 새로운 프로그램을 실행
 
@@ -52,15 +52,15 @@ int main()
 ![img.png](../picture/osfork01.png)
 
 
-### 프로세스 종료
+## 프로세스 종료
 - 프로세스는 마지막 문장을 실행할 떄 종료
 - exit() 시스템 콜 : 운영체제가 강제 종료
 - 운영체제는 프로세스가 종료되면 자원을 해제합니다 (메모리, 파일, I/O 버퍼 등)
 
-#### 좀비(zombie) 프로세스
+### 좀비(zombie) 프로세스
   - 실행이 종료되었지만 삭제되지 않은 프로세스들
 
-#### 고아(orphan) 프로세스
+### 고아(orphan) 프로세스
   - 부모프로세스가 자식 프로세스 보다 먼저 종료된 프로세스
 
 
@@ -111,7 +111,7 @@ Message-Passing 기능의 두가지 기능
     - Synchronous or asynchronous communication
     - Automatic or explicit(명시적) buffering
 
-#### 직접 통신 (direct)
+### 직접 통신 (direct)
 
 - 대칭 직접 통신
   - send(P, message) : 프로세스 P에게 메시지를 전송
@@ -127,7 +127,7 @@ Message-Passing 기능의 두가지 기능
   - 단점 : 식별자 교체시 모든 식별자를 찾아 변경해야함
 
 
-#### 간접 통신 (indirect)
+### 간접 통신 (indirect)
 
 - 메시지는 메일박스(mailboxes) 또는 포트(ports)라고 부르는 공간에 전송되거나 수신됨
 - 메일박스는 추상적 객체로 보이며 프로세스에 의해 메세지를 저장 및 제거 가능
@@ -163,7 +163,7 @@ Message-Passing 기능의 두가지 기능
 
 ## IPC(Inter-Process Coummunication)의 예제
 
-#### 1. Shared Memory 방식 : POSIX(Portable Operating System Interface) Shared Memory
+  ###   1. Shared Memory 방식 : POSIX(Portable Operating System Interface) Shared Memory
 ```agsl
 #include <stdio.h>
 #include <stdlib.h>
