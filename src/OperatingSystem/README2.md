@@ -85,7 +85,7 @@ int main()
 
 ***
 
-![img.png](../picture/img.png)
+![img.png](../picture/sharedmessage.png)
 
 ## 공유메모리
 - 메세지 송수신
