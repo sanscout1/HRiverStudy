@@ -3,8 +3,8 @@
 ### 📝 기초 공부
 
 * [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
-* [`OS`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem)
-
+* [`OperatingSystem`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem)
+* [`ComputerNetworking`](src%2FComputerNetworking_TopDownApproach)
 
 ***
 
