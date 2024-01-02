@@ -29,7 +29,6 @@ public class BoardDao {
         System.out.println("메뉴 선택: ");
         String menuNo = in.nextLine();
         System.out.println();
-
         switch (menuNo) {
             case "1" -> create();
             case "2" -> read();
@@ -53,9 +52,7 @@ public class BoardDao {
             board.setBwriter(in.nextLine());
             board.setBdate(getCurrentDate());
             // 보조 메뉴
-            System.out.println("--------------------------------------------");
-            System.out.println("보조 메뉴: 1. OK | 2. Cancel");
-            System.out.println("메뉴 선택: ");
+            subMenu();
             String menuNo = in.nextLine();
             if (menuNo.equals("1")) {
                 boardList.add(board);
@@ -102,9 +99,7 @@ public class BoardDao {
                     System.out.print("작성자: ");
                     String tmpBwriter = in.nextLine();
                     // 보조 메뉴
-                    System.out.println("--------------------------------------------");
-                    System.out.println("보조 메뉴: 1. OK | 2. Cancel");
-                    System.out.println("메뉴 선택: ");
+                    subMenu();
                     String menuNo = in.nextLine();
                     if (menuNo.equals("1")) {
                         board.setBtitle(tmpBtitle);
@@ -140,9 +135,7 @@ public class BoardDao {
 
     private void clear() {
         System.out.println("[게시물 전체 삭제]");
-        System.out.println("--------------------------------------------");
-        System.out.println("보조 메뉴: 1. OK | 2. Cancel");
-        System.out.println("메뉴 선택: ");
+        subMenu();
         try {
             String menuNo = in.nextLine();
             if (menuNo.equals("1")) {
@@ -184,5 +177,11 @@ public class BoardDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    private void subMenu(){
+        System.out.println("--------------------------------------------");
+        System.out.println("보조 메뉴: 1. OK | 2. Cancel");
+        System.out.println("메뉴 선택: ");
     }
 }
