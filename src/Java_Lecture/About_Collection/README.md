@@ -19,6 +19,9 @@
 - Dao 를 활용하여 main 에서 VO 를 숨김
 - 객체의 데이터와 기능을 분리시켜서 재사용성 증가, 서로의 영향력을 감소
 
+- [`BoardExample`](ListExample%2FBoardExample)
+    - 활요 예제
+
 
 ## Set
 

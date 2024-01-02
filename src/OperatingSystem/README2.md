@@ -149,16 +149,21 @@ Message-Passing 기능의 두가지 기능
 
 **프리미티브는 이용가능한 가장 단순한 요소들이다. 프리미티브는 주어진 기계(machine)의 프로그래머에게 이용가능한 가장 작은 처리(processing)의 단위이거나 언어에서 표현의 원자 요소가 될 수 있다.**
 
-- 메세지 통신 옵션 (blocking , nonblocking 은 동기화와 비동기화 이다 )
+- 메세지 통신 옵션 (blocking : 동기화 , nonblocking : 비동기화 이다 )
   - Blocking send : 송신과정을 막는다 , 메시지가 수신과정이나 메일박스에 받아질 때 까지
-  - nonblocking send : 송신과정은 메세지를 보내고 다른 일 수행
   - Blocking receive : 메시지를 사용할 수 있을 때까지 차단
+![img.png](../picture/blocking01.png)
+
+  - nonblocking send : 송신과정은 메세지를 보내고 다른 일 수행
   - Nonblocking receive : 수신자가 유효한 메세지나 null 을 수신
+![img.png](../picture/unblocking.png)
 
 #### 메세지 임시 대기열 세가지 방법 (buffering)
-- Zero capacity : 임시 대기열에 메세지 대기 불가능, 리시버가 메세지 받을 때까지 sender는 메세지 전송을 block 해야함
+
+- 통신 모두 프로세스 간에 교환되는 메시지는 임시 큐에 들어간다 : 버퍼링
+- Zero capacity : 임시 대기열에 메세지 대기 불가능, 리시버가 메세지 받을 때까지 sender는 메세지 전송을 block 해야함, 오직 한개씩 주고 받는다.
 - Bounded capacity : 최대 n개의 메시지를 저장할 수 있습니다. 새 메시지를 보낼 때 큐가 꽉 차 있지 않으면 메시지는 큐에 들어가고 sender는 기다리지 않고 전송 가능, 메세지가 가득 차면 sender는 메세지 전송을 차단해야합니다.
-- Unbounded capacity : sender는 절대 차단 하지 않습니다.
+- Unbounded capacity : sender는 절대 차단 하지 않습니다. 무한용량
 
 
 ## IPC(Inter-Process Coummunication)의 예제
@@ -200,6 +205,12 @@ int main()
 ```
 
 // mach message passing, windows 160p
+###  Mach message passing
+![img.png](../picture/mach01.png)
+
+### 윈도우즈 시스템
+- `advanced loval procedure call (LPC)` 을 통해 message passing을 사용
+-  고급 로컬 프로시저 호출 기능에 기반한 윈도우즈는 메시지 전달 기법을 사용
 
 ### 2. Message Passing 방식 : Pipes
 
@@ -227,5 +238,80 @@ int main()
 2. 명명 파이프(Named pipes)
    - 명명 파이프는 부모-자식 프로세스 관계없이 접근이 가능함
 
-// 181p 
+***
 
+# 클라이언트 - 서버 시스템 통신
+
+## 소켓
+- 소켓은 ip address 와 port number 가 결합된 식별자
+- 소켓은 연결의 종단점
+
+![img.png](../picture/socket01.png)
+
+- web server의 ip 주소는 161.25.19.8이고 port 넘버는 80
+-  host x의 ip 주소는 146.86.5.20이고 포트넘버는 1625
+
+### JAVA socket API
+
+- Socket class : connection-oriented (TCP)
+- DatagramSocket class : connectionless (UDP)
+- MulticastSocket class : multiple recipients (특정한 수신자에게만 전파)
+
+```agsl
+import java.net.*;
+import java.io.*;
+
+public class DateServer{
+    public static void main(String[] args) throws Exception{
+        ServerSocket server = new ServerSocket(6013);
+
+        // now listen for connections
+        while(true)
+        {
+            Socket client = server.accept();
+            PrintWriter pout = new PrintWriter(client.getOutputStream(), true);
+
+            // socket에 Date 정보 작성
+            pout.println(new java.util.Date().toString());
+
+            // client socket 해제
+            client.close();
+        }
+    }
+}
+```
+
+```agsl
+import java.net.*;
+import java.io.*;
+
+public class DateClient{
+    public static void main(String[] args) throws Exception{
+        // make connection to server socket
+        Socket socket = new Socket("127.0.0.1", 6013);
+
+        InputStream in = socket.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+        // read date from the socket
+        String line = null;
+        while((line=br.readLine())!=null)
+        {
+            System.out.println(line);
+        }
+
+        // close the socket connections
+        socket.close();
+    }
+}
+```
+
+### Remote Procedure Calls RPC
+
+- 원격 서비스의 가장 일반적인 형태 중 하나
+- 네트워크 연결이 있는 시스템간에 사용하기 위해 procedure call 메커니즘을 추상화하는 방법으로 설계됨
+- 클라이언트는 로컬에서 프로시저를 호출하는 것처럼 원격 호스트에서 프로시저를 호출함
+- 즉, 정리하면 RPC는 별도의 원격 제어를 위한 코딩없이 다른 주소 공간에서 함수나 프로시저를 실행할 수 있게하는 프로시저간 통신기술임
+
+
+- [`Thread`](Thread.md)
