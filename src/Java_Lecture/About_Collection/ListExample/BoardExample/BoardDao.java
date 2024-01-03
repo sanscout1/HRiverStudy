@@ -159,6 +159,7 @@ public class BoardDao {
         return currentDate;
     }
 
+
     private void readAll() {
         for (Board board : boardList) {
             System.out.printf("%-6s%-12s%-16s%-40s\n", board.getBno(), board.getBwriter(), board.getBdate(), board.getBcontent());

@@ -42,6 +42,10 @@ public class HashMapMain {
 
         //엔트리 set컬렉션을 얻어, 반복하여 키와 값을 출력하기
 
+        //Map -> entrySet, keyset
+        // Map --> entry   ,,,,,,, entry는 set에서 활용가능
+        //entry -> getkey, getvalue
+        // key 와 value 도 set 에서 활용 가능
         Set<Map.Entry<String,Integer>> entrySet = scores.entrySet();
         Iterator<Map.Entry<String,Integer>> entryIterator = entrySet.iterator();
         while (entryIterator.hasNext()){

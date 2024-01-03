@@ -50,8 +50,10 @@
 #### HashSet, TreeSet
 
 ### HashSet
-- 중복 객체 비허용 , null 도 하나만 가능ㄴ
+- 중복 객체 비허용 , null 도 하나만 가능
 - 순서 x
+
+
   ![img.png](../../picture/set01.png)
 - 다른 객체라도 hashCode() 메소드의 리턴값이 같고, equals() 메소드가true를 리턴하면동일한 객체라고 판단하고 중복 저장하지 않음
 - class Member 를 hashset에 사용할려면 hashcode 와 equals 오버라이딩 해야함
@@ -73,8 +75,7 @@
 - `iterator` 활용하여 검색 해서 빼옴
 
 #### [`iterator 및 set 코드 확인`](SetExample%2FHashSetEx01.java)
-https://tjdtls690.github.io/studycontents/java/2022-07-27-equals_hashcode/
-- 공부 더 할 것 위링크로
+
 
 ## Map
 #### HashMap, HashTable, TreeMap, Properties
@@ -85,6 +86,8 @@ https://tjdtls690.github.io/studycontents/java/2022-07-27-equals_hashcode/
 - 키값에 클래스가 들어간다면, 객체의 비교 구분을 하기 위하여 hashcode와 equals의 오버라이딩을 해야한다! (hashset 오버라이딩 참고)
 
 ![img.png](../../picture/map01.png)
+
+![img.png](../../picture/entry01.png)
 
 ### HashMap
 
