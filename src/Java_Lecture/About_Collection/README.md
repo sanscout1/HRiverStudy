@@ -76,7 +76,19 @@
 
 #### [`iterator 및 set 코드 확인`](SetExample%2FHashSetEx01.java)
 
+### TreeSet
 
+- node를 이용한 사이클을 이루지 않도록 구성한 데이터 구조
+- 탐색 알고리즘 구현을 위해 많이 사용
+
+<img src="https://www.mathwarehouse.com/programming/images/binary-search-tree/binary-search-tree-sorted-array-animation.gif" />
+
+- 메소드
+![img.png](../../picture/treeset01.png)
+- [`TreeSet 예제`](TreeSetEx%2FTreeSetEx.java)
+
+***
+***
 ## Map
 #### HashMap, HashTable, TreeMap, Properties
 
@@ -94,3 +106,41 @@
 ![img.png](../../picture/hashmap01.png)
 
 #### [`해쉬맵과 set 및 Iterator 활용 예제`](HashMapExample%2FHashMapMain.java)
+
+
+
+### Hashtable
+- 해쉬맵과 다르게 멀티스레드에서 안전하게 사용 가능
+- 
+### Properties
+- 해쉬테이블 자식 클래스
+- 키와 값을 String으로 가져옴
+- key = value 구조의 텍스트파일(.properties) 정보를 가져옴
+#### [PropertiesEx.java](app%2FPropertiesEx.java) -- 사용 예제
+
+
+### TreeMap
+- map.entry 에 left, right가 추가 된 구조
+- SortedMap 인터페이스로 구현
+- ket 기준으로 정렬 된다
+- 정렬 순서는 숫자, 알파벳 대문자, 소문자, 한글 순
+![img.png](../../picture/treemap02.png)
+
+### 정렬 Comporable, Comparator
+
+- String, Integer, Double 등 ---> compare() : 기본 오름차순
+- 내림차순으로 하고 싶으면 매개변수 순서 바꾸면됨
+
+#### Comparable
+   - 정렬 수행할 때, 정렬기준이 되는 메서드를 정의해 놓는 인터페이스
+   - Comporable 인터페이스를 
+   - compareTo() 메소드를 원하는 정렬 기준대로 구현
+   - 리턴되는 int값이 음수이면 현재 인스턴스가 비교대상인 인스턴스보다 작고, 양수이면 크고, 0 이면 같도록 하자
+
+#### Comparator는 두 매개변수 객체를 비교하는 것이고, Comparable은 자기 자신과 매개변수 객체를 비교
+
+
+- 메소드
+![img.png](../../picture/treemap01.png)
+
+#### [TreeMapEx 예제](TreeMapEx%2FTreeMapEx.java)

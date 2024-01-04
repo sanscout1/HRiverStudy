@@ -1,0 +1,39 @@
+package Java_Lecture.About_Collection.about_Comparator.StudentComparator;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class StudentMain {
+    public static void main(String[] args) {
+        Student student[] = new Student[5];
+        //순서대로 "이름", 학번, 학점
+        student[0] = new Student("Dave", 20240001, 4.2);
+        student[1] = new Student("Amie", 20160001, 4.5);
+        student[2] = new Student("Emma", 20110001, 3.5);
+        student[3] = new Student("Brad", 20130001, 2.8);
+        student[4] = new Student("Cara", 20140001, 4.2);
+
+        System.out.println("과제1==============================================");
+        Arrays.sort(student);
+        Arrays.stream(student).forEach(studentTmp -> System.out.println(studentTmp.toString()));
+
+        //과제 2
+
+        Arrays.sort(student, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return Comparator.comparingDouble((Student stuTmp) -> stuTmp.score)
+                        .thenComparingInt(stuTmp -> stuTmp.id).compare(o2,o1);
+        }});
+        
+        System.out.println("과제2============================================");
+        Arrays.stream(student).forEach(studentTmp -> System.out.println(studentTmp.toString()));
+
+        System.out.println("과제2 for문 출력");
+        for (int i = 0; i < 2; i++) {
+            System.out.println(student[i]);
+        }
+
+
+    }
+}
