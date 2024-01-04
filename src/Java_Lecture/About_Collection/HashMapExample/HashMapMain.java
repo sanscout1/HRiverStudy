@@ -39,7 +39,7 @@ public class HashMapMain {
             Integer v = scores.get(k);
             System.out.println(k+" : "+ v);
         }
-
+        System.out.println("---------------------------");
         //엔트리 set컬렉션을 얻어, 반복하여 키와 값을 출력하기
 
         //Map -> entrySet, keyset

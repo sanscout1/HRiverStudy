@@ -18,12 +18,12 @@ public class StudentMain {
         Arrays.stream(student).forEach(studentTmp -> System.out.println(studentTmp.toString()));
 
         //과제 2
-
         Arrays.sort(student, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return Comparator.comparingDouble((Student stuTmp) -> stuTmp.score)
-                        .thenComparingInt(stuTmp -> stuTmp.id).compare(o2,o1);
+                        .thenComparingInt(stuTmp -> - stuTmp.id).compare(o2,o1);
+                // 성적은 내림차순, 학번은 오름차순이기 때문에 반대로 가져오기 위해서 하나를 - 붙여준다
         }});
         
         System.out.println("과제2============================================");

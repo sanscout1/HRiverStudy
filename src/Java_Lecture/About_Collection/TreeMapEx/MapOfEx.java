@@ -9,7 +9,7 @@ public class MapOfEx {
         Map<Integer,String> map = Map.of(1,"first",2,"second");
         map.forEach((k,v) -> System.out.println(k + " - "+v));
 
-        //map.put(3,"three");  불변 구조라 추가할려면 list로 해야함
+      //  map.put(3,"three");  // of 메소드로 생성하면 불변 구조라 추가할려면 list로 해야함
 
         List<String> list1 = new ArrayList<>();
         list1.add("first");
