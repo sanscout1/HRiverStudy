@@ -13,11 +13,13 @@
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
 * [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test)
 * [`재고관리 유스케이스`](https://github.com/sanscout1/HRiverStudy/tree/main/src/Java_assignments/HR_usecaseAssignment)
-* [`telbook(~collection)`](src%2FJava_Test%2Ftelbook)
+* [`BoardProject 시험`](src%2FJava_Test%2FBoardProject)
+
 #### Book Project
 
 - [`My Book Project`](src%2FJava_Test%2FBookProjects%2FmyProject)
 - [`Book Project Team`](src%2FJava_Test%2FBookProjects%2FProject_mall)
+- * [`telbook(~collection)// book project 적용 예정`](src%2FJava_Test%2Ftelbook)
 
 
 ***
