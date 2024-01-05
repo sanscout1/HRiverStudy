@@ -15,7 +15,7 @@ public class MyClassWildCardEx1  {
 
 
     //문제 9
-    public static <T extends Comparable<T>> void printList(List<?> list){
+    public static <T extends Comparable<T>> void printList(List<?> list){ // 보면 앞에 T가 회색인거 확인가능, 뒤에 list ? 써서 이용 안하기 떄문
         list.forEach(System.out::println);
     }
 
