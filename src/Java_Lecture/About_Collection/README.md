@@ -153,4 +153,125 @@
 #### [`compareTo 람다 구조 예제`](about_Comparator%2FExComparator%2FSampleNumberComparator.java)
 #### [`student Comparable, Comparator 과제`](about_Comparator%2FStudentComparator)
 
+***
+
+## 스택과 큐는 따로 공부를 하자
+
+***
+
+## 제너릭
+
+- 자바 프로그래밍 언어의 타입 안정성 강화를 위해 도입
+- 제너릭을 사용하면 타입을 매개변수화 할 수 있다.
+  - 동일한 코드를 다른 타입에 사용할 수 있다.
+- 제너릭 타입 매개 변수 정의 가능 한것들
+  - 클래스
+  - 인터페이스
+  - 메서드
+- 컴파일시 실제 타입으로 대체되어 타입 안정서을 보장 한다.
+
+### 제너릭 클래스
+- 하나 이상의 타입 매개변수가 있는 클래스
+- ex) class MyGenericClass<T> {}   //T: 타입매개변수
+
+#### 제너릭 클래스의 객체 생성
+- MyGenericClass<Integer> obj = new MyGenericClass<Integer>();
+- 타입 매개변수 Integer를 사용하여 MyGenericClass의 객체를 생성한다. 
+- obj의 사용이 Integer 객체만 받도록 제한된다.
+
+#### 제너릭 메소드
+- 자체 타입 매개변수를 갖는 메서드
+- 클래스 수준 타입 매개변수와 다른 자체 타입 매개변수를 가질 수 있다.
+- public <T>void MyGenericMethod(T parameter1, T parameter2){}
+- 타입 매개변수 T 가 있는 제너릭 메소드 MyGenericMethod 를 정의한다.
+
+### 제너릭의 와일드 카드 (%)
+- 와일드 카드는 유연성을 제공하고 알 수 없거나 여러 타입을 사용 할 수 있도록 지원
+- 특정 타입이 중요하지 않는 객체 컬렉션을 작업할 때 유용
+- 지정된 상한 또는 하한 타입의 모든 타입을 사용할 수 있도록 허용
+- 제너릭 타입 매개변수를 다른 타입으로 대체할 수 있도록 지정이 가능하다.
+  - 필요성 : 매개변수의 정확한 타입을 알 수 없거나, 관련이 없는 상황에서 타입안정성을 희생하지 않고 알 수 없는 타입을 처리할 수 있는 방법 제공
+  - 자바 제너릭 와일드 카드는 물음표 기화로 표시한다. <?> // 놀랍게도 ? 와 T 자체는 큰 차이는 없다. 하지만 ? 는 super 혹은 extends 를 추가 할 수 있다.
+    - 바인딩 되지 않은 와일드 카드('?') : 알 수 없는 타입을 나타낸다. 실제 타입 인수에 관심이 없는 상황에서 사용
+  
+    - ex) 알수 없는 요소의 리스트를 받아 문자열 표현을 출력해야하는 메서드 구현 
+    - ```agsl
+      public static void printList(List<?> list) {
+      for(Object element : list) {print(element.toString());}
+      }
+      ```
+
+    - 상한 와일드 카드 <? extends Type>
+      - 지정된 타입의 하위 타입인 알 수 없는 타입을 나타낸다. 특정 클래스나 인터페이스에서 파생된 모든 타입 허용
+      - ex2) 숫자 리스트의 합계를 계산하는 listTotal()
+      ```agsl
+      public static Double listTotal(List<? extends Number> nubers){
+          double total= 0;
+          for(Number number : nubers){
+          total += number.doubleValue();}
+          return total;
+      } 
+  - 하한 와일드 카드 <? super T>
+    - 지정된 타입의 상위 타입인 알 수 없는 타입을 나타낸다. 특정 클래스 또는 인터페이스의 상위 타입인 모든 타입을 허용하려는데 유용
+  - 지정된 하한 클래스와 동일하거나 상위 타입의 모든 타입을 사용할 수 있다.
+  ```agsl
+    public static void addElements (List < ? super Integer> list) { list.add(10); }
+  // ? super Integer 사용하면 addElement() 메서드가 Object 또는 Number 와 같은 Integer 의 모든 상위 타입을 List 허용할 수 있다.
+  // 정수와 Integer의 상위타입인 다른 모든 객체를 추가할 수 있다. 
+    ```
+  - 문제8 : 모든 타입의 ArrayList를 출력할 수 있는 printList 라는 메서드를 작성하세요. (단 와일드 카드를 사용하세요.)
+  - [`문제 답안 코드 예제`](GenericEx%2Fwildcard%2FMyClassWildCardEx1.java)
+  ```agsl
+   public static void printList(List <?> list ) {
+        for(Object element : list) {System.out.println(element.toString());
+        }}
+  ```
+  - 문제9 : 객체 리스트를 받아들이고 리스트의 각요소를 출력하는 printList 메서드를 만들었습니다. 이 메서드를 Comparable 인터페이스를 구현하는 객체 리스트만 받아서 printList 할수 있도록 수정
+- 타입 삭제
+  - 타입 지우기 기능 지원
+
+#### 제너릭이 필요한 이유
+- 다양한 타입의 데이터에서 작동할 수 있는 재사용 가능한 코드를 만드는데 유용
+  - 코드 중복 최소화
+  - 코드 베이스를 유지 관리 편해진다
+  - 컴파일 시에 타입 안정성을 제공하여 런타임 오류의 가능성을 줄 일 수 있다
+- 타입 캐스팅의 필요성을 제거한다.
+
+- ### [제너릭 실습 예제](GenericEx)
+
+
+
+- https://hwan33.tistory.com/31 제너릭을 공부를 더해야한다
+- https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%A0%9C%EB%84%A4%EB%A6%ADGenerics-%EA%B0%9C%EB%85%90-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -185,4 +185,5 @@ public class BoardDao {
         System.out.println("보조 메뉴: 1. OK | 2. Cancel");
         System.out.println("메뉴 선택: ");
     }
+
 }

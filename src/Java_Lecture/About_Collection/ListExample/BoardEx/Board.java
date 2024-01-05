@@ -34,4 +34,9 @@ public class Board { //VO (Value Object)
     public void setWriter(String writer) {
         this.writer = writer;
     }
+
+    @Override
+    public String toString() {
+        return  "content='" + content + " ";
+    }
 }

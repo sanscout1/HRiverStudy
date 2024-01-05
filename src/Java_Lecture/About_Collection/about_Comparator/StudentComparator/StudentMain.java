@@ -24,14 +24,20 @@ public class StudentMain {
                 return Comparator.comparingDouble((Student stuTmp) -> stuTmp.score)
                         .thenComparingInt(stuTmp -> - stuTmp.id).compare(o2,o1);
                 // 성적은 내림차순, 학번은 오름차순이기 때문에 반대로 가져오기 위해서 하나를 - 붙여준다
+
+                //return Comparator.comparingDouble((Student stuTmp) -> stuTmp.score).reversed()
+                //        .thenComparingInt(stuTmp -> - stuTmp.id).compare(o2,o1);
+                //reversed() 로 반대 방향 출력도 가능
         }});
         
         System.out.println("과제2============================================");
         Arrays.stream(student).forEach(studentTmp -> System.out.println(studentTmp.toString()));
-
+        //stream 에서 limit을 사용하면 출력을 제한 할 수 있다.
+        System.out.println("과제2 스트림 출력!!!!!!!!!!!");
+        Arrays.stream(student).limit(2).forEach(studentTmp -> System.out.println(studentTmp.toString()));
         System.out.println("과제2 for문 출력");
         for (int i = 0; i < 2; i++) {
-            System.out.println(student[i]);
+            System.out.println(student[i].toString());
         }
 
 
