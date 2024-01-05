@@ -35,8 +35,8 @@ public class MyClassWildCardEx1  {
 
         printList(boardList);
          // public static <T extends Comparable<T>> void printList(List<T> list)
-        // -- 뒤에 인자로 <?> 가 아닌 <T> 로 하면 comparable 인터페이스 구현이 안되있다고 board 출력이 안나온다.
-        //   <T extends Comparable<T> 이것을 통해 T 타입이 comparatble 이 구현되어있는지 체크하고,
+        // -- 뒤에 인자로 <?> 가 아닌 <T> 로 하면 printList(boardList); 에서 boardList가 comparable 인터페이스 구현이 안되있다고 board 출력이 안나온다.
+        //   <T extends Comparable<T>> 이것을 통해 T 타입이 comparatble 이 구현되어있는지 체크하고,
         // printList(List<T> list) 여기서 그 체크된 T list를 구현하는것, 그래서 boardlist는 오류가 발생하는것이다.
         // 하지만  <T extends Comparable<T>> void printList(List<?> list) 이렇게 하면 뒤에 list<?> 는 앞에 뭘 정의하든
         // 신경끄고 받아서 출력하는 것이라, comparable이 implement 하는 T 상관없이 가져오는거라, boardlist를 출력하는 것이다.
