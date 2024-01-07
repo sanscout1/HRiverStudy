@@ -1,5 +1,8 @@
 package Java_Test.BookProjectList.BookProject_Exception;
 
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookException;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookExceptionList;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.ErrorCodeBook;
 import Java_Test.BookProjectList.BookProject_Exception.Service.OrderService;
 import Java_Test.BookProjectList.BookProject_Exception.vo.User;
 
@@ -12,10 +15,20 @@ public class OrderMain {
     String tel;       //입력받을 전화번호
     User user1;
 
-    System.out.print("당신의 이름을 입력하세요 : ");
-    name = sc.nextLine();
-    System.out.print("연락처를 입력하세요 : ");
-    tel = sc.nextLine();
+
+      System.out.print("당신의 이름을 입력하세요 : ");
+      name = sc.nextLine();
+      System.out.print("연락처를 입력하세요 : ");
+      tel = sc.nextLine();
+      while (BookExceptionList.isRightTel(tel)) {
+        try {
+        throw new BookException(ErrorCodeBook.IS_NOT_GOOD_TEL);
+        } catch (Exception e) {}
+        finally {
+          System.out.println("연락처를 다시 입력해주세요");
+          tel = sc.nextLine();
+        }
+      }
 
     user1 = new User(name, tel); // 입력받은 name, tel로 user객체 생성
 

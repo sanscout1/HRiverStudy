@@ -34,10 +34,10 @@ public class BookService {
     try{
     if(BookExceptionList.isEmptyBookList(bookList)){
       throw new BookException(ErrorCodeBook.EMPTY_BOOK);
-    }
+    } else{
     for(Book book : bookList){
       System.out.print(book.getBookId()+" | "+book.getBookName()+" | "+book.getBookPrice()+" | "+book.getBookAuthor()+" | "+book.getBookSubName()+" | "+book.getBookCategory()+" | "+book.getBookDate()+"\n");
-    }}
+    }}}
     catch (Exception e){}
   }
 

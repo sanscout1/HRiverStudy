@@ -9,6 +9,14 @@ import java.util.regex.Pattern;
 
 public class BookExceptionList {
 
+    public static boolean isRightTel(String tel){
+        String regex="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(tel);
+        if(m.matches()) return false;
+        return true;
+    }
+
     public static boolean isAdmin(User user, String adminId, String adminPW){
         if(user.getId().equals(adminId) && user.getPassword().equals(adminPW)){
             return true;
@@ -25,9 +33,9 @@ public class BookExceptionList {
 
     public static boolean isEmptyBookList(ArrayList<Book> booklist) {
         if(booklist.isEmpty()){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
 
@@ -37,9 +45,9 @@ public class BookExceptionList {
         Matcher m = p.matcher(user.getName());
 
         if(m.matches()){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     public static boolean isExistPassword(User user){
         String regex ="[\\w]";
@@ -47,8 +55,8 @@ public class BookExceptionList {
         Matcher m = p.matcher(user.getPassword());
 
         if(m.matches()){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }
