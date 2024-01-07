@@ -375,4 +375,22 @@ outputIntstream.forEach(i->System.out.printf("%d ",i));
 7) 일반전화 : ^\d{2.3} - \d{3,4} - \d{4}$
 8) 주민등록번호 : \d{6} \- [1-4]\d{6}
 9) IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
-   
+
+
+<br>
+
+
+### removeIf
+- Arraylist.removeIf(ArrayList -> ArrayList.data == data)
+   - 안에 조건에 맞는 값들 제거하는 람다 함수
+
+
+###  Date
+- SimpleDateFormat 을 통해 가져온 날짜 data를 String값으로 가져오는 방법
+```agsl
+public void setDate(){
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = date.format(new Date());
+        this.date = dateString;
+    }
+```
