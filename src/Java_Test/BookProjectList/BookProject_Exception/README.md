@@ -1,3 +1,30 @@
+# 예외처리 기능 추가
+
+- 예외처리 전용 패키지를 생성하여, errocode 생성자를 통해 enum 상수를 저장하고 있는 `ErrorCodeBook`, 예외처리 종류에 따른 함수를 저장하고 있는 `BookExceptionList`, 그리고 에러코드에 따라 출력문을 보여주는 `BookException` 을 생성했습니다.
+- `BookException` 에서 `ErrorCodeBook` enum 을 생성하여 예외에 맞는 에러코드를 출력
+- `BookExceptionList` 의 함수를 static 으로 작성하여, 필요에 맞게 예외 발생 할 수 있는 곳에서 사용
+<br>
+<br>
+- 사용 예제
+```agsl
+try {
+      System.out.println("고객 정보확인");
+      if(BookExceptionList.isExistName(user)){
+        throw new BookException(ErrorCodeBook.INEXIST_NAME);
+      }
+      if(BookExceptionList.isExistPassword(user)){
+        throw new BookException(ErrorCodeBook.INEXIST_PASSWORD);
+      }
+      System.out.println("이름: " + user.getName());
+      System.out.println("전화번호: " + user.getPhone()); // 고객 이름, 전화번호 출력
+    }
+    catch (Exception e){
+
+    }
+```
+<br>
+<br>
+### [`BookException 패키지`](BookException)
 ## regex
 
 - 정규 표현식을 전문적으로 다루는 클래스인 java.util.regex 패키지를 제공해준다. 패키지 안의 클래스중 주로`Pattern` 클래스와 `Matcher` 클래스

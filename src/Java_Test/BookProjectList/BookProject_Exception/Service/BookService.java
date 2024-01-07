@@ -31,12 +31,14 @@ public class BookService {
   }
 
   public void bookListPrint (ArrayList<Book> bookList){ // Book 리스트 출력
+    try{
     if(BookExceptionList.isEmptyBookList(bookList)){
       throw new BookException(ErrorCodeBook.EMPTY_BOOK);
     }
     for(Book book : bookList){
       System.out.print(book.getBookId()+" | "+book.getBookName()+" | "+book.getBookPrice()+" | "+book.getBookAuthor()+" | "+book.getBookSubName()+" | "+book.getBookCategory()+" | "+book.getBookDate()+"\n");
-    }
+    }}
+    catch (Exception e){}
   }
 
   public void addListBook(Book book) { // 장바구니에 Book 담기
@@ -61,17 +63,18 @@ public class BookService {
     while (bookIs) { // false 나올때까지 반복
       System.out.print("\n장바구니에 추가할 도서의 ID를 입력하세요 ");
       inputId = sc.nextLine();
-
-      for (Book book : bookList) {
-        if (BookExceptionList.isExistBook(inputId,book)) {
-          bookIs = false;
-          // 입력받은 book아이디랑 쇼핑몰 책 리스트에 같은이름이 있으면 이 if문에 들어오고 bookIs는 false가 되어서 for문 빠져나옴
+      try {
+        for (Book book : bookList) {
+          if (BookExceptionList.isExistBook(inputId, book)) {
+            bookIs = false;
+            // 입력받은 book아이디랑 쇼핑몰 책 리스트에 같은이름이 있으면 이 if문에 들어오고 bookIs는 false가 되어서 for문 빠져나옴
+          }
         }
-      }
-      if (bookIs) { // 같은 이름이 없으면 true 니까 if 실행 그리고 while 반복
-        throw new BookException(ErrorCodeBook.IS_NOT_EXIST_BOOK);
-      }
-    }
+        if (bookIs) { // 같은 이름이 없으면 true 니까 if 실행 그리고 while 반복
+          throw new BookException(ErrorCodeBook.IS_NOT_EXIST_BOOK);
+        }
+      }catch (Exception e) {}}
+
    askAddBook(bookList, inputId);
   }
 
@@ -80,6 +83,9 @@ public class BookService {
 
     System.out.print("장바구니에 추가하시겟습니까? (Y|N) "); //
     inputTF = sc.nextLine();
+    try {
+
+
     if (inputTF.equalsIgnoreCase("Y")) {
       for (Book book : bookList) {
         if (book.getBookId().equals(inputId)) {
@@ -92,7 +98,7 @@ public class BookService {
       System.out.println("N입력");
     } else {
       throw new BookException(ErrorCodeBook.IS_YN_CHOICE);
-    }
+    }} catch (Exception e) {}
   }
 
 }
