@@ -1,6 +1,9 @@
 package Java_Test.BookProjectList.BookProject_Exception.Service;
 
 
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookException;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookExceptionList;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.ErrorCodeBook;
 import Java_Test.BookProjectList.BookProject_Exception.vo.Book;
 import Java_Test.BookProjectList.BookProject_Exception.vo.User;
 
@@ -28,8 +31,8 @@ public class BookService {
   }
 
   public void bookListPrint (ArrayList<Book> bookList){ // Book 리스트 출력
-    if(bookList.isEmpty()){
-      System.out.println("장바구니가 비었습니다.");
+    if(BookExceptionList.isEmptyBookList(bookList)){
+      throw new BookException(ErrorCodeBook.EMPTY_BOOK);
     }
     for(Book book : bookList){
       System.out.print(book.getBookId()+" | "+book.getBookName()+" | "+book.getBookPrice()+" | "+book.getBookAuthor()+" | "+book.getBookSubName()+" | "+book.getBookCategory()+" | "+book.getBookDate()+"\n");
@@ -53,20 +56,20 @@ public class BookService {
 
     System.out.println();
 
-    bookListPrint(bookList); // 책리스트춮력
+    bookListPrint(bookList); // 책리스트출력
 
     while (bookIs) { // false 나올때까지 반복
       System.out.print("\n장바구니에 추가할 도서의 ID를 입력하세요 ");
       inputId = sc.nextLine();
 
       for (Book book : bookList) {
-        if (book.getBookId().equals(inputId)) {
+        if (BookExceptionList.isExistBook(inputId,book)) {
           bookIs = false;
           // 입력받은 book아이디랑 쇼핑몰 책 리스트에 같은이름이 있으면 이 if문에 들어오고 bookIs는 false가 되어서 for문 빠져나옴
         }
       }
       if (bookIs) { // 같은 이름이 없으면 true 니까 if 실행 그리고 while 반복
-        System.out.println("목록에 그런 책이없습니다.");
+        throw new BookException(ErrorCodeBook.IS_NOT_EXIST_BOOK);
       }
     }
    askAddBook(bookList, inputId);
@@ -88,7 +91,7 @@ public class BookService {
     } else if (inputTF.equalsIgnoreCase("N")) {
       System.out.println("N입력");
     } else {
-      System.out.println("다른 문자 입력,다시 입력 해주세요");
+      throw new BookException(ErrorCodeBook.IS_YN_CHOICE);
     }
   }
 

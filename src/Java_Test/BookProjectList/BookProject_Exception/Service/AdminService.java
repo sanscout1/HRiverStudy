@@ -1,5 +1,8 @@
 package Java_Test.BookProjectList.BookProject_Exception.Service;
 
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookException;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.BookExceptionList;
+import Java_Test.BookProjectList.BookProject_Exception.BookException.ErrorCodeBook;
 import Java_Test.BookProjectList.BookProject_Exception.vo.Admin;
 import Java_Test.BookProjectList.BookProject_Exception.vo.User;
 
@@ -27,7 +30,7 @@ public class AdminService {
     }
 
     private void isAdmin(User user, String adminId, String adminPW) {
-        if (user.getId().equals(adminId) && user.getPassword().equals(adminPW)) {
+        if (BookExceptionList.isAdmin(user, adminId, adminPW)) {
             // 관리자 아이디가 맞으면 Admin 객체 생성
             Admin admin = new Admin(user);
             // user 받는 이유, admin 의 아이디 비번을 확인하고 객체 생성을 하기 때문에, 유저 객체 들어올수 밖에 없다.
@@ -36,7 +39,7 @@ public class AdminService {
             System.out.println("이름" + admin.getName() + " 연락처 " + admin.getPhone());
             System.out.println("아이디" + admin.getId() + " 비밀번호 " + admin.getPassword());
         } else {
-            System.out.println("관리자 정보가 일치하지 않습니다.");
+            throw new BookException(ErrorCodeBook.IS_NOT_ADMIN);
         }
     }
 }

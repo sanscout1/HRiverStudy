@@ -56,7 +56,9 @@ public class OrderService {
           AdminService adminService = new AdminService(user);
           adminService.menuAdminLogin();  //관리자 로그인 메뉴
           Thread.sleep(1000);
+
         }
+        default ->  System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
       }
     }
   }
