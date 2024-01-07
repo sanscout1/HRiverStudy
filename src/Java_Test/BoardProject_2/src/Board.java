@@ -1,4 +1,4 @@
-package Java_Test.BookProjectList.BoardProject_2.src;
+package Java_Test.BoardProject_2.src;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
