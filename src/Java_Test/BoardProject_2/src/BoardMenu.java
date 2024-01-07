@@ -5,6 +5,7 @@ public class BoardMenu {
 
     BoardDao boardDao= new BoardDao();
     public void mainMenu(){
+        // 이 부분 boarddao 에서 게시물 출력 하는거 따로 뽑자
         System.out.println("[게시물 목록]");
         System.out.println("---------------------------------------------");
         System.out.printf("%-4s%-12s%-16s%-40s\n","no","writer","date","title");

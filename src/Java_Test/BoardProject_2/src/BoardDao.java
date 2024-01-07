@@ -28,6 +28,8 @@ public class BoardDao {
         System.out.print("작성자: ");
         board.setBwriter(in.nextLine());
         board.setDate();
+
+        // 1,2 아닌 경우 예외처리
         System.out.println("--------------------------------------------------------");
         System.out.println("보조 메뉴: 1.OK | 2.Cancel");
         System.out.println("메뉴 선택: ");
@@ -56,6 +58,8 @@ public class BoardDao {
                 System.out.println("보조 메뉴: 1.Update | 2.Delete | 3.List");
                 System.out.println("메뉴 선택: ");
                 int choice = Integer.parseInt(in.nextLine());
+
+                // 예외처리
                 try {
                     if (choice == 1) {
                         Update(board1);
@@ -80,7 +84,7 @@ public class BoardDao {
     }
 
     public void ReadAll() {
-
+        // 예외처리
         if(!boardList.isEmpty()){
             for (Board board1 : boardList) {
                 System.out.printf("%-4s%-12s%-16s%-40s\n",board1.getBno(),board1.getBwriter(),board1.getDate(),board1.getBtitle());
@@ -118,7 +122,7 @@ public class BoardDao {
 
 
 
-    public void Delete(Board board) {
+    public void Delete(Board board) {// 예외처리
         System.out.println("삭제합니다");
         try {boardList.remove(board);}
         catch (Exception e)
@@ -129,7 +133,7 @@ public class BoardDao {
 
     }
 
-    public void Clear() {
+    public void Clear() {  //예외처리
         System.out.println("[게시물 전체 삭제]");
         System.out.println("--------------------------------------------");
         System.out.println("보조 메뉴: 1. OK | 2. Cancel");
