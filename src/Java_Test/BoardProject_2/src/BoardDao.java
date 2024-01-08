@@ -60,7 +60,7 @@ public class BoardDao {
                     System.out.println("생성을 취소 했습니다.");
                 }
             } else {
-                throw new BoardException(ErrorCodeBoard.IS_NOT_ONETWO);
+                throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);
             }
         } catch (Exception e) {}
         list();
@@ -69,11 +69,15 @@ public class BoardDao {
     public void Read() {
         System.out.println("[게시물 읽기]");
         System.out.print("bno:");
-        int tmpBno = Integer.parseInt(in.nextLine());
-
+        try{
+        String tmp = in.nextLine();
+        if(BoardExceptionList.isInteger(tmp)) {
+            int tmpBno = Integer.parseInt(tmp);
+            Boolean flag = false;
         // foreach 에서 range 범위가 변화는 일 (삭제 같은거) 발생하면 오류발생해서 터짐
         for (Board board1 : boardList) {
             if (board1.getBno() == tmpBno) {
+                flag=true;
                 System.out.println("####################");
                 System.out.println("번호: " + board1.getBno());
                 System.out.println("제목: " + board1.getBtitle());
@@ -83,10 +87,12 @@ public class BoardDao {
                 System.out.println("------------------------------------------------");
                 System.out.println("보조 메뉴: 1.Update | 2.Delete | 3.List");
                 System.out.println("메뉴 선택: ");
-                int choice = Integer.parseInt(in.nextLine());
+                tmp = in.nextLine();
+                if (BoardExceptionList.isInteger(tmp)) {
+                    int choice = Integer.parseInt(tmp);
 
-                // 예외처리
-                try {
+                    // 예외처리
+
                     if (choice == 1) {
                         Update(board1);
                         break;
@@ -100,11 +106,18 @@ public class BoardDao {
                         System.out.println("없는 선택지 입니다.");
                         break;
                     }
-                } catch (Exception e){
-                    e.printStackTrace();
+                } else {
+                    throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);
                 }
             }
+
+        } if(!flag) {
+                throw new BoardException(ErrorCodeBoard.NOT_EXIST_BOARD);
+            }
+        } else{
+            throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_BNO);
         }
+        } catch (Exception e){}
         list();
 
     }
@@ -135,12 +148,22 @@ public class BoardDao {
                     System.out.println("보조 메뉴: 1. OK | 2. Cancel");
                     System.out.println("메뉴 선택: ");
                     String menuNo = in.nextLine();
-                    if (menuNo.equals("1")) {
-                        board.setBtitle(tmpBtitle);
-                        board.setBcontent(tmpBcontent);
-                        board.setBwriter(tmpBwriter);
-                        System.out.println("게시물 수정 성공!");
-                    }
+                    try {
+                        if (BoardExceptionList.isInteger(menuNo)) {
+                            if(BoardExceptionList.isOneOrTwo(menuNo)){
+                            if (menuNo.equals("1")) {
+                                board.setBtitle(tmpBtitle);
+                                board.setBcontent(tmpBcontent);
+                                board.setBwriter(tmpBwriter);
+                                System.out.println("게시물 수정 성공!");
+                            }
+                            } else {
+                                throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);
+                            }
+                        } else {
+                            throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);
+                        }
+                    } catch (Exception e){}
 
 
             }
@@ -148,12 +171,8 @@ public class BoardDao {
 
 
     public void Delete(Board board) {// 예외처리
-        System.out.println("삭제합니다");
-        try {boardList.remove(board);}
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+
+        boardList.remove(board);
         System.out.println("삭제 완료");
 
     }
@@ -165,12 +184,16 @@ public class BoardDao {
         System.out.println("메뉴 선택: ");
         try {
             String menuNo = in.nextLine();
+            if(BoardExceptionList.isOneOrTwo(menuNo)){
             if (menuNo.equals("1")) {
                 boardList.removeAll(boardList);
                 System.out.println("게시물 전체 삭제 성공!");
             }
+        } else {
+                throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);
+            }
         } catch (Exception e){
-            System.out.println("게시물이 비어있습니다.");
+
         }
         list();
 

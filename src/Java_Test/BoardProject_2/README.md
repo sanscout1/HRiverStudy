@@ -22,4 +22,19 @@
    - try catch로 오류 발생 예상 지점을 찾았지만 모두 비정상 종료가 발생
    - 알고보니 foreach 문에서 작동하는 배열이 remove로 처음 진입했을 때 반복사이즈와 다르니 발생하는 오류
    - foreach의 반복이 될 배열 요소사이즈가 변화하는 내용을 담는다면 break; 로 바로 멈추게 하던가 아니면 주의를 해야겠다.
+<br>
+<br>
+3. 예외처리 기능 추가 
+   ```agsl
+   public static boolean isInteger(String str){
+        String regex = "^[0-9]*$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(str);
+        return m.matches();
+    } 
+- 숫자 입력 받아야 하지만 아닐 때 체크 함수
+```agsl
+IS_NOT_RIGHT_CHOICE("올바른 선택지가 아닙니다.(숫자 입력이 아닙니다.)","E01");
+```
+- 예외출력 문구
 
