@@ -1,5 +1,10 @@
 package Java_Test.BoardProject_2.src;
 
+import Java_Test.BoardProject_2.src.BoardException.BoardException;
+import Java_Test.BoardProject_2.src.BoardException.BoardExceptionList;
+import Java_Test.BoardProject_2.src.BoardException.ErrorCodeBoard;
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +18,17 @@ public class BoardDao {
 
     public List<Board> getBoardList() {
         return boardList;
+    }
+
+
+    public void list(){
+        // 이 부분 boarddao 에서 게시물 출력 하는거 따로 뽑자
+        System.out.println("[게시물 목록]");
+        System.out.println("---------------------------------------------");
+        System.out.printf("%-4s%-12s%-16s%-40s\n","no","writer","date","title");
+        ReadAll();
+        System.out.println("---------------------------------------------");
+
     }
 
     public void Create() {
@@ -33,11 +49,21 @@ public class BoardDao {
         System.out.println("--------------------------------------------------------");
         System.out.println("보조 메뉴: 1.OK | 2.Cancel");
         System.out.println("메뉴 선택: ");
-        int choice = Integer.parseInt(in.nextLine());
-        if (choice == 1) {
-            boardList.add(board);
+        try {
+            String tmp = in.nextLine();
+            if (BoardExceptionList.isOneOrTwo(tmp)) {
+                int choice = Integer.parseInt(tmp);
+                if (choice == 1) {
+                    boardList.add(board);
 
-        }
+                } else {
+                    System.out.println("생성을 취소 했습니다.");
+                }
+            } else {
+                throw new BoardException(ErrorCodeBoard.IS_NOT_ONETWO);
+            }
+        } catch (Exception e) {}
+        list();
     }
 
     public void Read() {
@@ -79,7 +105,7 @@ public class BoardDao {
                 }
             }
         }
-
+        list();
 
     }
 
@@ -91,7 +117,6 @@ public class BoardDao {
             }
         }
         System.out.println();
-        System.out.println("---------------------------------------------");
 
     }
 
@@ -147,6 +172,7 @@ public class BoardDao {
         } catch (Exception e){
             System.out.println("게시물이 비어있습니다.");
         }
+        list();
 
     }
 
