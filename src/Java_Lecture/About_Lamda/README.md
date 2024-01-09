@@ -16,7 +16,9 @@
 
  - 선택사항이지만 인터페이스가 SAM 유지되도록 하는데 도움이 됩니다.
 
-
+- 예제 코드 <br>
+[`LamdaEx02.java`](LamdaEx02.java) <br>
+[`LamdaEx03.java`](LamdaEx03.java)
 
 ## 자바에서 람다표현식
 
