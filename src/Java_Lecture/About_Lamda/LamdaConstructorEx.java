@@ -1,17 +1,34 @@
 package Java_Lecture.About_Lamda;
 
+import Java_Lecture.About_Lamda.LamdaQuiz.Student;
 import Java_Lecture.About_Lamda.product.Person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //생성자 참조는 객체를 인스턴스화하지 않고도 생성자를 참조할 수 있는 방법 제공
 public class LamdaConstructorEx {
+    private static Student[] students = {
+            new Student("홍길동",90,96),
+            new Student("신세계",90,95)
+    };
+
+    public static double avg(Function<Student,Integer> func) {
+        double average = Arrays.stream(students)
+                //.mapToDouble(student -> func.apply(student))
+                .mapToDouble(func::apply)
+                .average()
+                .orElse(0.0);
+        //함수를 정의 해서 쓸곳만 인터페이스의 메서드 명시 해두고
+        return average;
+    }
     public static void main(String[] args) {
         // 1. 인수가 없는 생성자 참조  (supplier 함수형 인터페이스는 인수가 없는 객체의 공급자를 나타낸다.)
         // 참조된 생성자를 사용하여 새 객체를 생성하는 방법 제공한다.
@@ -20,6 +37,13 @@ public class LamdaConstructorEx {
 
         // 2. 인수가 있는 생성자 참조 (인수를 받는 생성자를 나타낸다.)
         // Function<Integer, ClassName> constructorRef = ClassName::new;
+
+
+        Function<Student, Integer> constructorRef =Student::getEnglishScore ;   // 활용 방법을 최대한 찾아보았따
+        double englishAvg = avg(constructorRef);
+
+
+
 
         // 3. 배열 생성자에 대한 참조
         // Function<Integer, ClassName[]> constructorRef = ClassName[]::new;
@@ -34,8 +58,11 @@ public class LamdaConstructorEx {
         List<Integer> numbers = Stream.of(1,2,3,4,5)
                 .collect(Collectors.toCollection(ArrayList::new));
 
-        BiFunction<String, Integer, Person> perosnFunction =Person::new;
+        BiFunction<String, Integer, Person> perosnFunction =Person::new;  //초기화로 null 해놓아도 된다.
         Person john = perosnFunction.apply("john",20);
+
+
+
 
 
         // 1. 인수가 없는 String생성자를 사용하여 새 String 객체를 생성하는 람다식 작성
