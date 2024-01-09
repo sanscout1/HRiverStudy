@@ -56,7 +56,7 @@ Supplier<List<String>> lambda = () -> new ArrayList<>();
 
 Supplier<List<String>> reference = ArrayList::new;
 
-- [`메서드 참조의 유형 4가지 코드`](LamdaEx05.java)
+
 
 <br>
 <br>
