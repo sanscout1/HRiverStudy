@@ -28,22 +28,22 @@
 
 
 1. 정적 메서드에 대한 참조
-    - 클래스명 :: 메서드명    : 람다 표현식이 정적 메서드에 위임할때 유용
-   // Lambda expression
-    - Function<Integer, String> lambda = (x) -> String.valueOf(x);
-   // Method reference
-     Function<Integer, String> reference = String::valueOf;
+    - 클래스명 :: 메서드명    : 람다 표현식이 정적 메서드에 위임할때 유용 <br>
+   // Lambda expression  <br>
+    - Function<Integer, String> lambda = (x) -> String.valueOf(x);  <br>
+   // Method reference  <br>
+     Function<Integer, String> reference = String::valueOf;  <br>
 
-2. 특정 객체의 인스턴스 메서드에 대한참조       Object::methodName
-  // Lambda expression
-    - Function<Integer, String> lambda = (str) -> str.length();
-  // Method reference
-      Function<Integer, String> reference = String::length;
+2. 특정 객체의 인스턴스 메서드에 대한참조       Object::methodName  <br>
+  // Lambda expression  <br>
+    - Function<Integer, String> lambda = (str) -> str.length();  <br>
+  // Method reference  <br>
+      Function<Integer, String> reference = String::length;  <br>
 3. 특정 타입의 임의 객체의 인스턴스 메서드에 대한 참조  :   ClassName::methodName
-   // Lambda expression
-    - BiFunction<String, String,Boolean> lambda = (str1,str2) -> str1.equals(str2);
-   // Method reference
-      BiFunction<String, String,Boolean> reference = String::equals;
+   // Lambda expression  <br>
+    - BiFunction<String, String,Boolean> lambda = (str1,str2) -> str1.equals(str2);  <br>
+   // Method reference  <br>
+      BiFunction<String, String,Boolean> reference = String::equals;  <br>
 4. 생성자에 대한 참조    :
 
 ClassName::new
