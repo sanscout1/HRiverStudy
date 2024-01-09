@@ -38,3 +38,5 @@ IS_NOT_RIGHT_CHOICE("올바른 선택지가 아닙니다.(숫자 입력이 아�
 ```
 - 예외출력 문구
 
+
+4. hashmap 을 적용해보자 (key,list(content writer 등등))
