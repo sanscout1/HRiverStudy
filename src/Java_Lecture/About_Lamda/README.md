@@ -116,10 +116,11 @@ public static void main(String args[]) {
 }
 ```
 ![img.png](../../picture/function01.png)
-- [`람다생성자 util.function`](LamdaConstructorEx.java)
+- [`람다생성자 util.function 예제 코드`](LamdaConstructorEx.java)
 > https://scshim.tistory.com/287 
 
 4. 생성자에 대한 참조    : 
+
   ClassName::new
 
  // Lambda expression
