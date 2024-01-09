@@ -20,6 +20,10 @@
 - 예제 코드 <br>
 [`LamdaEx02.java`](LamdaEx02.java) <br>
 [`LamdaEx03.java`](LamdaEx03.java)
+<br>
+<br>
+- 함수형 인터페이스 실전 활용 예제
+[`LamdaQuiz`](LamdaQuiz)
 
 ## 자바에서 람다표현식
 
