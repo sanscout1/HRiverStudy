@@ -21,7 +21,7 @@ public class LamdaConstructorEx {
         // 2. 인수가 있는 생성자 참조 (인수를 받는 생성자를 나타낸다.)
         // Function<Integer, ClassName> constructorRef = ClassName::new;
 
-        // 3. 배영 생성자에 대한 참조
+        // 3. 배열 생성자에 대한 참조
         // Function<Integer, ClassName[]> constructorRef = ClassName[]::new;
 
         // 4. 제너릭 클래스의 생성자 참조
