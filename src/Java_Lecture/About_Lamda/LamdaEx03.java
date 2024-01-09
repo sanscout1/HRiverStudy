@@ -29,14 +29,15 @@ public class LamdaEx03 {
 
         // 리스트를 알파벳 순서로 정렬을 쉽게 줄이는 방법,, 아래 두가지는 동일하다.
         // 새로운 sort를 저렇게 줄여섷 해보자
-//        List<String> names =Arrays.asList("John", "Jane","Adam", "Eve");
-//        Collectors.sort(names, new Comparator<String>() {
-//            public int compare(String a, String b) {
-//                return a.compareTo(b);
-//            }
-//        });
-//
-//        Collections.sort(names.(a, b) -> a.compareTo(b));
+        List<String> names =Arrays.asList("John", "Jane","Adam", "Eve");
+        Collections.sort(names, new Comparator<String>() {
+            public int compare(String a, String b) {
+                return a.compareTo(b);
+            }
+        });
+
+        Collections.sort(names,(a,b) -> a.compareTo(b));
+
 
 
 
