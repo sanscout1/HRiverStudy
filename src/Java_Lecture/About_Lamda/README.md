@@ -20,7 +20,7 @@
 
 ## 자바에서 람다표현식
 
-- 람다표현식은 익명함수르 간결하게 표현하는 방법
+- 람다표현식은 익명함수를 간결하게 표현하는 방법
 - 람다표현식을 사용하면 메서드에 매개변수로 동작을 전달할 수 있기 때문에 코드의 표현력과 기능성을 향상시킬 수 있다.
 
 ## 자바에서 메서드 참조의 유형 4가지
@@ -44,7 +44,22 @@
     - BiFunction<String, String,Boolean> lambda = (str1,str2) -> str1.equals(str2);
    // Method reference
       BiFunction<String, String,Boolean> reference = String::equals;
+4. 생성자에 대한 참조    :
 
+ClassName::new
+
+// Lambda expression
+
+Supplier<List<String>> lambda = () -> new ArrayList<>();
+
+// Method reference
+
+Supplier<List<String>> reference = ArrayList::new;
+
+- [`메서드 참조의 유형 4가지 코드`](LamdaEx05.java)
+
+<br>
+<br>
 ### Consumer<T>
 - void accept(T t)
 - 객체 T를 받아 소비
@@ -120,18 +135,6 @@ public static void main(String args[]) {
 - [`람다생성자 util.function 예제 코드`](LamdaConstructorEx.java)
 > https://scshim.tistory.com/287 
 
-4. 생성자에 대한 참조    : 
 
-  ClassName::new
-
- // Lambda expression
-
- Supplier<List<String>> lambda = () -> new ArrayList<>();
-
- // Method reference
-
-   Supplier<List<String>> reference = ArrayList::new;
-
-- [`메서드 참조의 유형 4가지 코드`](LamdaEx05.java)
 
 
