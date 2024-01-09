@@ -68,6 +68,10 @@ Supplier<List<String>> reference = ArrayList::new;
 
 <br>
 <br>
+
+## 표준 함수형 인터페이스
+- 함수형 인터페이스로 자주 쓰일 형식을 지원해주는 표준
+
 ### Consumer<T>
 - void accept(T t)
 - 객체 T를 받아 소비
