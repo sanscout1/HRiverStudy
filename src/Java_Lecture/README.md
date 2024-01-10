@@ -20,8 +20,11 @@
 <br>
 <br>
 - short, char 2byte
+
 - int 4byte
+
 - long 8byte
+
 - boolean 1byte
   <br>
   <br>
