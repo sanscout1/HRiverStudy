@@ -29,10 +29,10 @@ public class Test2 {
 
         System.out.println(array1.toString());  //776ec8df 16진법 주소 출력
         System.out.println(array1.toString()==array2.toString());
-        //System.out.println(array1.hashCode()==array2.hashCode());
+        System.out.println(array1.hashCode()==array2.hashCode());
         System.out.println(System.identityHashCode(array1));  //10진법 주소 출력
         System.out.println(System.identityHashCode(array2));
-        //System.out.println(Arrays.hashCode(array1) == Arrays.hashCode(array2)); 애는 이상해 쓰지마
+        System.out.println(Arrays.hashCode(array1) == Arrays.hashCode(array2));
         System.out.println(array1==array2);
         System.out.println(array1.equals(array2)); //
         System.out.println(array2 == array3);

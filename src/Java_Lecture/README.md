@@ -83,12 +83,12 @@
 ## 배열
 
 ```
-     	System.out.println(array1.toString());
+     	System.out.println(array1.toString());  //16진법 주소 출력
         System.out.println(array1.toString()==array2.toString());
-			 //이거 배열이라 그런거임
+			 // 값은 같지만, 주소값을 비교해서 false 출력
         //System.out.println(array1.hashCode()==array2.hashCode());
         //System.out.println(Arrays.hashCode(array1) == Arrays.hashCode(array2)); 
-        // 결과가 달라 이용 지양
+        // 주소값을 정수값으로 바꿔주는 hashcode 함수
         System.out.println(array1==array2);
         System.out.println(array1.equals(array2)); // 배열에서는 주소값비교임
 				//String 같은 참조형 다른애는 값비교 맞음
@@ -105,40 +105,10 @@
 - 변수에 변수 대입은 값복사 지만, 참조 변수에서는 주소값 복사 함
 
 
-- `System.*out*.println(System.*identityHashCode*(array1));`
-    - `System.identityHashCode()` 를 사용하는게 정확한 주소값이 출력된다. 10진법
+- `System.out.println(System.identityHashCode(array1));`
+    - `System.identityHashCode()` 10진법으로 주소출력
     - `System.*out*.println(array1.toString());   //776ec8df` -- `toString()` 16진법 주소 출력
 
-```
-import java.util.Arrays;
-public class ScoresArrayList {
-    static void PrintItem(int[] score){
-        int totalValue = Arrays.stream(score).sum();
-        double average = Arrays.stream(score).average().orElse(0.0);
-
-        System.out.print("점수 : ");
-        for(int i : score ) System.out.print(i + " ");
-        System.out.println();
-        System.out.printf("총합 : %d 평균 : %.1f", totalValue, average);
-    }
-    public static void main(String[] args) {
-        // 성적을 저장할 정수형 1차원 배열 scores 선언
-        int[] score ;
-
-        // scores 에 {80,90,87} 대입
-        score = new int[] {80,90,87};
-
-        // 출력시 PrintItem static method를 작성. scores(배열)을 매개값으로 전달하여
-        // scores의 항목(점수)를 출력한 후
-        // scores의 총합을 구하고 총합과 평균을 출력하세요
-        // 출력예시 :
-        // 점수 : 80 , 90 , 87
-        // 총합 : 00  평균: 00.0  평균은 소수 첫째자리까지
-
-        PrintItem(score);
-    }
-}
-```
 
 ---
 
