@@ -14,5 +14,24 @@ public class LamdaEx01 {
 //        특화 스트림을 사용해야 합니다.
 //        그래서 보통 mapToInt, mapToLong, mapToDouble 같은 메소드로 스트림을 변환시키고 사용
         System.out.println(sumOfEvenNumbers);
+
+
+        // 이중 포문과 같은 이중 map
+
+////         for loop
+//        List<Card> cards = new ArrayList<>();
+//        for (Denomination denomination : Denomination.values()) {
+//            for (Suit suit : Suit.values()) {
+//                cards.add(new Card(denomination, suit));
+//            }
+//        }
+//
+//
+//// stream
+//        final List<Cards> = Arrays.stream(Denomination.values())
+//                .flatMap(denomination -> Arrays.stream(Suit.values())
+//                        .map(suit -> new Card(denomination, suit)))
+//                .collect(Collectors.toUnmodifiableList());
+
     }
 }
