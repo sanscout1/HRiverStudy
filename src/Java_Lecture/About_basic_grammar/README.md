@@ -104,111 +104,6 @@ bw.close();
 - write()을 사용하여 출력할 내용을 담고, `flush()`을 통해서 **버퍼를 비워내는 동시에 콘솔에 출력**하면 됩니다. 주의할 점은 write()만 사용한다고 콘솔에 출력이 되는 것은 아니고, **반드시 `flush()`을 써 주어야 합니다**.
 
 
->https://hianna.tistory.com/543  reverse()
----
-
-### 람다식
-
-- 람다식은 함수를 하나의 식으로 표현하는 것입니다. 메소드의 이름이 필요 없기 때문에 익명 함수의 한 종류입니다.
-
-```
-public String hello() {
-    return "Hello World!";
-}
-
-() -> "Hello World!";
-```
-- 람다식을 사용하면 메소드 이름이 필요 없으며, 괄호 ()와 화살표 `->`를 이용하여 함수를 선언할 수 있습니다.
-
-
-- 람다식(Lambda Expression) 의 특징
-
-    람다식 내에서 사용되는 지역변수는 `final`이 붙지 않아도 상수로 간주된다.
-    람다식으로 선언된 변수명은 다른 변수명과 중복될 수 없다.
-
-
-- 람다식(Lambda Expression) 의 장점
-
-  코드를 간결하게 만들 수 있다.
-  식에 개발자의 의도가 명확히 드러나 가독성이 높아진다.
-  함수를 만드는 과정없이 한번에 처리할 수 있어 생산성이 높아진다.
-  병렬프로그래밍이 용이하다.
-
-- 람다식(Lambda Expression) 의 단점
-
-  람다를 사용하면서 만든 무명함수는 재사용이 불가능하다.
-  디버깅이 어렵다.
-  람다를 남발하면 비슷한 함수가 중복 생성되어 코드가 지저분해질 수 있다.
-  재귀로 만들경우에 부적합하다.
-
-
-
-- 람다식 예제
- ``` 
-//기존 문법
-new Thread(new Runnable() {
-   @Override
-   public void run() { 
-      System.out.println("Welcome Heejin blog"); 
-   }
-}).start();
-
-//람다식 
-new Thread(()->{  System.out.println("Welcome Heejin blog"); }).start();
-
-```
->https://velog.io/@tsi0521/java-Lambda  
-
->[https://inpa.tistory.com/entry/☕-Lambda-Expression](https://inpa.tistory.com/entry/%E2%98%95-Lambda-Expression)
-
-### 함수형 인터페이스(Functional Interface)
-
-```
-public class Lambda {
-    public static void main(String[] args) {  
-        // 기존의 익명함수
-        System.out.println(new MyLambdaFunction() {
-            public int max(int a, int b) {
-                return a > b ? a : b;
-            }
-        }.max(3, 5));
-    }
-}
-------------------------------------------------------------------
-@FunctionalInterface
-interface MyLambdaFunction {
-    int max(int a, int b);
-}
-
-public class Lambda {
-    public static void main(String[] args) {
-        // 람다식을 이용한 익명함수
-        MyLambdaFunction lambdaFunction = (int a, int b) -> a > b ? a : b;
-        System.out.println(lambdaFunction.max(3, 5));
-    }
-}
-```
-
-- 함수형 인터페이스를 구현하기 위해서는 인터페이스를 개발하여 그 내부에는 1개 뿐인 abstract 함수를 선언하고, 위에는 `@FunctionalInterface` 어노테이션을 붙여주면 된다.
-
----
-
-### IntStream
-
-- `IntStream.rangeClosed(0, 5).forEach(System.out::println);`
-- `.filter`( i → 조건) —> 조건에 맞는 것 걸러준다
-- `.rangeClosed()`     —→  end 까지 포함 범위
-
-`List<Character> r = IntStream.range(50, 80).mapToObj(a -> (char) a).collect(Collectors.toList());`
--  mapToObj 통해 형변환 가능
----
-### for문의 다른 이용 법
-```
-for(int i : intArray) {
-System.out.println(i);
-}
-```
-
 ---
 
 ```
@@ -280,27 +175,6 @@ public class Test {
   - delete(startIndex,endIndex)   endIndex 앞까지 제거
   - deleteCharAt(index)   해당 인덱스 문자 제거 
 
----
-
-### Arrays 
-- .sort(String[])  --> 문자열 오름차순 정렬, 퀵소트 이용
-- .sort(String[], comparator)  --> `Arrays.sort(s, Comparator.naturalOrder());` 오름차순 정렬
-- `Arrays.sort(s, Comparator.reverseOrder());` 내림차순정렬
--  `s = Arrays.stream(s).sorted().toArray(String[]::new);` 스트림을 이용한 정렬
-### array 를 intstream 처리 방법
-``` 
-int[] outputIntArray = {95,75,85,100,50};
-outputIntArray= Arrays.stream(outputIntArray).sorted().toArray();
-IntStream outputIntstream = Arrays.stream(outputIntArray);
-outputIntstream.forEach(i->System.out.printf("%d ",i));
-```
-
-
-> https://codechacha.com/ko/java-sorting-array/
-
----
-
-#### ArrayList <> (제너릭-->해당 내용물을 관리해서 저장하겠다)
 
 ---
 
@@ -310,12 +184,8 @@ outputIntstream.forEach(i->System.out.printf("%d ",i));
 - `str.split("-",3)`  배열 3개까지 만드는 제한 걸고 나눔
 -  `str.split("\\.");` . 기준으로 자르기
 
-
 ---
 
-### compareTo()
-- 문장열을 비교하다가 차이나는 부분에 반환값을 보여줌
----
 
 ### String.format()
 - `String result5 = String.format("%.1f", num);` 둘째자리 까지 반올림
@@ -326,11 +196,6 @@ outputIntstream.forEach(i->System.out.printf("%d ",i));
      inputStr1 = String.format("%.2f",Double.parseDouble(inputStr1));
 - while문에 sc.hasNext() 을 이용하면 입력 안들어오는 순간 안함
 
----
-
-
-### Optional 객체 처리
-- `.getAsInt()`, `getAsDouble()`
 
 ---
 
@@ -345,10 +210,6 @@ outputIntstream.forEach(i->System.out.printf("%d ",i));
 > https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 
 ---
-
-### String.matches()
-- matches()는 인자로 정규표현식
-- return boolean
 
 #### 정규 표현식
 1) ^ : 문자열의 시작

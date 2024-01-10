@@ -8,24 +8,42 @@
 - [`스트림`](About_Stream)
 
 ## JVM
-
-- `javac 컴파일러 ` 클래스파일 생성 하여 jvm 에서 독립적으로 처리하기 때문에 시스템에 종속적이지 않다 (javac 명령오는 텍스트 파일로 작성된 java 파일을 bytecode로 컴파일 합니다. 컴파일된 파일은'.class' 파일로 저장됩니다)
-- `java.exe` 실행 (javac 명령어로 컴파일한 '.class' 파일을 실행시킬 수 있습니다.)
+- os 독립적인 개발 가능
+- 자동으로 메모리를 관리 
+- `javac 컴파일러` 클래스파일 생성 하여 jvm 에서 독립적으로 처리하기 때문에 시스템에 종속적이지 않다 (javac 명령어는 텍스트 파일로 작성된 java 파일을 bytecode로 컴파일 합니다. 컴파일된 파일은'.class' 파일로 저장됩니다)
+- `java.exe` 실행 (javac 명령어로 컴파일한 '.class' 파일을 실행시킬 수 있습니다.) : JVM 에 있는 classLoadter 가 불러옴
 
 ## 변수와 타입
 
 - 클래스(class): 사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로 객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.
 - 인스턴스 : 클래스의 내용을 메모리에 할당 한 것.
-
+<br>
+<br>
+- short, char 2byte
+- int 4byte
+- long 8byte
+- boolean 1byte
+  <br>
+  <br>
 - 변수 초기값
 
     ![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)
 
   - 참조형 변수 사이즈 `4byte`
-  - double 이 float 보다 `정밀도`가 높다고 표현 (소수점 단위로 더 아래 표현 가능해서)
+  - double (8byte) 이 float (4byte) 보다 `정밀도`가 높다고 표현 (소수점 단위로 더 아래 표현 가능해서)
   - & | `한 개만` 쓰면 비트 연산자
   - byte 는 char 로 `자동 변환 불가`
   - %1$d %2$d —> 첫 번째로 쓴 정수, 두 번째로 쓴 정수 출력 방법
+
+## 자동 타입 변환
+- 작은 타입을 큰 타입에 대입 할때
+
+### 캐스팅 연산자로 강제 변환
+- 큰 허용 범위 타입을 작은 허용 타입에 대입 ,, 괄호 이용
+
+### String 타입 변환하기
+- parseInt ....
+- int -> String.valueOf(int)
 
 ---
 
@@ -122,8 +140,6 @@ public class ScoresArrayList {
 }
 ```
 
-- Arrays를 이용한 배열 예제
-    - `average().orElse(0.0)`  소수점 자리표현 방법
 ---
 
 
