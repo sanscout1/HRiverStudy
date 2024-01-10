@@ -27,7 +27,7 @@
   <br>
 - 변수 초기값
 
-    ![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)
+![image (1) (1).png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F271DBF3A5636DA3608)
 
   - 참조형 변수 사이즈 `4byte`
   - double (8byte) 이 float (4byte) 보다 `정밀도`가 높다고 표현 (소수점 단위로 더 아래 표현 가능해서)
