@@ -251,6 +251,24 @@
   - 문제9 : 객체 리스트를 받아들이고 리스트의 각요소를 출력하는 printList 메서드를 만들었습니다. 이 메서드를 Comparable 인터페이스를 구현하는 객체 리스트만 받아서 printList 할수 있도록 수정
   - [`문제 답안 코드 예제`](GenericEx%2Fwildcard%2FMyClassWildCardEx1.java)
 
+<br>
+<br>
+
+### 제너릭, 와일드카드 활용
+- Box<?> RandomBox = new Box<>((Number)1);
+  - 위에 처럼 작성하면 이 함수의 get은 작동하지만 set 으로 어떤 타입을 주더라도 안됨
+  - 생성된 객체의 타입이 정해지지 않았기 때문!
+  - 와일드카드는 경계를 주는 것이 중요
+- 경계 와일드카드는 선언한 부분에 한정해서만 제약 부여
+ - static <T> SimpleList<T> function1 (SimpleList<? extends Number> simpleList) {}
+ - 반환타입에 extends 가 안되있기 때문에 선언할때는 Number extends 에 맞게 만들지만 반환할때는 값이 integer 여도 <String> simplelist 에 저장이 가능하다고 뜸
+   - 하지만 runtime 오류 발생
+   - static <T extends Number> SimpleList<T> function1 (SimpleList<T> simpleList)
+      - 타입 자체를 범위 제한하는게 안전
+   
+- static <T> void copy(SimpleList<? extends T> laserprinters, SimpleList<? super T>printers){}
+  - 와일드카드는 이렇게 T 타입을 받아서 상한 하한 제한을 걸때 유용 (제너릭 T타입과 같이 활용 할 때 쓰자)
+
 #### 제너릭이 필요한 이유
 - 다양한 타입의 데이터에서 작동할 수 있는 재사용 가능한 코드를 만드는데 유용
   - 코드 중복 최소화
