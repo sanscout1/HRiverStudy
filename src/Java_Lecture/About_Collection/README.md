@@ -263,6 +263,7 @@
  - `static <T> SimpleList<T> function1 (SimpleList<? extends Number> simpleList) {}`
  - 반환타입에 extends 가 안되있기 때문에 선언할때는 Number extends 에 맞게 만들지만 반환할때는 값이 integer 여도 <String> simplelist 에 저장이 가능하다고 뜸
    - 하지만 runtime 오류 발생
+   - `SimpleList<String> filterStringValues = SimpleList.filterNegative(intValues);`
    - `static <T extends Number> SimpleList<T> function1 (SimpleList<T> simpleList)`
       - 타입 자체를 범위 제한하는게 안전
    
