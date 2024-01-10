@@ -14,7 +14,13 @@
 - 스트림 연산은 기존 자료를 변경하지 않는다.
 - 스트림 연산은 중간 연산과 최종연산 구분
 - 한 번 생성하고 사용한 스트림은 재사용할 수 없다.
-- 
+
+#### iterartor 차이점
+- 내부 반복자여서 빠르고, 병렬처리 효율적
+- 람다식으로 다양한 요소 처리 정의
+- 중간처리와 최종 처리를 수행하도록 파이프 라인을 형성
+
+![img.png](../../picture/iterartorvsStream.png)
 
 ## 중간 연산, 최종 연산
 ### 중간 연산
@@ -28,10 +34,23 @@
 - .count() : 요소 개수
 - .sum()
 - .average() <br>
-...
+<br>
+<br>
+<br>
 
-## 파이프라인 구성
 
-## 컬렉션 객체와 스트림
+[**기본 예제 코드**](StreamEx01.java)
 
-## 여러 가지 연산
+[**문자열 스트림 코드**](StreamEx04.java)
+
+[**map, .of 코드**](StreamEx05.java)
+
+[**reduce 코드**](StreamEx06.java)
+
+[**이중map 예제**](StreamExFromLamda01.java)
+
+[**병렬스트림**](StreamPack02%2FParallelStreamEx01.java)
+
+[**객체를 활용한 스트림**](StreamPack02%2Fproduct%2FProductStreamEx.java)
+
+[**파일스트림**](StreamFile.java)

@@ -1,6 +1,6 @@
 # STUDY
 
-### 📝 기초 공부
+## 📝 기초 공부
 
 * [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
 * [`OperatingSystem`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem)
@@ -8,7 +8,7 @@
 
 ***
 
-### ⌨️ 실습 과제
+## ⌨️ 실습 과제
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
 * [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test)
@@ -20,7 +20,7 @@
 
 ***
 
-### 📗 도서 목록
+## 📗 도서 목록
 
 * [`객체지향의 사실과 오해`](src%2FBookList%2FObjectRealMisunderstand%2FREADME.md)
 
