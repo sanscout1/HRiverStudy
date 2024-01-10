@@ -261,7 +261,7 @@
   - 와일드카드는 경계를 주는 것이 중요
 - 경계 와일드카드는 선언한 부분에 한정해서만 제약 부여
  - `static <T> SimpleList<T> function1 (SimpleList<? extends Number> simpleList) {}`
- - `SimpleList<String> filterStringValues = SimpleList.filterNegative(intValues);`
+ - `SimpleList<String> filterStringValues = SimpleList.function1(intValues);`
  - 반환타입에 제한이 안되있기 때문에 선언할때는 extends Number 에 맞게 만들지만 반환할때는 값이 integer 여도 <String> simplelist 에 저장이 가능하다고 뜸
    - 하지만 runtime 오류 발생
    
