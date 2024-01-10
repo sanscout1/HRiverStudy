@@ -29,8 +29,8 @@ public class LamdaEx01 {
 //
 //// stream
 //        final List<Cards> = Arrays.stream(Denomination.values())
-//                .flatMap(denomination -> Arrays.stream(Suit.values())
-//                        .map(suit -> new Card(denomination, suit)))
+//                .flatMap(denomination -> Arrays.stream(Suit.values())    //flatmap 에 들어간 요소 하나하나가 스트림이 되는 것
+//                        .map(suit -> new Card(denomination, suit)))   /map 이 나열해서 값을 변경할 수 도 있지만, 우선 값들을 나열만 해준다는 개념이 중요
 //                .collect(Collectors.toUnmodifiableList());
 
     }

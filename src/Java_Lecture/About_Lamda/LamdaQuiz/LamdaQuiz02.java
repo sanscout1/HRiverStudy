@@ -16,14 +16,23 @@ public class LamdaQuiz02 {
     // 2 번
 
     // 4.
-    interface Function {
-        double apply(double x, double y);
-    }
-    public static double calc(Function fun){
+//    interface Function {
+//        double apply(double x, double y);
+//    }
+//    public static double calc(Function fun){
+//        double x= 10;
+//        double y= 4;
+//        return  fun.apply(x,y);
+//    }  //여기 매개변수 함수 이름과, 메서드 이름을 그대로 함수형 인터페이스로 만들어야 한다.
+
+
+    public static double calc(BiFunction<Double,Double,Double> fun){
         double x= 10;
         double y= 4;
         return  fun.apply(x,y);
-    }  //여기 매개변수 함수 이름과, 메서드 이름을 그대로 함수형 인터페이스로 만들어야 한다.
+    }
+
+    // BiFunction 으로 인수 받으면 함수형 인터페이스를 따로 정의 안해도 똑같이 이용이 가능하다.
 
     public static void main(String[] args) {
 
