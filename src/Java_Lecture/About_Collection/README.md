@@ -266,6 +266,7 @@
    - 하지만 runtime 오류 발생
    
    <br>
+   
    - `static <T extends Number> SimpleList<T> function1 (SimpleList<T> simpleList)`
       - 타입 자체를 범위 제한하는게 안전
    
