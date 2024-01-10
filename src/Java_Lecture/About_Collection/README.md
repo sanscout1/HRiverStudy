@@ -255,18 +255,18 @@
 <br>
 
 ### 제너릭, 와일드카드 활용
-- Box<?> RandomBox = new Box<>((Number)1);
+- `Box<?> RandomBox = new Box<>((Number)1);`
   - 위에 처럼 작성하면 이 함수의 get은 작동하지만 set 으로 어떤 타입을 주더라도 안됨
   - 생성된 객체의 타입이 정해지지 않았기 때문!
   - 와일드카드는 경계를 주는 것이 중요
 - 경계 와일드카드는 선언한 부분에 한정해서만 제약 부여
- - static <T> SimpleList<T> function1 (SimpleList<? extends Number> simpleList) {}
+ - `static <T> SimpleList<T> function1 (SimpleList<? extends Number> simpleList) {}`
  - 반환타입에 extends 가 안되있기 때문에 선언할때는 Number extends 에 맞게 만들지만 반환할때는 값이 integer 여도 <String> simplelist 에 저장이 가능하다고 뜸
    - 하지만 runtime 오류 발생
-   - static <T extends Number> SimpleList<T> function1 (SimpleList<T> simpleList)
+   - `static <T extends Number> SimpleList<T> function1 (SimpleList<T> simpleList)`
       - 타입 자체를 범위 제한하는게 안전
    
-- static <T> void copy(SimpleList<? extends T> laserprinters, SimpleList<? super T>printers){}
+- `static <T> void copy(SimpleList<? extends T> laserprinters, SimpleList<? super T>printers){}`
   - 와일드카드는 이렇게 T 타입을 받아서 상한 하한 제한을 걸때 유용 (제너릭 T타입과 같이 활용 할 때 쓰자)
 
 #### 제너릭이 필요한 이유
