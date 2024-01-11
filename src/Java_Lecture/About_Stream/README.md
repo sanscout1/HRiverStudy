@@ -54,3 +54,22 @@
 [**객체를 활용한 스트림**](StreamPack02%2Fproduct%2FProductStreamEx.java)
 
 [**파일스트림**](StreamFile.java)
+
+
+### [**스트림 다양한 고찰**](StreamPack03%2FStudentMappingEx.java)
+- [`Collector`](StreamPack03%2FCollectorEx.java)
+- [`Collectors 관련 링크`](https://www.daddyprogrammer.org/post/1163/java-collectors/)
+<br>
+<br>
+
+[**Peek메소드**](StreamPack03%2FPeekForEachEx.java)
+
+[**Matching**](StreamPack03%2FMatchingEx.java)
+
+[**Optional**](StreamPack03%2FOnlineClass%2FOnlineClassMain.java)
+
+
+
+
+
+
