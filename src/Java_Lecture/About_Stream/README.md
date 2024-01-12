@@ -57,7 +57,7 @@
 
 
 ### [**스트림 다양한 고찰**](StreamPack03%2FStudentMappingEx.java)
-- [`Collector`](StreamPack03%2FCollectorEx.java)
+- [`Collector`](StreamPack03%2Fcollect%2FCollectorEx.java)
 - [`Collectors 관련 링크`](https://www.daddyprogrammer.org/post/1163/java-collectors/)
 <br>
 <br>
