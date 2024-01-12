@@ -19,20 +19,20 @@ public class VectorEx1 {
         list2.add(30);
         list2.add(40.5);
 
-        List<Board> boards = new Vector<>();
-       // List<Board> boards1 = new ArrayList<>();
+//        List<Board> boards = new Vector<>();
+        List<Board> boards1 = new ArrayList<>();
 
         Thread threadA = new Thread(){
             public void run(){
                 for (int i = 1; i <= 1000 ; i++) {
-                    boards.add(new Board("제목"+i, "내용"+i,"글쓴사람"+i));
+                    boards1.add(new Board("제목"+i, "내용"+i,"글쓴사람"+i));
                 }
             }
         };
         Thread threadB = new Thread(){
             public void run(){
                 for (int i = 1001; i <= 2000 ; i++) {
-                    boards.add(new Board("제목"+i, "내용"+i,"글쓴사람"+i));
+                    boards1.add(new Board("제목"+i, "내용"+i,"글쓴사람"+i));
                 }
             }
         };
@@ -48,12 +48,12 @@ public class VectorEx1 {
             e.printStackTrace();
         }
 
-        int size = boards.size();
+        int size = boards1.size();
         System.out.println("총 게시글 : "+size);  //벡터로하면 2000나옴  arraylist 하면 2000개안나옴
         //Vector는 따로따로 연산하게 막지만 (동기화 : 한번에 하나의 쓰레드만 접근가능하게)
         //arraylist는 신경안써서 연산중에 다른 쓰레드가 접근하는경우가 발생하여 작업을 못한 경우도 존재
 
-        for (Board board : boards) {
+        for (Board board : boards1) {
             System.out.println(board.getSubject()+" "+board.getWriter()+" "+board.getContent());
         }
     }

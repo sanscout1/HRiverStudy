@@ -1,7 +1,12 @@
 package Java_Lecture.About_oop.day_interface.privateInterface;
 
 public interface Service {
-    //deault 메소드
+    //1 상수
+    public static int A = 1;
+
+    //2 추상메서드
+    public int b ();
+    //3 deault 메소드
 
     default  void defaultMethod1(){
         System.out.println("defaultMethod1()의 코드");
@@ -13,7 +18,7 @@ public interface Service {
     }
 
 
-    // 5. private 메소드
+    // 4. private 메소드
 
     private void defaultCommon(){
         System.out.println("defaultMethod의 중복코드 1");
@@ -21,7 +26,7 @@ public interface Service {
     }
 
 
-    // 정적 메소드  ... static은 static 끼리만 가능
+    // 5 정적 메소드  ... static은 static 끼리만 가능
     static void staticMethod1(){
         System.out.println("staticMethod1의 종속코드 1");
         staticCommon();

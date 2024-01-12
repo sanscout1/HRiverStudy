@@ -204,7 +204,7 @@ public static void ride(Vehicle vehicle){
 
 ---
 
-
+### 인터페이스는 인터페이스 상속할때 extends 사용
 
 
 ### 싱글톤

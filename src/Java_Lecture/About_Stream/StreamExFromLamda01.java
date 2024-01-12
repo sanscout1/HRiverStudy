@@ -25,7 +25,10 @@ public class StreamExFromLamda01 {
 //                cards.add(new Card(denomination, suit));
 //            }
 //        }
-//
+//   1  1234
+//   2    1234
+//   3    1234
+//   4     1234
 //
 //// stream
 //        final List<Cards> = Arrays.stream(Denomination.values())
