@@ -16,7 +16,7 @@ public class exceptionEx {
 
         } catch(ArrayIndexOutOfBoundsException e) {
            e.printStackTrace();
-           // 우리가 만든 예외처리가 아니라면 메시지 설정이 안된다.
+           new ArrayIndexOutOfBoundsException("아아아");
 
         }
 
