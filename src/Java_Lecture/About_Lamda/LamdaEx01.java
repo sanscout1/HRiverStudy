@@ -32,6 +32,8 @@ public class LamdaEx01 {
 //                .flatMap(denomination -> Arrays.stream(Suit.values())    //flatmap 에 들어간 요소 하나하나가 스트림이 되는 것
 //                        .map(suit -> new Card(denomination, suit)))   /map 이 나열해서 값을 변경할 수 도 있지만, 우선 값들을 나열만 해준다는 개념이 중요
 //                .collect(Collectors.toUnmodifiableList());
+        //toUnmodifiableList() : 스트림에서 요소를 수집하여 변경 불가능한 리스트(java.util.List)로 반환합니다.
+        // 반환된 리스트는 요소를 추가, 수정, 삭제할 수 없으므로, 불변성을 보장합니다.
 
     }
 }
