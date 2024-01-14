@@ -17,7 +17,7 @@ public class LamdaEx04 {
         System.out.println(squaredNumber);
 
         //2.filter()
-        // 조건에 따라 스트림에서 요소를 선택하는데 사용 (조건을 정의하는 람다 표현식을 인수로 받는다)
+        // 조건에 따라 (if 문) 스트림에서 요소를 선택하는데 사용 (조건을 정의하는 람다 표현식을 인수로 받는다)
         //2-1 numbers 대상으로 홀수리스트 oddNumber 구성하여 출력
         List<Integer> oddnumbers = numbers.stream().filter(i -> i%2==1).collect(Collectors.toList());
         numbers.stream().filter(i -> i%2==1).forEach(i -> System.out.print(i+" "));
