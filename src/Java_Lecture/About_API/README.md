@@ -45,8 +45,7 @@ IDException, PasswordException 실습코드
 - [`PasswordException`](PasswordException)
 - [`IDException`](IDException)
 
-#### 1230
-- loginExample 에 notexit 예외처리 isExistIDPWD로 리팩토링 완료
-***
 
-//
+
+###  [**Exception ppt 준비자료**](https://1drv.ms/p/s!Au5yZcP4wBlnhWtTjxLutjr8erLf?e=h9PSh9)
+
