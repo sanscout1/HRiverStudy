@@ -38,6 +38,7 @@ public class LamdaEx03 {
 //
 //        Collections.sort(names,(a,b) -> a.compareTo(b));
 //        Collections.sort(names,String::compareTo);
+        // sort 함수는 리스트와 , 비교 어떻게할지 넣어서 정렬 가능
 
 
 
