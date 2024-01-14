@@ -17,7 +17,7 @@ public class exceptionEx {
         } catch(ArrayIndexOutOfBoundsException e) {
            e.printStackTrace();
            new ArrayIndexOutOfBoundsException("아아아");
-
+            // 정해진 예외처리만 이용 가능함
         }
 
     }
