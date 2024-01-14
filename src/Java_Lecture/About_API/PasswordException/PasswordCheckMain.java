@@ -12,6 +12,7 @@ public class PasswordCheckMain {
     }
 
     //우리가 원하는 예외 처리 메세지를 저장 할 수 있다.
+    // throw 와 thorws 이용 장소 차이 있음
     public void checkPassword(String password) throws PasswordCheckException {
         if(password == null) {
             throw new PasswordCheckException("비밀면호 입력이 없습니다.");
