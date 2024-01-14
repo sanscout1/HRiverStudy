@@ -27,4 +27,8 @@
 
 ***
 
+## 유튜브 영상 올리기
+
+* [`BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
+
 

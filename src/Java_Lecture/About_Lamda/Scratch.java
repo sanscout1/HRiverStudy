@@ -17,6 +17,7 @@ public class Scratch {
         String[] strings = Arrays.stream(st)
                 .sorted() // 오름차순 정렬
                 .sorted(Comparator.comparing(s -> s.charAt(1))) // 2번째 문자를 기준으로 비교해서 오름차순 정렬
+                // sorted 는 스트림 내부 함수이다.
                 .toArray(String[]::new); // String[] 배열로 모아서 반환
         System.out.println(Arrays.toString(strings));
 
