@@ -37,7 +37,7 @@
 
 ## 자바에서 메서드 참조의 유형 4가지
 
-- 함수적 인터페이스의 익명 구현 객체를 생성하는 대신, 기존에 정의된 메소드를 참조하여 람다 표현식을 간결하게 만들어주는 Java의 기능 중 하나
+- 함수형 인터페이스의 익명 구현 객체를 생성하는 대신, 기존에 정의된 메소드를 참조하여 람다 표현식을 간결하게 만들어주는 Java의 기능 중 하나
 
 1. 정적 메서드에 대한 참조
     - 클래스명 :: 메서드명    : 람다 표현식이 정적 메서드에 위임할때 유용 <br>
@@ -53,7 +53,8 @@
       Function<Integer, String> reference = String::length;  <br>
 3. 특정 타입의 임의 객체의 인스턴스 메서드에 대한 참조  :   ClassName::methodName
    // Lambda expression  <br>
-    - BiFunction<String, String,Boolean> lambda = (str1,str2) -> str1.equals(str2);  <br>
+    - BiFunction<String, String,Boolean> lambda = (str1,str2) -> str1.equals(str2);  
+    - 여기서는 매개변수 타입이 String 이기 때문에 아래처럼 바꿀 수 있다. <br>
    // Method reference  <br>
       BiFunction<String, String,Boolean> reference = String::equals;  <br>
 4. 생성자에 대한 참조    :
