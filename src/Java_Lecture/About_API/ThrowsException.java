@@ -17,6 +17,8 @@ public class ThrowsException {
     }
   // 함수에서 발생하는 예외 처리는 throws 를 통해 main 문에 있는 예외 작성 한 곳으로 이동 하게 한다.
     //throws 예외 처리를 미루는 것 : 예외를 호출한 곳으로 보내주는 것
+
+    //throws 는 trycatch를 해야되는 경우지만 다른 곳에서 trycatch 하고자 할때 이용한다.
     private Class loadClass(String fileName, String className) throws FileNotFoundException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(fileName);
         Class c  = Class.forName(className);
