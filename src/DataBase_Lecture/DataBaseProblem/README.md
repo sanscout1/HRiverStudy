@@ -19,7 +19,7 @@ WHERE CATEGORY = '인문' AND PUBLISHED_DATE LIKE '2021%' ORDER BY PUBLISHED_DAT
 
 - DATE_FORMAT 을 통해 날짜 출력을 지정할 수 있다.
 
-### [`select 2번`](https://school.programmers.co.kr/learn/courses/30/lessons/132201)
+### [`select 3번`](https://school.programmers.co.kr/learn/courses/30/lessons/132201)
 ```agsl
 SELECT PT_NAME,PT_NO,GEND_CD,AGE,IFNULL(TLNO,'NONE') AS TLNO 
 FROM PATIENT WHERE GEND_CD='W' AND AGE<=12 
