@@ -133,7 +133,7 @@ public class MyThread1 extends Thread{
 #### JVM(Java Virtual Machine)과 호스트 운영체제
 - JVM에서 관리하는 Java 쓰레드 라이브러리로 생성한 쓰레드들은 각 운영체제에서 사용하는 다중 쓰레드 모델에 맞추어서 매핑되도록 수행합니다
 - ava 프로그램이 JVM을 지원하는 어떠한 플랫폼에서도 작동할 수 있도록 하는 일관되고 추상적인 환경을 제공
-
+***
 ## 쓰레드 이슈
 - 다중 쓰레드 프로그램을 사용할때 고려해야할 점
 ### 1. 쓰레드의 fork() 및 exec() 시스템 콜 호출
@@ -168,10 +168,129 @@ public class MyThread1 extends Thread{
 
 ### 3. 쓰레드의 신호처리
 
--
+- 신호(동기식 신호/비동기식 신호)가 발생하면 어느 쓰레드에게 신호를 전달해야하는가를 고려해야합니다.
+- 신호는 운영체제에서 프로세스에게 어떤 사건이 일어났음을 알려주기 위해 사용되는 것
+  - 동기식 신호 : 실행중인 프로그램이 불법적인 메모리 접근, 0으로 나누기 등의 행위를 하였을때 발생함. 동기식 신호는 신호를 발생시킨 연산을 수행한 동일한 프로세스에게 전달됨.
+  - 비동기식 신호 : 프로세스 외부로부터 신호가 발생하여 프로세스에게 신호를 순서를 무시하고 전달하는 신호입니다. 
+
+#### 신호 처리기의 종류
+
+1. 디폴트 신호 처리기 : 모든 신호마다 커널에 의해 실행되는 처리기
+2. 사용자 정의 신호 처리기 : 특정 신호에 사용자가 정의한 방식으로 처리되는 처리기
+
+#### 왜 다중 쓰레드 프로세스는 신호 처리를 고려해야 하는가?
+- 문제는 어느 쓰레드에게 신호를 전달해야 하는가? 입니다.
+
+#### 다중 쓰레드 프로세스에서 신호 발생시 전달 쓰레드 선택의 경우
+1. 신호가 적용될 쓰레드에게 전달 (단일)   (동기식 신호)
+2. 모든 쓰레드에게 전달   (비동기식 신호)
+3. 몇몇 쓰레드들에게만 선택적으로 전달  (다중 쓰레드 UNIX)
+4. 특정 쓰레드가 모든 신호를 전달받도록 지정 (비동기식 프로시저 호출)
+
+#### 비동기식 프로시저 호출이란 무엇인가?
+- 사용자 쓰레드들이 특정 사건의 발생을 전달받을때 호출될 함수를 지정할 수 있게하는 것입니다
+
+####  신호를 받았을때 어느 쓰레드(단일/전부/선택적)에게 전달할 것인지, 신호를 전달받으면 어떻게 처리(무시/강제종료)할 것인지 고려해야 합니다.
 
 
+### 4. 쓰레드 풀
+- 첫번째 문제는 서비스를 수행할때마다 쓰레드를 생성하는데 소요되는 시간입니다. 
+- 두번째 문제는 모든 요청마다 새 쓰레드를 생성하여 서비스한다면 시스템에서 동시에 실행할 수 있는 최대 쓰레드의 한계수를 정해야 합니다
+  - 쓰레드의 개수를 무한정 만들면 CPU 시간, 메모리 공간같은 시스템 자원이 고갈될 것
 
+- 프로세스를 생성할 때 아예 일정한 수의 쓰레드들을 미리 풀(pool)로 만들어 두는 것
+    - 미리 생성된 쓰레드들이 풀에 있다가 요청이 들어오면 풀에 있는 쓰레드 하나가 서비스를 하고 다시 풀에 복귀하는 개념입니다. 만약 풀에 쓰레드가 없다면 서버는 풀에 쓰레드가 생길때까지 대기하여야 합니다.
+
+#### 쓰레드 풀의 장점
+1. 새 쓰레드를 만들어 주기보다 기존 쓰레드로 서비스해 주는 것이 빠름
+2. 쓰레드 풀은 임의 시각에 존재할 쓰레드 개수에 제한을 둠. 이러한 제한은 많은 수의 쓰레드를 병렬 처리할 수 없는 시스템에 도움을 줌
+
+```agsl
+public class ThreadPool implements Runnable {
+	private String threadName;
+
+	public ThreadPool(String threadName) {
+		this.threadName = threadName;
+	}
+
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName()+"의"+threadName+"이 시작되었습니다.");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println(Thread.currentThread().getName()+"가 종료되었습니다.");
+	}
+
+	@Override
+	public String toString() {
+		return this.threadName;
+	}
+
+}
+
+
+public class Driver {
+
+	public static void main(String[] args) throws InterruptedException {
+		// 5개의 pool을 고정함
+		ExecutorService pool = Executors.newFixedThreadPool(5);
+		
+		IntStream.range(1, 10).forEach(i->{
+			Runnable thread = new ThreadPool("SleepThread"+i);
+			pool.execute(thread);
+		});
+		
+		// ExecutorService 종료
+		pool.shutdown();
+		
+		// ExecutorService가 종료될때까지 대기
+		while(!pool.isTerminated())
+		{
+			
+		}
+		
+		System.out.println("모든 Thread가 종료되었습니다.");
+		
+	}
+
+}
+```
+<br>
+<br>
+
+### 5. 쓰레드별 데이터
+- 다중 쓰레드 프로그래밍의 큰 장점중 하나로는 프로세스의 자원을 각각의 쓰레드들이 공유한다는 점
+- #### 쓰레드만이 가지고 있는 자원을 쓰레드별 데이터
+
+### 6. 스케줄러 활성화
+- 사용자 쓰레드 라이브러리와 커널 쓰레드간의 통신을 하는 방법입니다
+- 쓰레드 라이브러리와 커널간의 통신 문제 해결
+- `LWP(경량 프로세스)`는 사용자 쓰레드와 커널 쓰레드를 연결해주는 커널에서 응용 프로그램에 제공하는 자료구조
+
+
+***
+## 쓰레드 스케줄링  (나중에 이해안되면 다시 정리하자) https://yonghwankim-dev.tistory.com/251
+
+### 1. 경쟁범위
+- 동일한 프로세스에 속한 쓰레드들 사이에서 CPU를 경쟁하기 때문에 프로세스-경쟁-범위(process-contention scope, PCS)
+- 사용자 수준 쓰레드는 쓰레드 라이브러리가 사용이 가능한 LWP에 사용자 수준 쓰레드를 스케줄링하는 것
+- 프로세스-경쟁-범위(PCS)는 동일한 프로세스 범위에서 프로세스에 속한 쓰레드들이 CPU를 할당받기 위해 경쟁
+
+
+-  실제로 CPU 상에서 실행되기 위해서는 운영체제가 커널 쓰레드를 물리적인 CPU로 스케줄하는 것을 필요로 합니다
+- CPU 상에 어느 커널 쓰레드를 스케줄할 것인지 결정하기 위해서는 커널은 시스템-경쟁 범위(system-contention scope, SCS)를 사용
+
+![img.png](../picture/Thread07.png)
+
+### 2. C 언어 기반 Pthread 스케줄링 예제
+
+- POSIX Pthread API는 쓰레드를 생성하면서 PCS 또는 SCS를 지정할 수 있습니다
+
+- PTHREAD_SCOPE_PROCESS : PCS 스케줄링을 사용하여 쓰레드를 스케줄링
+- PTHREAD_SCOPE_SYSTEM : SCS 스케줄링을 사용하여 쓰레드를 스케줄링
 
 
 
