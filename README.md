@@ -27,8 +27,14 @@
 
 ***
 
-## 유튜브 영상 올리기
+## 🎬유튜브 영상 올리기
 
 * [`BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
+
+
+***
+## 🏃‍♂이번 주 할 일
+
+* [`HRiver Working Now`](https://trello.com/b/XqfPmlF5/hriver-board)
 
 
