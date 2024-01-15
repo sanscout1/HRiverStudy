@@ -18,3 +18,16 @@ WHERE CATEGORY = '인문' AND PUBLISHED_DATE LIKE '2021%' ORDER BY PUBLISHED_DAT
 ```
 
 - DATE_FORMAT 을 통해 날짜 출력을 지정할 수 있다.
+
+### [`select 2번`](https://school.programmers.co.kr/learn/courses/30/lessons/132201)
+```agsl
+SELECT PT_NAME,PT_NO,GEND_CD,AGE,IFNULL(TLNO,'NONE') AS TLNO 
+FROM PATIENT WHERE GEND_CD='W' AND AGE<=12 
+ORDER BY AGE DESC,PT_NAME ASC;
+```
+
+- select 문에서 `IFNULL(column,value)` 을 작성하여 null 인 값에 원하는 값을 출력할 수 있다. 
+
+
+
+
