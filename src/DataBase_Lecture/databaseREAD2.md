@@ -299,7 +299,7 @@ mysql> select distinct publisher from book where price >= 10000 order by bookid 
 
 ![img.png](../picture/db07.png)
 
-![img.png](db08.png)
+![img.png](../picture/db08.png)
 
 <br>
 <br>
@@ -397,7 +397,7 @@ mysql> select publisher from book;
 <br>
 
 ### where 절 조건
-![img.png](db09.png)
+![img.png](../picture/db09.png)
 
 <br>
 <br>
@@ -425,7 +425,7 @@ mysql> select * from book where price<20000;
 
 - where 조건문의 와일드카드
 
-![img.png](db10.png)
+![img.png](../picture/db10.png)
 
 12. 가격 2만원 미만 도서
 
