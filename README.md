@@ -3,7 +3,7 @@
 ## 📝 기초 공부
 
 * [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
-* [`OperatingSystem`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem)
+* [`OperatingSystem`](src%2FOperatingSystem%2FOSindex.md)
 * [`ComputerNetworking`](src%2FComputerNetworking_TopDownApproach)
 
 ***
@@ -35,6 +35,6 @@
 ***
 ## 🏃‍♂이번 주 할 일
 
-* [`HRiver Working Now`](https://trello.com/b/XqfPmlF5/hriver-board)
+* [`HRiver Working Now`](https://trello.com/b/XqfPmlF5/hriver-working)
 
 
