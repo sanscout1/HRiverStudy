@@ -35,6 +35,30 @@
 - DBMS 서버가 데이터의 일관성 유지, 복구, 동시 접근 제어 기능 수행
 - 데이터를 표준화하며 무결성 (종복을 최소화해서 관리)을 유지
 
+![img.png](../picture/database02.png)
+
+### SQL(Structured Query Language) 
+- Data subLanguage 데이터 구조에 관한 데이터를 생성하고 처리하는 문법만을 가지고 있다.
+
+#### 기능에 따라 분류
+1. 데이터 정의어(DDL)
+    - CREATE 생성, ALTER 수정, DROP 삭제  : 객체
+2. 데이터 조작어(DML)
+    - INSERT , UPDATE , DELETE : 테이블
+3. 데이터 제어어(DCL)
+    - GRANT, REVOKE, COMMIT , ROLLBACK
+4. 데이터 질의어(DQL)
+    - SELECT
+5. TCL  : COMMIT , ROLLBACK (제어어의 속하는 TCL)
+
+
+
+
+
+
+***
+
+## [**데이터베이스 실습**](databaseREAD2.md)
 
 
 
