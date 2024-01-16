@@ -58,6 +58,16 @@ select first_name as 이름 ,gender 성별, hire_date '회사 입사일' from em
 ![img.png](../picture/db115.png)
 
 ```agsl
+INSERT INTO buytbl VALUES(NULL, 'KBS', '운동화', NULL   , 30,   2);
+INSERT INTO buytbl VALUES(NULL, 'KBS', '노트북', '전자', 1000, 1);
+INSERT INTO buytbl VALUES(NULL, 'JYP', '모니터', '전자', 200,  1);
+INSERT INTO buytbl VALUES(NULL, 'BBK', '모니터', '전자', 200,  5);
+```
+
+- `auto_increment` 는 `insert` 할 때 null 을 넣는다.
+
+
+```agsl
 -- 1. sqldb 선택하고, 사용자 중 김경호 씨 정보 출력
 use sqldb;
 SELECT * FROM usertbl;
