@@ -16,20 +16,20 @@
    - column name, datatype 등등 편한대로 지정하고 넣어주면된다.
 
 3. 원하는 테이블 우클릭해서 select문 실행 하고, 테이블에 좌클릭 누르면서 직접 값 하나 하나 넣기가능
-![img.png](db111.png)
+![img.png](../picture/db111.png)
 
 4. sql script 저장
 
-![img.png](db112.png)
+![img.png](../picture/db112.png)
 
 5. 주석 처리 방법
 
-![img.png](db113.png)
+![img.png](../picture/db113.png)
 
 
 6. 띄어쓰기가 있는 sql문
 
-![img.png](db114.png)
+![img.png](../picture/db114.png)
 
 7. 다른 실습
 ```agsl
@@ -55,7 +55,7 @@ select first_name as 이름 ,gender 성별, hire_date '회사 입사일' from em
 
 8. Script 만들기
 
-![img.png](db115.png)
+![img.png](../picture/db115.png)
 
 ```agsl
 -- 1. sqldb 선택하고, 사용자 중 김경호 씨 정보 출력
