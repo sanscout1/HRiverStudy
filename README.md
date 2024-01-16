@@ -9,6 +9,7 @@
 
 ***
 
+
 ## ⌨️ 실습 과제
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
@@ -19,6 +20,11 @@
 #### Book Project
 - [`BookProjectList`](src%2FJava_Test%2FBookProjectList)
 
+***
+
+## 📜알고리즘
+
+* [`알고리즘 깃허브`](https://github.com/sanscout1/javaAlgo)
 ***
 
 ## 📗 도서 목록
