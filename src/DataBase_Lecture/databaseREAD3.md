@@ -196,7 +196,7 @@ mysql> SELECT * FROM ORDERS;
 ```
 
 11.  테이블 생성 문법
-![img.png](db11.png)
+![img.png](../picture/db11.png)
 - ####  primary key(unique + not null)
   - 예) PRIMARY KEY(주문고객, 주문제품)
 - #### UNIQUE
@@ -208,9 +208,9 @@ mysql> SELECT * FROM ORDERS;
   - 예) FOREIGN KEY(소속부서) REFERENCES
     부서(부서번호)
     ON DELETE CASCADE ON UPDATE CASCADE
-![img.png](db13.png)
+![img.png](../picture/db13.png)
 
-![img.png](db14.png)
+![img.png](../picture/db14.png)
 
 - #### CHECK
     - 테이블 생성 때 스키마의 조건을 걸어 두는 것
@@ -220,17 +220,17 @@ mysql> SELECT * FROM ORDERS;
 - '값은 대소문자를 비교한다'
 
 
-![img.png](db12.png)
+![img.png](../picture/db12.png)
 
 - #### ALTER TBALE
 
-![img.png](db15.png)
+![img.png](../picture/db15.png)
 
-![img.png](db16.png)
+![img.png](../picture/db16.png)
 
-![img.png](DB17.png)
+![img.png](../picture/DB17.png)
 
-![img.png](db18.png)
+![img.png](../picture/db18.png)
 
 
 
@@ -375,7 +375,7 @@ mysql> select name,age,grade,point from customer where name like '김%';
 ```
 `select name,age,grade,point from customer where name like ('김%');`
 - like () 가능
-![img.png](db19.png)
+![img.png](../picture/db19.png)
 
 20. 제품 테이블에서 제조업체의 수를 검색
 ```agsl
