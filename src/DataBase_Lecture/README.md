@@ -58,7 +58,8 @@
 
 ***
 
-## [**데이터베이스 실습**](databaseREAD2.md)
+## [**데이터베이스 실습 기본**](databaseREAD2.md)
+## [**데이터베이스 실습 기본2**](databaseREAD3.md)
 
 
 
