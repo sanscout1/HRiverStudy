@@ -347,7 +347,63 @@ mysql> show tables;
 +---------------------+
 ```
 
-18.
+18. 고객 테이블에서 고객아이디, 고객이름 등급속성 검색
+```agsl
+mysql> select customer_id,name,grade from customer;
++-------------+--------+--------+
+| customer_id | name   | grade  |
++-------------+--------+--------+
+| apple       | 정소화 | gold   |
+| banana      | 김선우 | vip    |
+| carrot      | 고명석 | gold   |
+| melon       | 성원용 | gold   |
+| orange      | 김용욱 | silver |
+| peach       | 오형준 | silver |
+| pear        | 채광주 | silver |
++-------------+--------+--------+
+```
+
+19. 고객테이블에서 성이 김 씨 인 고객의 고객 이름 나이 등급 적립금 검색
+```agsl
+mysql> select name,age,grade,point from customer where name like '김%';
++--------+------+--------+-------+
+| name   | age  | grade  | point |
++--------+------+--------+-------+
+| 김선우 |   25 | vip    |  1000 |
+| 김용욱 |   22 | silver |     0 |
++--------+------+--------+-------+
+```
+`select name,age,grade,point from customer where name like ('김%');`
+- like () 가능
+![img.png](db19.png)
+
+20. 제품 테이블에서 제조업체의 수를 검색
+```agsl
+
+mysql> select count(p_company) as '제조업체 수' from product group by p_company;
++-------------+
+| 제조업체 수 |
++-------------+
+|           2 |
+|           2 |
+|           3 |
++-------------+
+```
+- 회사별로 몇개의 제품이 있는지 나와버림
+
+```agsl
+mysql> select count(distinct p_company)as '제조업체 수'  from product;
++-------------+
+| 제조업체 수 |
++-------------+
+|           3 |
++-------------+
+```
+- 이러면 업체 몇개인지 나옴
+
+21. 
+
+
 
 
 
