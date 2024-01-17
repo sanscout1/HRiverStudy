@@ -51,7 +51,7 @@ Database changed
 ```
 
 - 3, 4, 5 과정
-```agsl
+```sql
 mysql> create table test(id smallint unsigned primary key auto_increment,name varchar(20) not null);
 Query OK, 0 rows affected (0.07 sec)
 
@@ -78,7 +78,7 @@ mysql> select * from test;
 ```
 
 ### 실습 2
-```agsl
+```sql
 mysql> create database sinsaegebookdb;
 Query OK, 1 row affected (0.01 sec)
 
