@@ -14,7 +14,7 @@
 5. 만든 테이블에 자료 입력 : insert
 
 - 1.2. 과정
-```agsl
+```sql
 
 mysql> show databases;
 +--------------------+
@@ -118,7 +118,7 @@ Query OK, 0 rows affected (0.00 sec)
 - pdf 3,7페이지 서점 데이터 만들기 (sinsaegebookdb)
 
 1. book table 만들기  
-```roomsql
+```sql
 mysql> create table Book(
     -> bookid INTEGER PRIMARY KEY,
     -> bookname VARCHAR(40),
@@ -130,7 +130,7 @@ mysql> create table Book(
   <br>
 
 2.  customer table 만들기
-```roomsql
+```sql
 mysql> create table customer(
     -> custid INTEGER PRIMARY KEY,
     -> name VARCHAR(40),
@@ -141,7 +141,7 @@ mysql> create table customer(
 <br>
 
 3. order table 만들기 (외래키로 두테이블의 primary key 가져옴)
-```roomsql
+```sql
 mysql> create table orders(
     -> orderid INTEGER PRIMARY KEY,
     -> custid INTEGER,
@@ -157,7 +157,7 @@ mysql> create table orders(
 4. 자료 복사 붙이기
 - 워크밴치는 그냥 넣고 번개 누르면 되지만,
 - cli 에서는 붙이고 commit; 해줘야 함
-```roomsql
+```sql
 use sinsaegebookdb;
 INSERT INTO Book VALUES(1, '축구의 역사', '굿스포츠', 7000);
 INSERT INTO Book VALUES(2, '축구 아는 여자', '나무수', 13000);
@@ -197,7 +197,7 @@ commit;
 
 6. 정보 조회 방법
 
-```roomsql
+```sql
 mysql> select phone from customer;
 +---------------+
 | phone         |
@@ -226,7 +226,7 @@ mysql> select phone from customer where name='김연아';
 <br>
 
 7.  book 테이블에서 책이름과 출판사 이름을 뽑는데 가격이 만원이상인거
-```roomsql
+```sql
 mysql> select bookname,publisher from book where price >= 10000;
 +-------------------+------------+
 | bookname          | publisher  |
@@ -244,7 +244,7 @@ mysql> select bookname,publisher from book where price >= 10000;
 <br>
 
 - 출판사 기준 정렬
-```roomsql
+```sql
 mysql> select bookname,publisher from book where price >= 10000 order by publisher;
 +-------------------+------------+
 | bookname          | publisher  |
@@ -262,7 +262,7 @@ mysql> select bookname,publisher from book where price >= 10000 order by publish
 <br>
 
 - bookid 기준 오름 차순
-```roomsql
+```sql
 mysql> select * from book where price >= 10000 order by bookid asc;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -280,7 +280,7 @@ mysql> select * from book where price >= 10000 order by bookid asc;
 <br>
 
 - distinct 로 중보제거 및 desc 로 내림차순
-```roomsql
+```sql
 mysql> select distinct publisher from book where price >= 10000 order by bookid desc;
 +------------+
 | publisher  |
@@ -306,7 +306,7 @@ mysql> select distinct publisher from book where price >= 10000 order by bookid 
 
 8.  문제 모든 도서의 이름과 가격을 검색
 
-```roomsql
+```sql
 mysql> describe book;
 +-----------+-------------+------+-----+---------+-------+
 | Field     | Type        | Null | Key | Default | Extra |
@@ -324,7 +324,7 @@ mysql> describe book;
 
 - describe로 구조 확인 가능
 
-```roomsql
+```sql
 
 mysql> select bookname, price from book;
 +-------------------+-------+
@@ -350,7 +350,7 @@ mysql> select bookname, price from book;
 
 9. 모든 도서의 도서번호, 도서이름, 출판사, 가격 검색
 
-```roomsql
+```sql
 mysql> select * from book ;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -374,7 +374,7 @@ mysql> select * from book ;
 10. 도서 테이블에 있는 모든 출판사 검색
 
 
-```roomsql
+```sql
 mysql> select publisher from book;
 +------------+
 | publisher  |
@@ -404,7 +404,7 @@ mysql> select publisher from book;
 
 11.  가격이 2만원 미만인 도서
 
-```roomsql
+```sql
 mysql> select * from book where price<20000;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -429,7 +429,7 @@ mysql> select * from book where price<20000;
 
 12. 가격 2만원 미만 도서
 
-```roomsql
+```sql
 mysql> select * from book where price<20000;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -446,7 +446,7 @@ mysql> select * from book where price<20000;
 ```
 
 13. 가격이 만원이상 2만원 이하
-```roomsql
+```sql
 mysql> select * from book where price between 10000 and 20000;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -461,7 +461,7 @@ mysql> select * from book where price between 10000 and 20000;
 
 14. 출판사가 굿스포츠 혹은 대한미디어
 
-```roomsql
+```sql
 mysql> select * from book where publisher='굿스포츠' or publisher='대한미디어';
 +--------+-----------------+------------+-------+
 | bookid | bookname        | publisher  | price |
@@ -476,7 +476,7 @@ mysql> select * from book where publisher='굿스포츠' or publisher='대한미
 ```
 
 15. 출판사가 굿스포츠 혹은 대한미디어가 아닌거
-```roomsql
+```sql
 mysql> select * from book where publisher not in('굿스포츠','대한미디어');
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -491,7 +491,7 @@ mysql> select * from book where publisher not in('굿스포츠','대한미디어
 ```
 
 16. 축구의 역사를 출간한 출판사
-```roomsql
+```sql
 mysql> select bookname,publisher from book where bookname='축구의 역사';
 +-------------+-----------+
 | bookname    | publisher |
@@ -502,7 +502,7 @@ mysql> select bookname,publisher from book where bookname='축구의 역사';
 ```
 
 17. 도서 이름에 축구가 포함된 출판사
-```roomsql
+```sql
 mysql> select bookname,publisher from book where bookname like '%축구%';
 +----------------+------------+
 | bookname       | publisher  |
@@ -515,7 +515,7 @@ mysql> select bookname,publisher from book where bookname like '%축구%';
 ```
 
 18.  도서이름의 왼쪽 두번째 위치에 구 라는 문자열 갖는 도서
-```roomsql
+```sql
 mysql> select * from book where bookname like '_구%';
 +--------+-----------------+------------+-------+
 | bookid | bookname        | publisher  | price |
@@ -532,7 +532,7 @@ mysql> select * from book where bookname like '_구%';
 
 19. 축구에 관한 도서중 가격이 2만원 이상인 도서
 
-```roomsql
+```sql
 mysql> select * from book where bookname like '%축구%' and price>=20000;
 +--------+-------------+------------+-------+
 | bookid | bookname    | publisher  | price |
@@ -543,7 +543,7 @@ mysql> select * from book where bookname like '%축구%' and price>=20000;
 ```
 
 20. 도서를 이름 순으로 검색
-```roomsql
+```sql
 mysql> select * from book order by bookname;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -563,7 +563,7 @@ mysql> select * from book order by bookname;
 ```
 
 21. 도서를 가격순으로 검색하고, 가격이 같으면 이름순 검색
-```roomsql
+```sql
 mysql> select * from book order by price,bookname;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |
@@ -582,7 +582,7 @@ mysql> select * from book order by price,bookname;
 ```
 
 22. 도서 가격 내림차순 검색, 같으면 출판사 오름차순
-```roomsql
+```sql
 mysql> select * from book order by price desc, publisher asc;
 +--------+-------------------+------------+-------+
 | bookid | bookname          | publisher  | price |

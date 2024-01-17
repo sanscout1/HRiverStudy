@@ -32,7 +32,7 @@
 ![img.png](../picture/db114.png)
 
 7. 다른 실습
-```roomsql
+```sql
 USE employees;
 -- select emp_no from employees;  주석처리
 -- create table `my test`;  my test 같이 띄어쓰면 원래 안되는데 `` 으로 둘러싸면 된다.
@@ -57,7 +57,7 @@ select first_name as 이름 ,gender 성별, hire_date '회사 입사일' from em
 
 ![img.png](../picture/db115.png)
 
-```roomsql
+```sql
 INSERT INTO buytbl VALUES(NULL, 'KBS', '운동화', NULL   , 30,   2);
 INSERT INTO buytbl VALUES(NULL, 'KBS', '노트북', '전자', 1000, 1);
 INSERT INTO buytbl VALUES(NULL, 'JYP', '모니터', '전자', 200,  1);
@@ -67,7 +67,7 @@ INSERT INTO buytbl VALUES(NULL, 'BBK', '모니터', '전자', 200,  5);
 - `auto_increment` 는 `insert` 할 때 null 을 넣는다.
 
 
-```roomsql
+```sql
 -- 1. sqldb 선택하고, 사용자 중 김경호 씨 정보 출력
 use sqldb;
 SELECT * FROM usertbl;
@@ -147,7 +147,7 @@ select emp_no,hire_date from employees order by hire_date limit 0,5;  -- 시작 
 
 ## group by, having
 
-```roomsql
+```sql
 -- 테이블을 복사하는 select
 -- create table 테이블이름 (select 원하는 속성 지정 from 기존테이블);
 select * from buytbl2;
@@ -201,14 +201,14 @@ select num, groupname, sum(price*amount) as 비용 from buytbl group by groupnam
 - 맨 마지막에는 모두의 합이 나오는것
 - 그룹네임과 num 기준으로 했기 때문에 두 기준에 맞게 rollup 한거
 
-```roomsql
+```sql
 select num, groupname, sum(price*amount) as 비용 from buytbl group by groupname with rollup;
 
 ```
 ![img.png](../picture/db1016.png)
 - 그룹네임으로 묶어서 비용 총합 나오는거 볼수 잇음
 
-```roomsql
+```sql
 
 -- 트랜잭션 : 테이블의 데이터를 변경(입력/수정/삭제) 할 떄 실제 테이블에 완전히 적용하지 않고, 임시로 적용시키는 것. 실수가 있을 경우 취소할 수 있다.
 select * from usertbl;
