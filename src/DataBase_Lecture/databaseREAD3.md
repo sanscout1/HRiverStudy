@@ -1,7 +1,7 @@
 # SSGMARKET 실습
 
 1. db 만들기
-```agsl
+```roomsql
 mysql> create database ssgmarket
     -> ;
 Query OK, 1 row affected (0.01 sec)
@@ -26,7 +26,7 @@ mysql> show databases;
 - 언더바 있는 칼럼은 primary key
 
 3. 테이블 만들기 
-```agsl
+```roomsql
 mysql> CREATE TABLE CUSTOMER(
     -> CUSTOMER_ID VARCHAR(20) NOT NULL,
     -> NAME VARCHAR(20) NOT NULL,
@@ -47,7 +47,7 @@ mysql> SHOW TABLES;
 ```
 
 4. 값 넣기
-```agsl
+```roomsql
 
 mysql> insert into customer values(
     -> 'apple','정소화',20,'gold','학생',1000);
@@ -68,7 +68,7 @@ Query OK, 0 rows affected (0.00 sec)
 - insert 명은 commit; 을 해야 rollback 을 안할 수 있음
 
 5.  product 테이블 만들기
-```agsl
+```roomsql
 mysql> create table product(
     -> PRODUCT_ID CHAR(3) NOT NULL,
     -> PRODUCT_NAME VARCHAR(20),
@@ -94,7 +94,7 @@ mysql> describe product;
 - check문을 통하여 저장할 값의 범위 및 조건을 정해둘 수 있다.
 
 6. 값 여러개 넣기
-```agsl
+```roomsql
 mysql> insert into product values('p01','그냥만두',5000,4500,'대한식품'),
     -> ('p02','매운쫄면',2500,5500,'민국푸드'),
     -> ('p03','콩떡파이',3600,2600,'한빛제과'),
@@ -120,14 +120,14 @@ mysql> select * from product;
 ```
 
 8. 값 수정이 필요하다 UPDATE
-```agsl
+```roomsql
 mysql> update customer set customer_id='melon' where name ='성원용';
 ```
 
 -WHERE로 원하는 튜플을 찾아내서 거기에 원하는 값으로 바꾸자
 
 9. 외래키를 포함한 테이블 생성
-```agsl
+```roomsql
 mysql> create table ORDERS(
     -> ORDER_PRODUCT CHAR(4),
     -> CUSTOMER_ID VARCHAR(20) NOT NULL,
@@ -165,7 +165,7 @@ mysql> DESCRIBE ORDERS
 ```
 
 10. orders 테이블에 값 넣기
-```agsl
+```roomsql
 mysql> INSERT INTO ORDERS VALUES('o02','melon','p01',5,'인천시 계양구','2022-01-10'),
     -> ('o03','banana','p06',45,'경기도 부천시','2022-01-11'),
     -> ('o04','carrot','p02',8,'부산시 금정구','2022-02-01'),
@@ -235,7 +235,7 @@ mysql> SELECT * FROM ORDERS;
 
 
 12. 배송업체 테이블 생성
-```agsl
+```roomsql
 mysql> create table DELIVERY(
     -> DELINO INTEGER NOT NULL,
     -> NAME VARCHAR(20),
@@ -258,7 +258,7 @@ mysql> describe DELIVERY;
 
 
 13. ALTER 문 사용
-```agsl
+```roomsql
 mysql> ALTER TABLE CUSTOMER ADD JOINDATE DATE;
 Query OK, 0 rows affected (0.04 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -277,7 +277,7 @@ mysql> describe CUSTOMER;
 ```
 
 14. 다시 칼럼 삭제
-```agsl
+```roomsql
 mysql> ALTER TABLE CUSTOMER drop column joindate;
 Query OK, 0 rows affected (0.23 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -296,19 +296,19 @@ mysql> describe CUSTOMER;
 ```
 
 15. 고객 테이블에 20세 이상의 고객만 가입할수있는 무결성 제약조건 추가
-```agsl
+```roomsql
 mysql> ALTER TABLE CUSTOMER ADD CONSTRAINT OVERAGE CHECK(AGE >= 20);
 Query OK, 7 rows affected (0.13 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 ```
 - 조건 별명을 `overage` 로 20살 이상만 가능하게 `chekc` 로 넣어주기
-```agsl
+```roomsql
 mysql> insert into customer values('ppp','서유미',18,'골드','학생',1000);
 ERROR 3819 (HY000): Check constraint 'OVERAGE' is violated.
 ```
 
 - 오류 나오는 것 확인
-```agsl
+```roomsql
 mysql> select * from information_schema.table_constraints where constraint_schema = 'ssgmarket';
 +--------------------+-------------------+-----------------+--------------+------------+-----------------+----------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | TABLE_SCHEMA | TABLE_NAME | CONSTRAINT_TYPE | ENFORCED |
@@ -333,7 +333,7 @@ mysql> select * from information_schema.table_constraints where constraint_schem
 - 이유는 모르지만 drop check 하니 된다.
 
 17. 배송 테이블 삭제
-```agsl
+```roomsql
 mysql> drop table delivery;
 Query OK, 0 rows affected (0.03 sec)
 
@@ -348,7 +348,7 @@ mysql> show tables;
 ```
 
 18. 고객 테이블에서 고객아이디, 고객이름 등급속성 검색
-```agsl
+```roomsql
 mysql> select customer_id,name,grade from customer;
 +-------------+--------+--------+
 | customer_id | name   | grade  |
@@ -364,7 +364,7 @@ mysql> select customer_id,name,grade from customer;
 ```
 
 19. 고객테이블에서 성이 김 씨 인 고객의 고객 이름 나이 등급 적립금 검색
-```agsl
+```roomsql
 mysql> select name,age,grade,point from customer where name like '김%';
 +--------+------+--------+-------+
 | name   | age  | grade  | point |
@@ -378,7 +378,7 @@ mysql> select name,age,grade,point from customer where name like '김%';
 ![img.png](../picture/db19.png)
 
 20. 제품 테이블에서 제조업체의 수를 검색
-```agsl
+```roomsql
 
 mysql> select count(p_company) as '제조업체 수' from product group by p_company;
 +-------------+
@@ -391,7 +391,7 @@ mysql> select count(p_company) as '제조업체 수' from product group by p_com
 ```
 - 회사별로 몇개의 제품이 있는지 나와버림
 
-```agsl
+```roomsql
 mysql> select count(distinct p_company)as '제조업체 수'  from product;
 +-------------+
 | 제조업체 수 |
