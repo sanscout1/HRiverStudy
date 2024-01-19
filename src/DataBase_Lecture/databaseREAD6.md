@@ -1,4 +1,5 @@
-# 실습 1
+
+## 실습 1
 
 
 ```sql
@@ -108,7 +109,7 @@ or loc = (select loc from dept where loc = 'dallas');
 ```
 
 
-# 실습 2
+## 실습 2
 ```sql
 -- 이름: demo_sinsaege_advanced.sql
 -- 설명
@@ -256,3 +257,10 @@ select sum(price) from book join cart on cart.bookid = book.bookid  group by car
 
 
 ```
+
+***
+
+
+
+
+
