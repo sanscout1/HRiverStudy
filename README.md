@@ -36,7 +36,8 @@
 
 ## 🎬유튜브 영상 올리기
 
-* [`BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
+* [`5주차 BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
+* [`6주차 dfs 알고리즘 활용 문제풀이 `](https://youtu.be/WaxKKOj0B6U)
 
 
 ***
