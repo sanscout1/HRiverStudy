@@ -19,14 +19,14 @@ public class CalculatorThreadEx {
     }
     public void setMemory2(int memory) {
         synchronized (this) {
-            this.memory = memory;
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-            }finally {
-                System.out.println(Thread.currentThread().getName() + " : " + "현재금액 : " + this.memory);
+        this.memory = memory;
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+        } finally {
+            System.out.println(Thread.currentThread().getName() + " : " + "현재금액 : " + this.memory);
 
-            }
+        }
         }
     }
 
