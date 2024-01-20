@@ -4,22 +4,22 @@
 - dbms 별로 제공 해주는 함수
 - 필요에 따라 사용자 정의 함수도 만들 수 있음
 
-![img.png](db10001.png)
+![img.png](../picture/db10001.png)
 
 
 - 숫자 함수
 
-![img_1.png](db10002.png)
+![img_1.png](../picture/db10002.png)
 
 
 - 문자 함수
-![img.png](db10003.png)
+![img.png](../picture/db10003.png)
 
 - 날짜 함수
 
 ![img.png](database10004.png)
 
-![img.png](db10005.png)
+![img.png](../picture/db10005.png)
 
 
 ```sql
@@ -160,11 +160,60 @@ select 도서이름,고객이름 from highorders;
 # 인덱스 (따로 공부하자)
 
 - 도서의 색인이나 사전과 같이 데이터를 쉽고 빠르게 찾을 수있도록 만든 데이터 구조
+- 데이터의 수정, 삭제 등의 변경이 발생하면 인덱스의 재구성이 필요함
+- 빠른 검색과 함께 효율적인 레코드 접근이 가능함
 
-![img_1.png](db100006.png)
+### 클러스터 인덱스
+- 테이블 전체가 정렬된 인덱스가 되는 방식
+- 실제 데이터와 무리(cluster)를 지어 인덱싱 되므로 클러스터형 인덱스라고 부른다
+- 리프페이지에 데이터가 저장 되어 있다.
+-  테이블당 하나만 생성할 수 있다
+- 특정 컬럼을 PK로 지정하면 클러스터형 인덱스를 생성
+- Unique + Not null로 지정해도 클러스터형 인덱스를 생성
+-  B+Tree의 형태로 구성
+![img.png](../picture/db100002.png)
+
+### 비클러스터 인덱스
+- 보조 인덱스(Secondary Index)라고도 불리며, 클러스터형 인덱스와 다르게 물리적으로 테이블을 정렬하지 않는다
+- 정렬된 별도의 인덱스 페이지를 생성하고 관리
+-  실제 데이터를 함께 가지고 있지 않다
+- 테이블 당 여러개 생성이 가능
+- 인덱스 페이지와 데이터 페이지가 구분
+- 리프페이지에 데이터 페이지의 특정 행을 가리킨다
+
+![img.png](../picture/db1000003.png)
+
+## B+ tree
+![img_1.png](../picture/db100006.png)
+- Leaf Node만 인덱스(Key)와 함께 데이터(Value)를 가지고 있고, 나머지 Root Node와 Branch Node는 데이터를 위한 인덱스(Key)만을 갖는다
 
 
-![img_1.png](db10007.png)
+### 인덱스 생성
+![img_1.png](../picture/db10007.png)
+
+```sql
+create index ix_Book on book(bookname);
+create index ix_Book2 on book(publisher,price);
+show index from book;
+```
+## DB 물리적 저장
+![img.png](../picture/db100001.png)
+
+### InnoDB
+#### 데이터베이스 엔진 (또는 스토리지 엔진)은 DBMS가 데이터베이스에 대해 데이터를 삽입, 추출, 업데이트 및 삭제(CRUD 참조)하는 데 사용하는 기본 소프트웨어 컴포넌트
+- MySQL의 데이터베이스 엔진
+- 트랜잭션을 지원하기 때문에 트랜잭션 세이프 스토리지 엔진
+- MVCC(Multi Versioning Concurrency Control) 구조로 동작
+  - read 수행 시 write 중이어도 Block되지 않음
+  - write 시 배타적 Lock을 얻음
+    - 기본적으로 행 단위로 Lock되며 트랜잭션 종료까지 유지
+    - 격리 수준이나 InnoDB 설정에 따라 실제 Lock되는 행의 범위가 다를 수 있음
+  - write와 write의 경우 나중에 온 트랜잭션이 Lock을 획득하려고 할 때 Block 됨
+- 결론: 내가 생각하는 dbms 의 무결성 관리는 innoDB 가 하는 것
+
+
+
+
 
 
 

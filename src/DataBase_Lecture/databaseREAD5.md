@@ -1,6 +1,6 @@
 ##  조인 문법
 
-![img.png](db10000.png)
+![img.png](../picture/db10000.png)
 
 
 ```sql
