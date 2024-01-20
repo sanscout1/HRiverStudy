@@ -236,7 +236,7 @@ select custid,address from cust_addr where custid=1;
 -- 3) 고객번호 1번의 전화번호 변경 내역을 모두 나타내세요
 select custid,phone from cust_addr where custid=1;
 -- 4) 고객번호 1번의 가입 당시 전화번호를 나타내시오. 단, 가입당시 전화번호는 주소이력(history)중 가장 오래된 것을 찾습니다. 주소변경 이력이 없으면현재 주소를 반환합니다.
-select custid,phone from cust_addr where addrid >= all(select addrid from cust_addr where custid =1);
+select custid,phone from cust_addr where addrid <= all(select addrid from cust_addr where custid =1);
 --  5) 고객번호 1번의 '2024년 01월01일' 당시 전화번호를 나타내세요. 단, 주소 이력 중changeday 속성값이 '2024년 01월 01일'보다 오래된 첫번째 값을 찾습니다. 
 -- 제일 최신 전번 출력하기로 함
 select custid,phone from cust_addr where changeday >= (select changeday from cust_addr where addrid >= all(select addrid from cust_addr where custid =1));
