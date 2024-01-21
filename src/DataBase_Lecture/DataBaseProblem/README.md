@@ -34,6 +34,13 @@ ORDER BY AGE DESC,PT_NAME ASC;
 - `SELECT DATE_FORMAT('2019-09-16 20:23:12', '%Y/%M/%D')`
 - date_formate 은 뒤에 시간 까지 여서 조절하고 싶으면 위에 문장 처럼 조절
 
+### [`select 5번`](https://school.programmers.co.kr/learn/courses/30/lessons/133024)
+```sql
+SELECT flavor from first_half group by flavor order by sum(total_order) desc, shipment_id asc;
+```
+- 손쉽게 정답
+
+
 ![img.png](db10001.png)
 
 ```sql

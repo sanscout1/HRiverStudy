@@ -17,7 +17,7 @@
 
 - 날짜 함수
 
-![img.png](database10004.png)
+![img.png](../picture/database10004.png)
 
 ![img.png](../picture/db10005.png)
 
