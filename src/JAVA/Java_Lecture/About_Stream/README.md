@@ -8,7 +8,7 @@
 - 스트림 API : 연속적인 데이터의 흐름을 반복적으로 또는 연산하여 처리하는 기능 (map, reduce, filter, sort)
 
 ### 스트림 인터페이스
-![img.png](../../picture/stream01.png)
+![stream01.png](..%2F..%2F..%2Fpicture%2Fstream01.png)
 
 ### 스트림 특징
 - 스트림 연산은 기존 자료를 변경하지 않는다.
@@ -20,7 +20,7 @@
 - 람다식으로 다양한 요소 처리 정의
 - 중간처리와 최종 처리를 수행하도록 파이프 라인을 형성
 
-![img.png](../../picture/iterartorvsStream.png)
+![iterartorvsStream.png](..%2F..%2F..%2Fpicture%2FiterartorvsStream.png)
 
 ## 중간 연산, 최종 연산
 ### 중간 연산
