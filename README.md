@@ -2,7 +2,7 @@
 
 ## 📝 수업 공부
 
-* [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
+* [`JAVA`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
 * [`DataBase`](src%2FDataBase_Lecture)
 
 ### ⌨️ 실습 과제
