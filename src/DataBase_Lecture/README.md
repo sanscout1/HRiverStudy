@@ -306,6 +306,7 @@
 ## [**데이터베이스 실습 기본4**](databaseREAD5.md)
 ## [**데이터베이스 실습 기본5**](databaseREAD6.md)
 ## [**데이터베이스 실습 기본6**](databaseREAD7.md)
+## [**데이터베이스 실습 기본7**](databaseREAD8.md)
 
 ***
 
