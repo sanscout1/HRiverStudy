@@ -215,6 +215,68 @@ insert into movietbl values (3,'라스트 모히칸','마이클 만','다니엘 
         );
         
 select * from movietbl;
+commit;
+
+
+
+
+
+
+-- TEXT 파일로 내려받기
+select m_script from movietbl where m_id = 1
+	into outfile 'C:/datasource/movies_add/out/schindelr_out.txt'
+    lines terminated by '\\n';     -- 줄바꿈 문자도 그대로 저장하기 위한 옵션
+    
+-- 영화 쉰들러 리스트의 영화대본(m_script)를 schinder_out.txt 파일로 다운받겠다. 
+
+
+-- 바이너리 파일로 영화클립 파일 다운로드
+select m_film from movietbl where m_id=3
+	into dumpfile 'C:/datasource/movies_add/out/mohican_out.mp4';
+    
+    
+-- 피벗 (pivot) 열에 포함된 여러 값을 출력하고,   여러 열로 변환하여 테이블 반환 식을 회전하고 필요하면 집계까지 수행하는 작업
+create table pivotTest (
+	name char(3),
+    season char(2),
+    amount int);
+    
+insert into pivotTest values ('ss1','여름',10);
+insert into pivotTest values ('ss2','가을',10);
+insert into pivotTest values ('ss3','겨울',10);
+insert into pivotTest values ('ss4','봄',10);
+select * from pivotTest;
+select name,
+	sum(if(season='봄',amount,0)) as '봄',
+	sum(if(season='여름',amount,0)) as '여름',
+	sum(if(season='가을',amount,0)) as '가을',
+	sum(if(season='겨울',amount,0)) as '겨울',
+    sum(amount) as '합계' from pivotTest group by name;
+
+-- JSON 데이터
+-- 웹과 모바일 으용 프로그램 등과 데이터를 교환하기 위한 개방형 표준 포맷이다. (속성 : 값) 독립적인 데이터 포맷이다.
+use sqldb;
+select * from usertbl;
+desc usertbl;
+select json_object('name',name,'height',height) as 'JSON 값' from usertbl where height >= 180;
+
+set @json = '{
+	"usertbl": [{"name":"임재범","height":"182"},{"name":"이승기","height":"182"},{"name":"성시경","height":"186"}]
+    }';
+    
+select json_valid(@json) as json_valid;
+select json_search(@json,'one','성시경') as json_search;  -- one 하면 최초 발견값만 리턴, all 하면 모든 값 리턴
+select json_extract(@json,'$.usertbl[2].name') as json_extract;
+
+select json_insert(@json,'$.usertbl[0].mdate','2024-01-21') as json_insert;
+select json_replace(@json,'$.usertbl[0].name','신세계') as json_replace;
+select json_remove(@json,'$.usertbl[0]') as json_remove;
+
+
+
+
+
+
 
 -- m_script, m_film 에 null 해결 방법
 -- 1. 최대 패킷 크기 확인 (= 최대 파일 크기)
@@ -257,6 +319,7 @@ C:\ProgramData\MySQL\MySQL Server 8.0>exit
 
 그 후에 mysql administration startup 으로 서버 종료후 다시 실행
 */
+
 
 
 
