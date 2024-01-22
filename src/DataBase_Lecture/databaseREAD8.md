@@ -264,11 +264,15 @@ C:\ProgramData\MySQL\MySQL Server 8.0>exit
 
 ### powershell 들어가서 my.ini 파일을 notepad로 열고 바꿔야 하는 설정
 1. 사이즈 허용
+
 ![img.png](../picture/moviedb01.png)
 2. 파일 경로 변경
+
 ![img_1.png](../picture/moviedb02.png)
 3. 위 설정 변경하면 이렇게 표시가 잘 된다.
+
 ![img.png](../picture/moviedb03.png)
 
 - 윈도우 경로에 C:\ProgramData 로 들어가면 my.ini 파일 볼 수 있다.
+
 ![img.png](moviedb04.png)
