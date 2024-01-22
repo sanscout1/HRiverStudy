@@ -1,4 +1,4 @@
-# OperatingSystem
+# CS.OperatingSystem
 
 ## 운영체제 소개
 

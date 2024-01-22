@@ -3,7 +3,7 @@
 ## 📝 기초 공부
 
 * [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
-* [`OperatingSystem`](src%2FOperatingSystem%2FOSindex.md)
+* [`CS.OperatingSystem`](src%2FOperatingSystem%2FOSindex.md)
 * [`ComputerNetworking`](src%2FComputerNetworking_TopDownApproach)
 * [`DataBase`](src%2FDataBase_Lecture)
 
@@ -30,7 +30,8 @@
 ## 📗 도서 목록
 
 * [`객체지향의 사실과 오해`](src%2FBookList%2FObjectRealMisunderstand%2FREADME.md)
-
+* [`그림으로 배우는 리눅스 구조`](src%2FBookList%2FHowLinuxislearnedbydrawing)
+* [`그림과 실습으로 배우는 도커 & 쿠버네티스`](src%2FBookList%2FDocker_kubernetes)
 
 ***
 
@@ -43,6 +44,6 @@
 ***
 ## 🏃‍♂이번 주 할 일
 
-* [`HRiver Working Now`](https://trello.com/b/XqfPmlF5/hriver-working)
+* [`HRiver Doing`](https://trello.com/b/XqfPmlF5/hriver-working)
 
 
