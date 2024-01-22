@@ -1,16 +1,11 @@
 # STUDY
 
-## 📝 기초 공부
+## 📝 수업 공부
 
 * [`JAVA 기본`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Lecture)
-* [`OperatingSystem`](src%2FCS%2FOperatingSystem)
-* [`ComputerNetworking`](src%2FCS%2FComputerNetworking_TopDownApproach)
 * [`DataBase`](src%2FDataBase_Lecture)
 
-***
-
-
-## ⌨️ 실습 과제
+### ⌨️ 실습 과제
 
 * [`주간 과제 목록`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_assignments)
 * [`퀴즈`](https://github.com/sanscout1/javaStudy/tree/main/src/Java\_Test)
@@ -20,6 +15,11 @@
 #### Book Project
 - [`BookProjectList`](src%2FJava_Test%2FBookProjectList)
 
+***
+
+## CS 공부
+* [`OperatingSystem`](src%2FCS%2FOperatingSystem)
+* [`ComputerNetworking`](src%2FCS%2FComputerNetworking_TopDownApproach)
 ***
 
 ## 📜알고리즘

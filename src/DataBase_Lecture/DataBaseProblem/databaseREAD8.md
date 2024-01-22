@@ -20,4 +20,9 @@
     - BLOB 형식 - 사진, 동영상파일, 대용량의 글자를 저장하기 위한 데이터타입
     - SET 
 3) 날짜/시간
-    - 
+    - DATE (3) YYYY-MM-DD 형식
+    - DATETIME (8) YYYY-MM-DD HH:MM:SS
+4) 지도/JSON 데이터 형식
+    - GEOMETRY : 공간데이터 형식으로 선,점, 다각형같은 공간개체를 저장,조작
+    - JSON : (JavaScript Object Notation) 
+
