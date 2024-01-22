@@ -2,7 +2,7 @@
 - 한 프로세스안에서 동시에 여러 작업들을 수행할 수 있게 해주는 프로세스 안의 작은 프로세스
 -  `쓰레드 ID`, `프로그램 카운터(Program Counter, PC)`, `레지스터 집합(Register Set)`, `스택(Stack)`으로 구성
 - 같은 프로세스에 속한 다른 쓰레드와 `코드(code)`, `데이터(data) 영역`, `열린 파일`이나 신호와 같은 운영체제의 자원들을 공유
-![img.png](../picture/Thread03.png)
+![Thread03.png](..%2F..%2Fpicture%2FThread03.png)
 
 ## 쓰레드 장점
 - 응답성(Responsiveness) : 응용 프로그램이 긴 작업을 수행하더라도 프로그램의 수행이 계속되는 것을 허용함
@@ -22,7 +22,8 @@
   - 하나의 사용자 쓰레드가 블록되면 전체 프로세스가 봉쇄됨
   - 다중 쓰레드가 다중 처리기에서 수행되도 병렬로 작동 불가능
   
-![img.png](../picture/thread04.png) <br>
+![thread04.png](..%2F..%2Fpicture%2Fthread04.png)
+<br>
   
   
 - 일대일 모델(One-to-One Model)
@@ -30,14 +31,14 @@
   - 하나의 쓰레드가 블록되어도 다른 쓰레드가 수행 가능하기 때문에 많은 병렬성 제공
   - 다중 처리기에서 다중 쓰레드가 병렬로 수행되는 것을 허용
   - 단점 : 사용자 쓰레드를 생성할 때 커널 쓰레드도 생성되기 때문에 응용 프로그램의 성능이 저하됨
-![img.png](../picture/Thread05.png)
+![Thread05.png](..%2F..%2Fpicture%2FThread05.png)
 
 - 다대다 모델(Many-to-Many Model)
   - 여러 개의 사용자 수준 쓰레드를 그보다 작거나 같은 수의 커널 쓰레드로 매핑함
   - 하나의 사용자 쓰레드가 블록되어도 다른 사용자 쓰레드를 실행 시킬수 있음 (병렬성)
   - 개발자가 필요한 만큼의 사용자 쓰레드를 생성할 수 있음
   - 
-![img.png](../picture/thread06.png)
+![thread06.png](..%2F..%2Fpicture%2Fthread06.png)
 
 - 다대다 모델의 변형, 두 수준 모델(Two-Level Model)
   - 두 수준 모델은 다대다 모델의 변형으로 많은 사용자 쓰레드를 적거나 같은 수의 커널 쓰레드로 매핑시키는 것을 유지하지만 하나의 사용자 쓰레드가 하나의 커널 쓰레드에 종속되도록 합니다
@@ -283,7 +284,7 @@ public class Driver {
 -  실제로 CPU 상에서 실행되기 위해서는 운영체제가 커널 쓰레드를 물리적인 CPU로 스케줄하는 것을 필요로 합니다
 - CPU 상에 어느 커널 쓰레드를 스케줄할 것인지 결정하기 위해서는 커널은 시스템-경쟁 범위(system-contention scope, SCS)를 사용
 
-![img.png](../picture/Thread07.png)
+![Thread07.png](..%2F..%2Fpicture%2FThread07.png)
 
 ### 2. C 언어 기반 Pthread 스케줄링 예제
 
