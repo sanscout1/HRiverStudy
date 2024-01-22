@@ -50,7 +50,7 @@
     <br><br>
    - 쓰레드 정지 관련 메서드
      
-     ![img.png](../../picture/therad01.png)
+ ![therad01.png](..%2F..%2F..%2Fpicture%2Ftherad01.png)
 
 2. Runnable 인터페이스 : run();
 
@@ -61,7 +61,7 @@
 - 동기화 메소드 나 해당 영역 실행시 즉시 잠금 일어나고, 실행 끝나면 잠금 풀림
 - 객체 데이터에 공유할 예정인 곳에는 모두 `sychronized` 추가 해야하며, 안하면 비정상 접근 발생
 
-![img.png](../../picture/thread02.png)
+![thread02.png](..%2F..%2F..%2Fpicture%2Fthread02.png)
 
 
 - 예제 코드
