@@ -24,5 +24,9 @@
     - DATETIME (8) YYYY-MM-DD HH:MM:SS
 4) 지도/JSON 데이터 형식
     - GEOMETRY : 공간데이터 형식으로 선,점, 다각형같은 공간개체를 저장,조작
-    - JSON : (JavaScript Object Notation) 
+    - JSON : (JavaScript Object Notation) {id:'jack' , age : 20 ....}
+
+5) SQL 변수 사용
+   - SET @변수이름 = 값; -- 변수의 선언 및 값 대입
+        SELECT @변수이름
 
