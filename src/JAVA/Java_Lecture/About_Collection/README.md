@@ -3,7 +3,7 @@
 - 프레임워크 : 미리 준비되어진 구조나 기능
 - 컬렉션 : 객체를 수집하고 저장해서 관리 (CRUD)
 
-![img.png](../../picture/collection01.png)
+![collection01.png](..%2F..%2F..%2Fpicture%2Fcollection01.png)
 - map 은 collection implement는 아니지만 자료구조로 묶어서 설명
 - collection 은 Iterable<E> 을 상속중
 - list set 은 공통된 메소드가 존재 (상속중이기 때문에 collection을)
@@ -22,7 +22,7 @@
 - index 가 있다 --- 순서가 있다, 인덱스로 검색 삭제 기능 제공
 - 중복 객체 허용
 - 순서에 따라 객체를 관리한다.
-![img.png](../../picture/list01.png)
+![list01.png](..%2F..%2F..%2Fpicture%2Flist01.png)
 - arraylist는 삽입할때마다 공간을 만들어서(미리 공간을 확보함) 삽입 시간이 오래걸림
 
 
@@ -54,7 +54,7 @@
 - 순서 x
 
 
-  ![img.png](../../picture/set01.png)
+ ![set01.png](..%2F..%2F..%2Fpicture%2Fset01.png)
 - 다른 객체라도 hashCode() 메소드의 리턴값이 같고, equals() 메소드가true를 리턴하면동일한 객체라고 판단하고 중복 저장하지 않음
 - class Member 를 hashset에 사용할려면 hashcode 와 equals 오버라이딩 해야함
 ***
@@ -71,7 +71,7 @@
 - [`Member.java`](SetExample%2FMember.java)
 
 
-![img.png](../../picture/iterator01.png)
+![iterator01.png](..%2F..%2F..%2Fpicture%2Fiterator01.png)
 - `iterator` 활용하여 검색 해서 빼옴
 
 #### [`iterator 및 set 코드 확인`](SetExample%2FHashSetEx01.java)
@@ -84,7 +84,7 @@
 <img src="https://www.mathwarehouse.com/programming/images/binary-search-tree/binary-search-tree-sorted-array-animation.gif" />
 
 - 메소드
-![img.png](../../picture/treeset01.png)
+![treeset01.png](..%2F..%2F..%2Fpicture%2Ftreeset01.png)
 - [`TreeSet 예제`](TreeSetEx%2FTreeSetEx.java)
 
 ***
@@ -97,13 +97,13 @@
 - 키와 값으로 구성된 엔트리
 - 키값에 클래스가 들어간다면, 객체의 비교 구분을 하기 위하여 hashcode와 equals의 오버라이딩을 해야한다! (hashset 오버라이딩 참고)
 
-![img.png](../../picture/map01.png)
+![map01.png](..%2F..%2F..%2Fpicture%2Fmap01.png)
 
-![img.png](../../picture/entry01.png)
+![entry01.png](..%2F..%2F..%2Fpicture%2Fentry01.png)
 
 ### HashMap
 
-![img.png](../../picture/hashmap01.png)
+![hashmap01.png](..%2F..%2F..%2Fpicture%2Fhashmap01.png)
 
 #### [`해쉬맵과 set 및 Iterator 활용 예제`](HashMapExample%2FHashMapMain.java)
 
@@ -124,7 +124,7 @@
 - SortedMap 인터페이스로 구현
 - ket 기준으로 정렬 된다
 - 정렬 순서는 숫자, 알파벳 대문자, 소문자, 한글 순
-![img.png](../../picture/treemap02.png)
+![treemap02.png](..%2F..%2F..%2Fpicture%2Ftreemap02.png)
 #### [TreeMapEx 예제](TreeMapEx%2FTreeMapEx.java)
 
 
@@ -147,7 +147,7 @@
 
 
 - 메소드
-![img.png](../../picture/treemap01.png)
+![treemap01.png](..%2F..%2F..%2Fpicture%2Ftreemap01.png)
 
 #### [`comparable 기본 구조`](about_Comparator%2FSortingEx.java)
 #### [`comparable 구조 예제`](about_Comparator%2FmemberComparator%2FMember.java)
