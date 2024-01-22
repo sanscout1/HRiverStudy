@@ -2,7 +2,7 @@
 
 
 ## 1.1 A Nuts-and-Bolts Description (인터넷의 구성 요소)
-![img.png](../picture/hostendsystem01.png)
+![hostendsystem01.png](..%2F..%2Fpicture%2Fhostendsystem01.png)
 ### 1) 인터넷 : 수억 디바이스들의 연결된 컴퓨터 네트워크
    1. host, end system
       - 네트워크에 연결된 모든 디바이스들
@@ -60,7 +60,7 @@
   <br><br><br><br>
 ### 1) 접속 네트워크(access network)
 - 경로 상에 있는 첫 번째 라우터 즉, 가장 자리 라우터(edge router)에 연결하는 네트워크
-![img.png](../picture/accessNetwork01.png)
+![accessNetwork01.png](..%2F..%2Fpicture%2FaccessNetwork01.png)
 - 색칠 된 경로가 접속 네트워크
   <br><br>
 #### 가정 접속 : DSL (digital subscriber line), 케이블, FTTH, 위성 기술
@@ -78,7 +78,7 @@
       <br><br>
 - #### Cable Internet Access (hybrid fiber coax HFC)
   - 동축케이블과 광섬유의 조합, end system(집)에서 나온 동축케이블들을 `Fiber node(neighborhood junction)` 부터는 광케이블로 `cable head end ` 와 연결
-![img.png](../picture/hfc01.png)
+![hfc01.png](..%2F..%2Fpicture%2Fhfc01.png)
   - `헤드엔드` :  신호를 가공, 증폭한 다음 분배해주는 시설 
   - `케이블 모뎀` : 케이블 인터넷 접속을 위한 모뎀 
         - `CMTS` : 아날로그 신호를 디지털 신호 포맷으로 변환, HFC 네트워크를 다운스트림과 업스트림 채널 2개로 나눈다. (DSL과 똑같음)
@@ -101,7 +101,7 @@
   - #### AON(Active Optical Network)과 PON(Passive Optical Network)
     - `스플리팅(splitting)` : 일반적으로 CO에서 시작되는 각 광섬유는 여러 가정이 공유하기 때문에, 가정에 가까운 곳까지 하나의 광섬유로 온 다음 고객별 광섬유로 분리하는 것
     - `AON` : 근본적인 교환(switched) 이더넷 , 점대점 연결
-    - `PON` : ![img.png](../picture/PON01.png)
+    - `PON` : ![PON01.png](..%2F..%2Fpicture%2FPON01.png)
       - 각 가정은 `ONT(Optical Network Terminator)`를 가지고 있으며, 이는 지정된 광섬유로 이웃 스플리터에 연결된다.
       - `스플리터(Optical Splitter)`는 여러 가정을 하나의 공유 광섬유로 결합, 이를 텔코의 CO에 있는 `OLT(Optical Line Terminator)`에 연결한다.
       - OLT는 광신호와 전기 신호 간의 변환을 제공, 이는 텔코 라우터를 통해 인터넷에 연결된다.
@@ -109,7 +109,7 @@
 <br><br><br><br>
       
 - #### 기업(그리고 가정) 접속
-  ![img.png](../picture/ethernet01.png)
+![ethernet01.png](..%2F..%2Fpicture%2Fethernet01.png)
     - LAN(Local Area Network)
       - 종단 시스템을 가장자리 라우터에 연결하는 데 사용된다.
       - 여러 유형의 LAN 기술 중, 이더넷 기술이 기업, 대학, 홈 네트워크에서 가장 널리 사용되는 접속 기술
