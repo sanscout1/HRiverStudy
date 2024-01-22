@@ -49,7 +49,7 @@ int main()
 -  fork() 함수를 호출하면 부모 프로세스는 자식 프로세스 번호를 반환받고 wait() 함수로 인하여 대기
 - 자식 프로세스의 "ls" 명령어를 수행하고 부모 프로세스가 대기를 풀고 출력문을 수행 (exit() 함수는 명시해도 되지만 여기서는 숨겨서 표현)
 
-![img.png](../picture/osfork01.png)
+![osfork01.png](..%2F..%2Fpicture%2Fosfork01.png)
 
 
 ## 프로세스 종료
@@ -85,7 +85,7 @@ int main()
 
 ***
 
-![img.png](../picture/sharedmessage.png)
+![sharedmessage.png](..%2F..%2Fpicture%2Fsharedmessage.png)
 
 ## 공유메모리
 - 메세지 송수신
@@ -152,11 +152,11 @@ Message-Passing 기능의 두가지 기능
 - 메세지 통신 옵션 (blocking : 동기화 , nonblocking : 비동기화 이다 )
   - Blocking send : 송신과정을 막는다 , 메시지가 수신과정이나 메일박스에 받아질 때 까지
   - Blocking receive : 메시지를 사용할 수 있을 때까지 차단
-![img.png](../picture/blocking01.png)
+![blocking01.png](..%2F..%2Fpicture%2Fblocking01.png)
 
   - nonblocking send : 송신과정은 메세지를 보내고 다른 일 수행
   - Nonblocking receive : 수신자가 유효한 메세지나 null 을 수신
-![img.png](../picture/unblocking.png)
+![unblocking.png](..%2F..%2Fpicture%2Funblocking.png)
 
 #### 메세지 임시 대기열 세가지 방법 (buffering)
 
@@ -206,7 +206,7 @@ int main()
 
 // mach message passing, windows 160p
 ###  Mach message passing
-![img.png](../picture/mach01.png)
+![mach01.png](..%2F..%2Fpicture%2Fmach01.png)
 
 ### 윈도우즈 시스템
 - `advanced loval procedure call (LPC)` 을 통해 message passing을 사용
@@ -234,7 +234,7 @@ int main()
    - 단방향 통신, write end 에서 read end로 전송만 가능
    - 양방향 통신이 필요하다면 파이프 2개를 이용해서 다른 방향으로 전송해야함
    - 일반적으로 부모 프로세스는 파이프를 생성하여 생성한 자식 프로세스와 통신하기 위하여 사용됩니다.
-   - ![img.png](../picture/pipeimg01.png)
+   - ![pipeimg01.png](..%2F..%2Fpicture%2Fpipeimg01.png)
 2. 명명 파이프(Named pipes)
    - 명명 파이프는 부모-자식 프로세스 관계없이 접근이 가능함
 
@@ -246,7 +246,7 @@ int main()
 - 소켓은 ip address 와 port number 가 결합된 식별자
 - 소켓은 연결의 종단점
 
-![img.png](../picture/socket01.png)
+![socket01.png](..%2F..%2Fpicture%2Fsocket01.png)
 
 - web server의 ip 주소는 161.25.19.8이고 port 넘버는 80
 -  host x의 ip 주소는 146.86.5.20이고 포트넘버는 1625
