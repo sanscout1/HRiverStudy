@@ -10,10 +10,10 @@
 * [`주간 과제 목록`](src%2FJAVA%2FJava_assignments)
 * [`퀴즈`](src%2FJAVA%2FJava_Test)
 * [`재고관리 유스케이스`](src%2FJAVA%2FJava_assignments%2FHR_usecaseAssignment)
-* [`BoardProject 시험`](src%2FJava_Test%2FBoardProject_2)
+* [`BoardProject 시험`](src%2FJAVA%2FJava_Test%2FBoardProject_2)
 
 #### Book Project
-- [`BookProjectList`](src%2FJava_Test%2FBookProjectList)
+- [`BookProjectList`](src%2FJAVA%2FJava_Test%2FBookProjectList)
 
 ***
 
