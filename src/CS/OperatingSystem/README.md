@@ -209,6 +209,6 @@
 <img src="https://github.com/sanscout1/HRiverStudy/blob/main/src/picture/contextSwitch01.png?raw=true" width="50%">
 
 ***
-* [`프로세스의 이해 2`](https://github.com/sanscout1/javaStudy/tree/main/src/OperatingSystem/README2.md)
+* [`프로세스의 이해 2`](README2.md)
 
 
