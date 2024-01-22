@@ -101,3 +101,19 @@ CASE   WHEN freezer_yn IS NULL THEN "N"
   END AS freezer_yn 
 ```
  - `case when` 칼럼 조건 `then` 넣을 값  `else` 넣을 값 `end` as 별명
+
+
+### [`String,Date 1번`](https://school.programmers.co.kr/learn/courses/30/lessons/151138)
+
+```sql
+SELECT HISTORY_ID, CAR_ID, DATE_FORMAT(START_DATE, "%Y-%m-%d"), DATE_FORMAT(END_DATE, "%Y-%m-%d"),
+    CASE WHEN DATEDIFF(END_DATE, START_DATE)+1 < 30 THEN "단기 대여" ELSE "장기 대여" END AS RENT_TYPE
+    FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+    WHERE START_DATE BETWEEN "2022-09-01" AND "2022-09-30"
+    ORDER BY HISTORY_ID DESC
+```
+- 이 부분은 외워야 할 것이 많다.
+1. `DATE_FORMAT(START_DATE, "%Y-%m-%d")` date_format 사용 방법
+2. `CASE WHEN DATEDIFF(END_DATE, START_DATE)+1 < 30 THEN "단기 대여" ELSE "장기 대여" END AS RENT_TYPE`
+   - datediff(end_date, start_date) : 날짜 차이 값 보여주는 함수
+   - case when 조건식 then true값 반환 else false 값 반환 end as 타입값
