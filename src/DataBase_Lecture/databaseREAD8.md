@@ -18,6 +18,8 @@
       - LONGTEXT 4G 까지 저장 가능
     - ENUM() 열거형 데이터 값
     - BLOB 형식 - 사진, 동영상파일, 대용량의 글자를 저장하기 위한 데이터타입
+      - longblob : 4기가 (4294967295바이트)까지 저장
+      - medium : 16메가바이트 (16777215 바이트)
     - SET 
 3) 날짜/시간
     - DATE (3) YYYY-MM-DD 형식
@@ -275,4 +277,4 @@ C:\ProgramData\MySQL\MySQL Server 8.0>exit
 
 - 윈도우 경로에 C:\ProgramData 로 들어가면 my.ini 파일 볼 수 있다.
 
-![img.png](moviedb04.png)
+![img.png](../picture/moviedb04.png)
