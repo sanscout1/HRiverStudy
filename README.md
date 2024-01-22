@@ -2,7 +2,7 @@
 
 ## 📝 수업 공부
 
-* [`JAVA`][Java_Lecture](src%2FJAVA%2FJava_Lecture)
+* [`JAVA`](src%2FJAVA%2FJava_Lecture)
 * [`DataBase`](src%2FDataBase_Lecture)
 
 ### ⌨️ 실습 과제
