@@ -97,7 +97,7 @@ public class ConsumerExam {
                     }
                     }
 ```
-![img.png](../../picture/consumer.png)
+![consumer.png](..%2F..%2F..%2Fpicture%2Fconsumer.png)
 ### Supplier
 - 매개 값이 없고 리턴값이 있는 get() 메소드
 -  실행 후 호출한 곳으로 데이터를 공급하는 역할
@@ -115,7 +115,7 @@ public class SupplierExam {
     }
 }
 ```
-![img.png](../../picture/supplier01.png)
+![supplier01.png](..%2F..%2F..%2Fpicture%2Fsupplier01.png)
 
 ### Predicate
 -  매개 변수와 boolean 리턴값이 있는 test() 메소드
@@ -125,7 +125,7 @@ public class SupplierExam {
 Predicate<String> isEmpty = String::isEmpty;
         System.out.println(isEmpty.test(""));
 ```
-![img.png](../../picture/predicate01.png)S
+![predicate01.png](..%2F..%2F..%2Fpicture%2Fpredicate01.png)
 ### Function<T,R>
 - 매개변수, 리턴
 - 할당된 람다 표현식은 `apply()` 메서드를 구현
@@ -148,7 +148,7 @@ public static void main(String args[]) {
   System.out.println("100 * 50 = " + biFunctionMultiple.apply(100, 50));
 }
 ```
-![img.png](../../picture/function01.png)
+![function01.png](..%2F..%2F..%2Fpicture%2Ffunction01.png)
 - [`람다생성자 util.function 예제 코드`](LamdaConstructorEx.java)
 > https://scshim.tistory.com/287 
 
