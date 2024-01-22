@@ -273,25 +273,7 @@ public class Driver {
 
 
 ***
-## 쓰레드 스케줄링  (나중에 이해안되면 다시 정리하자) https://yonghwankim-dev.tistory.com/251
 
-### 1. 경쟁범위
-- 동일한 프로세스에 속한 쓰레드들 사이에서 CPU를 경쟁하기 때문에 프로세스-경쟁-범위(process-contention scope, PCS)
-- 사용자 수준 쓰레드는 쓰레드 라이브러리가 사용이 가능한 LWP에 사용자 수준 쓰레드를 스케줄링하는 것
-- 프로세스-경쟁-범위(PCS)는 동일한 프로세스 범위에서 프로세스에 속한 쓰레드들이 CPU를 할당받기 위해 경쟁
-
-
--  실제로 CPU 상에서 실행되기 위해서는 운영체제가 커널 쓰레드를 물리적인 CPU로 스케줄하는 것을 필요로 합니다
-- CPU 상에 어느 커널 쓰레드를 스케줄할 것인지 결정하기 위해서는 커널은 시스템-경쟁 범위(system-contention scope, SCS)를 사용
-
-![Thread07.png](..%2F..%2Fpicture%2FThread07.png)
-
-### 2. C 언어 기반 Pthread 스케줄링 예제
-
-- POSIX Pthread API는 쓰레드를 생성하면서 PCS 또는 SCS를 지정할 수 있습니다
-
-- PTHREAD_SCOPE_PROCESS : PCS 스케줄링을 사용하여 쓰레드를 스케줄링
-- PTHREAD_SCOPE_SYSTEM : SCS 스케줄링을 사용하여 쓰레드를 스케줄링
-
+https://yonghwankim-dev.tistory.com/231 정리할것
 
 
