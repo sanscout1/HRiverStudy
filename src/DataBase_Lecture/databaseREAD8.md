@@ -278,3 +278,10 @@ C:\ProgramData\MySQL\MySQL Server 8.0>exit
 - 윈도우 경로에 C:\ProgramData 로 들어가면 my.ini 파일 볼 수 있다.
 
 ![img.png](../picture/moviedb04.png)
+
+
+
+
+
+
+
