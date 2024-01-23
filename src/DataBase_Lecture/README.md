@@ -307,7 +307,7 @@
 ## [**Join**](databaseREAD6.md)
 ## [**내장함수**](databaseREAD7.md)
 ## [**mysql 데이터 형식, 심화**](databaseREAD8.md)
-## [**데이터베이스 실습 기본8**](databaseREAD9.md)
+## [**procedure**](databaseREAD9.md)
 
 ***
 
