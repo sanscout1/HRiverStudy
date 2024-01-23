@@ -219,6 +219,84 @@ order by member_id;
 
 ***
 
+### [`join 2번`](https://school.programmers.co.kr/learn/courses/30/lessons/157339)
+
+```sql
+SELECT DISTINCT CAR.CAR_ID
+      ,CAR.CAR_TYPE
+      ,ROUND(DAILY_FEE * (1- (DISCOUNT_RATE / 100)) * 30) AS FEE
+
+FROM CAR_RENTAL_COMPANY_CAR CAR 
+INNER JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY HISTORY ON CAR.CAR_ID = HISTORY.CAR_ID
+INNER JOIN CAR_RENTAL_COMPANY_DISCOUNT_PLAN DISCOUNT ON CAR.CAR_TYPE = DISCOUNT.CAR_TYPE
+WHERE CAR.CAR_ID NOT IN (
+    SELECT CAR_ID
+    FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+    WHERE END_DATE > '2022-11-01' 
+    AND START_DATE < '2022-11-30'
+)
+     AND CAR.CAR_TYPE IN ('세단', 'SUV')
+     AND DISCOUNT.DURATION_TYPE = '30일 이상'
+HAVING FEE BETWEEN 500000 AND 2000000
+ORDER BY FEE DESC, CAR_TYPE, CAR_ID DESC
+```
+
+### [`join 3번`](https://school.programmers.co.kr/learn/courses/30/lessons/131117)
+
+```sql
+SELECT a.PRODUCT_ID,PRODUCT_NAME, sum(price*amount) as TOTAL_SALES
+from FOOD_PRODUCT a join FOOD_ORDER b on a.PRODUCT_ID = b.PRODUCT_ID
+where month(PRODUCE_DATE) = 5
+group by PRODUCT_ID
+order by TOTAL_SALES desc, PRODUCT_ID
+```
+
+***
+
+### [`join 4번`](https://school.programmers.co.kr/learn/courses/30/lessons/144854)
+
+```sql
+SELECT BOOK_ID,AUTHOR_NAME,date_format(PUBLISHED_DATE,'%Y-%m-%d') PUBLISHED_DATE
+from BOOK a join AUTHOR b on a.AUTHOR_ID= b.AUTHOR_ID
+where CATEGORY='경제'
+order by PUBLISHED_DATE;
+```
+
+***
+
+### [`join 5번`](https://school.programmers.co.kr/learn/courses/30/lessons/131124)
+
+```sql
+SELECT MEMBER_NAME,REVIEW_TEXT,date_format(REVIEW_DATE,'%Y-%m-%d') REVIEW_DATE
+from MEMBER_PROFILE a join REST_REVIEW b on a.MEMBER_ID=b.MEMBER_ID 
+where a.member_id 
+= (select member_id from REST_REVIEW group by  member_id 
+                     order by count(REVIEW_ID) desc limit 1)
+order by REVIEW_DATE,REVIEW_TEXT;
+```
+
+***
+
+### [`join 6번`](https://school.programmers.co.kr/learn/courses/30/lessons/59042)
+
+```sql
+SELECT b.ANIMAL_ID,b.NAME
+from ANIMAL_INS a right join ANIMAL_OUTS b on a.ANIMAL_ID=b.ANIMAL_ID
+where a.ANIMAL_ID is null
+order by ANIMAL_ID;
+```
+
+***
+
+### [`join 7번`](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
+
+```sql
+
+```
+
+***
+
+
 ### [`group by 1번`](https://school.programmers.co.kr/learn/courses/30/lessons/131123)
 ```sql
 SELECT food_type,rest_id,rest_name,favorites from REST_INFO 
@@ -305,11 +383,107 @@ order by CAR_TYPE;
 
 ### [`group by 8번`](https://school.programmers.co.kr/learn/courses/30/lessons/151139)
 ```sql
-
+SELECT MONTH(START_DATE) AS MONTH
+     , CAR_ID
+     , COUNT(HISTORY_ID) AS RECORDS
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+WHERE CAR_ID IN (SELECT CAR_ID
+                 FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+                 WHERE MONTH(START_DATE) IN (8, 9, 10)
+                 GROUP BY CAR_ID
+                 HAVING COUNT(HISTORY_ID) >= 5)
+      AND MONTH(START_DATE) IN (8, 9, 10)
+GROUP BY MONTH, CAR_ID
+ORDER BY MONTH, CAR_ID DESC;
 ```
 
 ***
 
+### [`group by 9번`](https://school.programmers.co.kr/learn/courses/30/lessons/133026)
+```sql
+SELECT INGREDIENT_TYPE, sum(total_order) TOTAL_ORDER
+from FIRST_HALF a join ICECREAM_INFO b on a.FLAVOR = b.FLAVOR
+group by INGREDIENT_TYPE
+```
+
+***
+
+### [`group by 10번`](https://school.programmers.co.kr/learn/courses/30/lessons/131116)
+```sql
+SELECT CATEGORY,price, product_name
+from FOOD_PRODUCT
+where CATEGORY in ('과자', '국', '김치', '식용유')
+and price in (SELECT MAX(PRICE) FROM FOOD_PRODUCT GROUP BY CATEGORY)
+group by category
+order by price desc;
+```
+
+***
+
+### [`group by 11번`](https://school.programmers.co.kr/learn/courses/30/lessons/131530)
+```sql
+SELECT floor(price/10000)*10000 as price_group, count(product_code) as products
+from product
+group by price_group
+order by price_group
+```
+
+***
+### [`group by 12번`](https://school.programmers.co.kr/learn/courses/30/lessons/59040)
+```sql
+SELECT ANIMAL_TYPE,count(ANIMAL_TYPE) as count
+from ANIMAL_INS
+group by ANIMAL_TYPE
+order by ANIMAL_TYPE
+```
+
+***
+### [`group by 13번`](https://school.programmers.co.kr/learn/courses/30/lessons/59041)
+```sql
+SELECT NAME,COUNT(ANIMAL_ID) as count
+from ANIMAL_INS
+group by name having count(ANIMAL_ID) >= 2 and name is not null
+order by name
+```
+
+***
+
+### [`group by 14번`](https://school.programmers.co.kr/learn/courses/30/lessons/131532)
+```sql
+SELECT date_format(sales_date,'%Y') as YEAR,
+date_format(sales_date,'%m') as MONTH 
+,GENDER, count(distinct(b.USER_ID)) as USERS
+from USER_INFO a join ONLINE_SALE b on a.USER_ID=b.USER_ID
+where gender in (0,1)
+group by year(sales_date),month(sales_date),gender
+order by year,month,gender
+```
+
+***
+
+### [`group by 15번`](https://school.programmers.co.kr/learn/courses/30/lessons/59412)
+```sql
+SELECT hour(DATETIME) as HOUR, count(ANIMAL_ID) as COUNT
+from ANIMAL_OUTS
+group by hour having hour between 9 and 20
+order by hour
+```
+- select 문의 별명을 group by , where order by 등등에 이용 가능
+
+***
+
+### [`group by 16번`](https://school.programmers.co.kr/learn/courses/30/lessons/59413)
+```sql
+SET @i = -1;
+SELECT (@i := @i + 1) AS HOUR
+        , (SELECT COUNT(*) 
+           FROM animal_outs 
+           WHERE HOUR(datetime) = @i) AS COUNT
+FROM animal_outs
+WHERE @i < 23
+```
+
+***
 
 
 
@@ -377,6 +551,44 @@ CASE   WHEN freezer_yn IS NULL THEN "N"
   END AS freezer_yn 
 ```
  - `case when` 칼럼 조건 `then` 넣을 값  `else` 넣을 값 `end` as 별명
+
+***
+
+### [`IS NULL 2번`](https://school.programmers.co.kr/learn/courses/30/lessons/59039)
+```sql
+SELECT ANIMAL_ID
+from ANIMAL_INS
+where NAME is null
+order by ANIMAL_ID;
+```
+
+***
+
+### [`IS NULL 3번`](https://school.programmers.co.kr/learn/courses/30/lessons/59407)
+```sql
+SELECT ANIMAL_ID
+from ANIMAL_INS 
+where NAME is not null
+order by ANIMAL_ID;
+```
+
+***
+
+### [`IS NULL 4번`](https://school.programmers.co.kr/learn/courses/30/lessons/59410)
+```sql
+SELECT ANIMAL_TYPE,ifnull(NAME,'No name') as name,SEX_UPON_INTAKE
+from ANIMAL_INS
+order by ANIMAL_ID;
+```
+
+***
+
+### [`IS NULL 5번`](https://school.programmers.co.kr/learn/courses/30/lessons/131528)
+```sql
+SELECT count(user_id) users
+from USER_INFO
+where age is null
+```
 
 ***
 
