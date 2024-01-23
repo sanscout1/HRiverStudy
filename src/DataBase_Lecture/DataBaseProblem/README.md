@@ -291,10 +291,72 @@ order by ANIMAL_ID;
 ### [`join 7번`](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
 
 ```sql
+SELECT b.ANIMAL_ID,b.NAME
+from ANIMAL_INS a join ANIMAL_OUTS b on a.ANIMAL_ID=b.ANIMAL_ID
+where b.datetime < a.datetime
+order by a.datetime;
+```
+
+***
+
+### [`join 8번`](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
+
+```sql
+SELECT NAME,DATETIME
+from ANIMAL_INS 
+where ANIMAL_ID not in (select ANIMAL_ID from ANIMAL_OUTS )
+order by datetime limit 3;
+
+
+# 풀이2
+SELECT I.NAME, I.DATETIME
+FROM ANIMAL_INS AS I
+    LEFT JOIN ANIMAL_OUTS AS O ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE O.ANIMAL_ID IS NULL
+ORDER BY I.DATETIME
+LIMIT 3;
 
 ```
 
 ***
+
+### [`join 9번`](https://school.programmers.co.kr/learn/courses/30/lessons/59045)
+
+```sql
+SELECT a.ANIMAL_ID,a.ANIMAL_TYPE,a.NAME
+from ANIMAL_INS a join ANIMAL_OUTS b on a.ANIMAL_ID = b.ANIMAL_ID
+where a.SEX_UPON_INTAKE != b.SEX_UPON_OUTCOME
+```
+
+***
+
+### [`join 10번`](https://school.programmers.co.kr/learn/courses/30/lessons/131533)
+
+```sql
+SELECT PRODUCT_CODE, sum(price*sales_amount) SALES
+from PRODUCT a join OFFLINE_SALE b on a.PRODUCT_ID=b.PRODUCT_ID
+group by PRODUCT_CODE
+order by sales desc,PRODUCT_CODE;
+```
+
+***
+
+### [`join 11번`](https://school.programmers.co.kr/learn/courses/30/lessons/131534)
+
+```sql
+SELECT YEAR(OS.SALES_DATE) AS YEAR
+     , MONTH(OS.SALES_DATE) AS MONTH
+     , COUNT(DISTINCT OS.USER_ID) AS PURCHASED_USERS
+     , ROUND(COUNT(DISTINCT OS.USER_ID)
+             / (SELECT COUNT(DISTINCT USER_ID) FROM USER_INFO WHERE YEAR(JOINED) = 2021), 1) AS PURCHASED_RATIO
+FROM USER_INFO AS UI JOIN ONLINE_SALE AS OS ON UI.USER_ID = OS.USER_ID
+WHERE YEAR(UI.JOINED) = 2021
+GROUP BY YEAR, MONTH
+ORDER BY YEAR, MONTH
+```
+
+***
+
 
 
 ### [`group by 1번`](https://school.programmers.co.kr/learn/courses/30/lessons/131123)
