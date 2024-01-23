@@ -300,13 +300,14 @@
 
 *** 
 
-## [**데이터베이스 실습 기본**](databaseREAD2.md)
-## [**데이터베이스 실습 기본2**](databaseREAD3.md)
-## [**데이터베이스 실습 기본3**](databaseREAD4.md)
-## [**데이터베이스 실습 기본4**](databaseREAD5.md)
-## [**데이터베이스 실습 기본5**](databaseREAD6.md)
-## [**데이터베이스 실습 기본6**](databaseREAD7.md)
-## [**데이터베이스 실습 기본7**](databaseREAD8.md)
+## [**DB설정 및 Select**](databaseREAD2.md)
+## [**Select, Create**](databaseREAD3.md)
+## [**Select, With**](databaseREAD4.md)
+## [**Join**](databaseREAD5.md)
+## [**Join**](databaseREAD6.md)
+## [**내장함수**](databaseREAD7.md)
+## [**mysql 데이터 형식, 심화**](databaseREAD8.md)
+## [**데이터베이스 실습 기본8**](databaseREAD9.md)
 
 ***
 
