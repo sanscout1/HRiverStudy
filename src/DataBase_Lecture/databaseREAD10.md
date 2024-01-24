@@ -2,7 +2,7 @@
 
 - 현실 세계 개념을 추상화 하여 데이터베이스로 구현 하는 과정
 
-![img.png](db201.png)
+![img.png](../picture/db201.png)
 
 
 ### 데이터베이스 생명주기
@@ -23,7 +23,7 @@
 
 *** 
 ## 데이터 모델링 과정
-![img.png](db202.png)
+![img.png](../picture/db202.png)
 <br>
 <br>
 <br>
@@ -46,15 +46,15 @@
 - 독립적인 의미를 지니고 있는 유무형
 - 속성(attribute)에 의해 식별
 
-![img.png](db203.png)
+![img.png](../picture/db203.png)
 
 #### 개체 타입의 유형
 - 강한 개체(strong entity) : 다른 개체의 도움 없이 독자적으로 존재할 수 있는 개체
 - 약한 개체(weak entity) : 독자적으로는 존재할 수 없고 반드시 상위 개체 타입을 가짐
 
-![img.png](db204.png)
+![img.png](../picture/db204.png)
 
-![img.png](db216.png)
+![img.png](../picture/db216.png)
 <br>
 <br>
 <br>
@@ -62,7 +62,7 @@
 #### 속성
 - 개체가 가진 성질
 
-![img.png](db205.png)
+![img.png](../picture/db205.png)
 <br>
 <br>
 <br>
@@ -72,12 +72,12 @@
 - 관계 타입(relationship type) : 개체 타입과 개체 타입 간의 연결 가능한 관계를 정의한 것
 - 관계 집합(relationship set) : 관계로 연결된 집합을 의미함
 
-![img.png](db206.png)
+![img.png](../picture/db206.png)
 <br>
 <br>
 - 마름모 안에 있는게 관계 타입
 
-![img.png](db207.png)
+![img.png](../picture/db207.png)
 <br>
 <br>
 - 관계 집합에 참가하는 개체 타입의 수를 관계 타입의 `차수(degree)`
@@ -92,12 +92,12 @@
 - 한쪽 개체 타입의 개체 하나가 다른 쪽 개체타입의 여러 개체와 관계를 맺음
 - n은 0 이상의 자연수를 의미
 
-![img.png](db208.png)
+![img.png](../picture/db208.png)
 
 #### 다대다(N:M) 관계
 - 각 개체 타입의 개체들이 서로 임의의 개수의 개체들과 서로 복합적인 관계를 맺고 있는 관계
 
-![img.png](db209.png)
+![img.png](../picture/db209.png)
 <br>
 <br>
 
@@ -105,11 +105,11 @@
 - 관계 대응수 1:1, 1:N, M:N에서 `1, N, M`은 각 개체가 관계에 참여하는 `최댓값`을 의미
 -  최솟값을 표시하지 않는다는 단점을 보완하기 위해 다이어그램에서는 대응수 외에 최솟값과 최댓값을 관계실선 위에 `(최솟값, 최댓값)`으로 표기
 
-![img.png](db210.png)
+![img.png](../picture/db210.png)
 
 <br>
 
-![img.png](db211.png)
+![img.png](../picture/db211.png)
 - 학과는 학생을 0이상 존재 가능
 - 학생은 무조건 하나의 학과를 가지고 있어야 한다.
 
@@ -118,12 +118,12 @@
 
 - 상위 개체 타입의 특성에 따라 하위 개체 타입이 결정되는 형태
 
-![img.png](db212.png)
+![img.png](../picture/db212.png)
 
 
 ### 참여 제약 조건
 
-![img.png](db213.png)
+![img.png](../picture/db213.png)
 
 - 전체 참여는 개체 집합의 모든 개체가, 부분 참여는 일부만 참여함
 - 최솟값이 1 이상으로 모두 참여한다는 뜻이고, 부분 참여는 최솟값이 0 이상
@@ -131,16 +131,16 @@
 ### 역할
 - 개체 타입 간의 관계를 표현할 때 각 개체들은 고유한 역할(role) 담당
 
-![img.png](db214.png)
+![img.png](../picture/db214.png)
 
 ### 순환적 관계
 - 하나의 개체 타입이 동일한 개체 타입(자기자신)과 순환적으로 관계를 가지는 형태
 
-![img.png](db215.png)
+![img.png](../picture/db215.png)
 
 #### 문장으로 정리 해보기
 
-![img.png](db217.png)
+![img.png](../picture/db217.png)
 - 직원 개체는 기본키로 직원번호, 이름, 직책 속성을 가지고 있다.
 - 가족 개체는 이름, 관계 속성을 가지고 있고 직원의 기본키를 상속받아 사용한다. (직원번호로 가족을 구분)
 
@@ -149,16 +149,16 @@
 - ER 다이어그램을 더 축약하여 쉽게 표현
 - 개체 타입과 속성은 직사각형으로 표현
 
-![img.png](db218.png)
+![img.png](../picture/db218.png)
 
-![img.png](db219.png)
+![img.png](../picture/db219.png)
 - fk 는 외래키로 가져온 것
 - 직원 부서 관계에는 외래키가 기본 속성이다 (강한관계 : 비식별자 관계)
 - 직원 가족 관계에는 직원번호 외래키가 구분자로 되어 있다. :  (약한개체 : 식별자 관계)
 
 ### er 실습 예제
 
-![img.png](db220.png)
+![img.png](../picture/db220.png)
 
 ```sql
 /*
