@@ -745,6 +745,18 @@ order by ORDER_ID;
 ### [`String,Date 8`](https://school.programmers.co.kr/learn/courses/30/lessons/157341)
 
 ```sql
+SELECT distinct(b.CAR_ID)
+from CAR_RENTAL_COMPANY_CAR a join CAR_RENTAL_COMPANY_RENTAL_HISTORY b
+on a.CAR_ID =b.CAR_ID
+where CAR_TYPE='세단' and month(start_date) = 10
+order by CAR_ID desc;
+```
+
+***
+
+### [`String,Date 9`](https://school.programmers.co.kr/learn/courses/30/lessons/157342)
+
+```sql
 
 ```
 
