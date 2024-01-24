@@ -708,7 +708,18 @@ order by USER_ID desc;
 ### [`String,Date 5`](https://school.programmers.co.kr/learn/courses/30/lessons/151141)
 
 ```sql
-
+SELECT h.HISTORY_ID, 
+ROUND((DATEDIFF(h.END_DATE,h.START_DATE)+1) *
+        (CASE
+            WHEN DATEDIFF(h.END_DATE,h.START_DATE)+1 < 7 THEN 1
+            WHEN DATEDIFF(h.END_DATE,h.START_DATE)+1 < 30 THEN 0.95
+            WHEN DATEDIFF(h.END_DATE,h.START_DATE)+1 < 90 THEN 0.92
+            ELSE 0.85
+         END) * c.DAILY_FEE, 0) AS FEE
+    FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY h
+    JOIN CAR_RENTAL_COMPANY_CAR c ON c.CAR_ID=h.CAR_ID
+    WHERE c.CAR_TYPE='트럭'
+    ORDER BY FEE DESC, h.HISTORY_ID DESC
 ```
 
 ***
@@ -768,7 +779,11 @@ ORDER BY AVERAGE_DURATION DESC, CAR_ID DESC
 ### [`String,Date 10`](https://school.programmers.co.kr/learn/courses/30/lessons/132204)
 
 ```sql
-
+SELECT APNT_NO,PT_NAME,a.PT_NO,a.MCDP_CD,DR_NAME,APNT_YMD
+from PATIENT p join APPOINTMENT  a on p.PT_NO=a.PT_NO
+join DOCTOR  d on DR_ID=MDDR_ID
+where APNT_YMD like '2022-04-13%' and APNT_CNCL_YN='N'
+order by APNT_YMD;
 ```
 
 ***
@@ -785,7 +800,56 @@ where NAME in ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
 ### [`String,Date 12`](https://school.programmers.co.kr/learn/courses/30/lessons/59047)
 
 ```sql
-
+SELECT ANIMAL_ID,NAME
+from ANIMAL_INS
+where name like '%el%' and animal_type ='dog'
+order by name;
 ```
 
 ***
+
+### [`String,Date 13`](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
+
+```sql
+SELECT ANIMAL_ID,NAME, 
+(case when SEX_UPON_INTAKE like 'Neutered%' then 'O'
+when SEX_UPON_INTAKE like 'Spayed%' then 'O'
+else 'X' end)
+as 중성화
+from ANIMAL_INS
+order by ANIMAL_ID;
+```
+
+***
+
+### [`String,Date 14`](https://school.programmers.co.kr/learn/courses/30/lessons/59411)
+
+```sql
+SELECT a.ANIMAL_ID,a.NAME
+from ANIMAL_INS a join ANIMAL_OUTS b on a.ANIMAL_ID=b.ANIMAL_ID
+order by b.DATETIME-a.DATETIME desc limit 2 ;
+```
+
+***
+
+### [`String,Date 15`](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
+
+```sql
+SELECT ANIMAL_ID,NAME,date_format(DATETIME,'%Y-%m-%d') 날짜
+from ANIMAL_INS
+order by ANIMAL_ID;
+```
+
+***
+
+### [`String,Date 16`](https://school.programmers.co.kr/learn/courses/30/lessons/131529)
+
+```sql
+SELECT substr(PRODUCT_CODE,1,2) CATEGORY, count(PRODUCT_ID) PRODUCTS
+from PRODUCT
+group by CATEGORY
+order by CATEGORY;
+```
+
+***
+
