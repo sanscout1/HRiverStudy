@@ -308,6 +308,6 @@
 ## [**내장함수**](databaseREAD7.md)
 ## [**mysql 데이터 형식, 심화**](databaseREAD8.md)
 ## [**procedure**](databaseREAD9.md)
-
+##[**데이터 모델링**](databaseREAD10.md)
 ***
 
