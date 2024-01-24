@@ -757,6 +757,34 @@ order by CAR_ID desc;
 ### [`String,Date 9`](https://school.programmers.co.kr/learn/courses/30/lessons/157342)
 
 ```sql
+SELECT CAR_ID, ROUND(AVG(DATEDIFF(END_DATE,START_DATE)+1),1) AS AVERAGE_DURATION
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+GROUP BY CAR_ID HAVING AVERAGE_DURATION >= 7
+ORDER BY AVERAGE_DURATION DESC, CAR_ID DESC
+```
+
+***
+
+### [`String,Date 10`](https://school.programmers.co.kr/learn/courses/30/lessons/132204)
+
+```sql
+
+```
+
+***
+
+### [`String,Date 11`](https://school.programmers.co.kr/learn/courses/30/lessons/59046)
+
+```sql
+SELECT ANIMAL_ID,NAME,SEX_UPON_INTAKE
+from ANIMAL_INS 
+where NAME in ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+```
+
+***
+### [`String,Date 12`](https://school.programmers.co.kr/learn/courses/30/lessons/59047)
+
+```sql
 
 ```
 
