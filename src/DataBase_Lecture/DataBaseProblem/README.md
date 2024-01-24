@@ -669,3 +669,25 @@ SELECT HISTORY_ID, CAR_ID, DATE_FORMAT(START_DATE, "%Y-%m-%d"), DATE_FORMAT(END_
    - datediff(end_date, start_date) : 날짜 차이 값 보여주는 함수
    - case when 조건식 then true값 반환 else false 값 반환 end as 타입값
 ***
+
+### [`String,Date 2`](https://school.programmers.co.kr/learn/courses/30/lessons/157343)
+
+```sql
+SELECT CAR_ID,CAR_TYPE,DAILY_FEE,OPTIONS
+from CAR_RENTAL_COMPANY_CAR
+where options like '%네비게이션%'
+order by car_id desc;
+```
+
+***
+
+### [`String,Date 3`](https://school.programmers.co.kr/learn/courses/30/lessons/164671)
+
+```sql
+SELECT concat('/home/grep/src/',b.board_id,'/',b.file_id,FILE_NAME,b.file_ext) FILE_PATH
+from USED_GOODS_BOARD a join USED_GOODS_FILE b on a.BOARD_ID=b.BOARD_ID
+where a.views >= all(select views from USED_GOODS_BOARD)
+order by FILE_ID desc;
+```
+
+***
