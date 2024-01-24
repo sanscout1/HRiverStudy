@@ -691,3 +691,61 @@ order by FILE_ID desc;
 ```
 
 ***
+
+### [`String,Date 4`](https://school.programmers.co.kr/learn/courses/30/lessons/164670)
+
+```sql
+SELECT USER_ID,NICKNAME, concat(CITY,' ',STREET_ADDRESS1,' ',STREET_ADDRESS2) 전체주소,
+CONCAT_WS("-", SUBSTR(b.TLNO, 1, 3), SUBSTR(b.TLNO, 4, 4), SUBSTR(b.TLNO, 8, 4)) 전화번호
+from USED_GOODS_BOARD a join USED_GOODS_USER b on WRITER_ID = USER_ID
+group by USER_ID having count(BOARD_ID) >=3
+order by USER_ID desc;
+```
+
+***
+
+
+### [`String,Date 5`](https://school.programmers.co.kr/learn/courses/30/lessons/151141)
+
+```sql
+
+```
+
+***
+
+### [`String,Date 6`](https://school.programmers.co.kr/learn/courses/30/lessons/164672)
+
+```sql
+SELECT BOARD_ID,WRITER_ID,TITLE,PRICE,
+(case 
+ when STATUS = 'SALE' then '판매중'
+ when STATUS = 'RESERVED' then '예약중'
+ when STATUS = 'DONE' then '거래완료'
+end) as STATUS
+from USED_GOODS_BOARD
+where DATE_FORMAT(CREATED_DATE,'%Y-%m-%d') = '2022-10-05'
+order by BOARD_ID desc;
+```
+
+***
+
+### [`String,Date 7`](https://school.programmers.co.kr/learn/courses/30/lessons/131113)
+
+```sql
+SELECT ORDER_ID,PRODUCT_ID, date_format(OUT_DATE,'%Y-%m-%d'),
+(case when OUT_DATE <= '2022-05-01' then '출고완료'
+when OUT_DATE > '2022-05-01' then '출고대기'
+else '출고미정' end ) as 출고여부
+from FOOD_ORDER
+order by ORDER_ID;
+```
+
+***
+
+### [`String,Date 8`](https://school.programmers.co.kr/learn/courses/30/lessons/157341)
+
+```sql
+
+```
+
+***
