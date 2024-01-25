@@ -69,14 +69,14 @@
 ### execve()
 - execve() 함수 호출한곳의 메모리를 새로운 파일로 대체 하는 함수
 
-![img.png](execve01.png)
+![img.png](picture/execve01.png)
 #### execve() 실행 시 보유 데이터
 - 프로그램 코드와 코드 영역의 파일 오프셋,크기 및 메모리 맵 시작 주소
 - 데이터 영역의 파일 오프셋, 크기 및 메모리 맵 시작 주소
 - 최초로 실행할 명령의 메모리 주소
 
 
-![img.png](execve02.png)
+![img.png](picture/execve02.png)
 - 프로그램의 데이터 저장 위치 및 오프셋등 정보를 확인 가능하다.
 
 ### ASLR
@@ -85,7 +85,7 @@
 
 ## 프로세스의 부모 자식 관계
 
-![img.png](pstree01.png)
+![img.png](picture/pstree01.png)
 - systemd pid=1 부모 프로세스로 부터 자식프로세스들이 생성된 것을 확인 가능
 
 
@@ -100,7 +100,7 @@
 - stat 이 R 로 시작하면 실행 상태
 - 프로세스를 종료하면 좀비 상태(stat z)가 되어 있다가 소멸
 
-![img.png](process01.png)
+![img.png](picture/process01.png)
 
 - 모든 프로세스들이 슬립 상태 일때는 cpu는 `idle process` 를 실행 중
 - cpu 소비 전력을 감소상태로 유지 한다.
