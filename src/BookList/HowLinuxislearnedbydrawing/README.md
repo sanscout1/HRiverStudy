@@ -1,4 +1,4 @@
-![img.png](linux01.png)
+![img.png](picture/linux01.png)
 # 그림으로 배우는 리눅스 구조
 
 ## 커널
@@ -14,20 +14,20 @@
     - 파일 시스템 조작
     - 장치 조작
 
-![img.png](systemcall01.png)
+![img.png](picture/systemcall01.png)
     - 
 - 시스템 콜을 호출하면 예외라는 이벤트 발생
 - 사용자 모드에서 커널 모드로 변경
 
-![img.png](systmcall02.png)
+![img.png](picture/systmcall02.png)
 
 - strace 함수를 이용하여 시스템 콜 내용을 확인 할 수 있다.
 
-![img.png](systemcall03.png)
+![img.png](picture/systemcall03.png)
 - tasket -c 논리cpu번호 명령어
 - %system 비율을 통해 cpu모드 시간 존재 확인
 
-![img.png](systemcall04.png)
+![img.png](picture/systemcall04.png)
 - 시스템 콜 소요 시간 확인
 
 ## 라이브러리
@@ -36,13 +36,13 @@
 ### 시스템 콜 래퍼 함수
 - getppid() 함수 같이 libc 라이브러리에서 지원
 
-![img.png](systemcall05.png)
+![img.png](picture/systemcall05.png)
 - 콜래퍼 함수 지원으로 호환 문제 없음
 - 없다면 각 프로그램에서 어셈블리 언어로 직접 작성하여 시스템 콜 호출 해야함 (아키텍처를 변경 시 동작 보장 못함)
 
 ### 정적 라이브러리, 동적(공유) 라이브러리
 
-![img.png](systemcall06.png)
+![img.png](picture/systemcall06.png)
 - 라이브러리 함수를 프로그램에 가져오면 정적
   - 용량이 커짐
 - 링크로 이어서 사용한다면 동적
@@ -55,15 +55,79 @@
 
 ## 프로세스 생성
 
-![img.png](fork01.png)
+
+### fork()
+
+![img.png](picture/fork01.png)
 - fork() 함수 이용
 - 부모프로세스는 자신의 프로세스 id 와 자식 프로세스 id를 출력 후 종료, 자식프로세스는 자신 프로레스id 출력 종료
 
-![img.png](fork02.png)
+![img.png](picture/fork02.png)
 - ret ==0 인 경우는 자식프로세스가 실행, 부모프로세스 id 부르는 함수 getppid() 호출
 - ret >0 일 때는 부모프로세스가 실행, ret 에 자식프로세스 id가 저장되어 있다.
 
+### execve()
+- execve() 함수 호출한곳의 메모리를 새로운 파일로 대체 하는 함수
+
+![img.png](execve01.png)
+#### execve() 실행 시 보유 데이터
+- 프로그램 코드와 코드 영역의 파일 오프셋,크기 및 메모리 맵 시작 주소
+- 데이터 영역의 파일 오프셋, 크기 및 메모리 맵 시작 주소
+- 최초로 실행할 명령의 메모리 주소
 
 
+![img.png](execve02.png)
+- 프로그램의 데이터 저장 위치 및 오프셋등 정보를 확인 가능하다.
+
+### ASLR
+- -no-pie 옵션으로 aslr을 통한 프로그램 실행할 때마다 각 섹션을 다른 주소에 맵핑하는 것을 멈춤
+- aslr 을 통해 공격 대상 코드나 데이터가 고정된 특정 주소에 존재한다는 조건의 공격이 어려워짐
+
+## 프로세스의 부모 자식 관계
+
+![img.png](pstree01.png)
+- systemd pid=1 부모 프로세스로 부터 자식프로세스들이 생성된 것을 확인 가능
+
+
+### fork 함수 와 execve 함수 동시 작동
+- posix_spawn() 라는 POSIX c언어 인터페이스 규격 활용
+- 하지만 fork 함수 와 execve 함수 동시 작동 하는 경우가 아니라면 사용 피할 것
+
+## 프로세스 상태
+
+- 프로세스는 실행 후 이벤트 발생 전까지 `슬립상태`
+- ps aux  --> stat 이 S 로 시작하면 슬립상태
+- stat 이 R 로 시작하면 실행 상태
+- 프로세스를 종료하면 좀비 상태(stat z)가 되어 있다가 소멸
+
+![img.png](process01.png)
+
+- 모든 프로세스들이 슬립 상태 일때는 cpu는 `idle process` 를 실행 중
+- cpu 소비 전력을 감소상태로 유지 한다.
+
+## 프로세스 종료
+- exit() 함수 호출 하면 exit_group() 시스템 콜 호출
+- 프로세스가 종료하면 부모 프로세스는 wait() 호출 후 다음 정보를 얻는다
+  - 프로세스 반환값, 함수의 인수를 256으로 나눈 나머지와 같다
+  - 시그널에 따라 종료 여부
+  - 종료할 때 까지 cpu 시간 정보
+
+## 좀비 프로세스, 고아 프로세스
+- 좀비 프로세스 : 부모가 종료 상태를 확인하지 않은 자식 프로세스 
+  - 좀비 프로세스가 대량 존재한다면 부모 프로세스의 버그를 체크하는게 좋다
+- 고아 프로세스 : 부모 프로세스는 종료되고 자식 프로세스는 남은 상태
+  - 커널은 init을 부모 프로세스로 새로 지정해줌
+
+## 시그널
+- 어떤 프로세스가 다른 프로세스에 신호를 보내서 외부에서 실행 순서를 강제로 바꾸는 것
+  - SIGINT : ctrl + c 누르면 프로세스 종료
+  - KILL -INT <PID> : 해당 pid 종료
+  - SIGCHLD : 자식 프로세스 종료 시 부모 프로세스에 보내는 시그널
+  - SIGSTOP : 프로세스 실행 일시 정지 , ctrl + z
+  - SIGCONT : 정지한 프로세스 실행을 재게
+-  시그널 핸들러 : 프로세스는 미리 등록해놓으며, 해당하는 시그널을 수신하면 실행 중인 처리 중단 후, 시그널 핸들러에 등록한 처리를 동작 하고 다시 원래 동작 개시
+- 시그널을 무시하도록 설정도 가능  `signal.siganl(signal.SIGIN,signal.SIG_IGN)` -- SIGINT 시그널 무시 설정
+- SIGKILL : 프로세스 종료의 최후 수단
+  - uninterruptible sleep 상태 (stat D)의 프로세스는 sigkill 로 종료가 안되는 상태 (손 쓸 방법이 없는 상태)
 
 
