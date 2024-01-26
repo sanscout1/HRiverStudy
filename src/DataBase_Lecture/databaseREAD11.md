@@ -138,11 +138,21 @@ on a.userid =  b.userid;
 
 ![img.png](p13.png)
 
-- 학생은 팀장을 속할 수 있지만 아닐수도 있기에 1:n (학생은 여러팀에 있을수도 0일수도 있다)에 n쪽에 madatory 를 제거해서 student student가 아에 팀에 해당 안되는 경우도 표현
+- 학생은 팀장에 속할 수 있지만 아닐수도 있기에 1:n (학생은 여러팀에 있을수도 0일수도 있다)에 n쪽에 madatory 를 제거해서 student student가 아에 팀에 해당 안되는 경우도 표현
 - membership 관계는 학생과 팀이 n:m으로 되어 있으며, 학생은 membership 에 없어도 된다 생각해서 mandatory 제거
 - 팀과 게임도 유사 guest도 위와 유사하다.
-- erdiagram은 테이블 기준으로 반대쪽 그림을 해석하는게 중요해 보인다. ex) student 와 membership을 보면 student 반대는 n + 0 이므로 학생은 membership 테이블에 없어도 되고 여러개 있어도 된다는 의미, 반대로 membership 은 student와 (1,1) 이므로 student 요소와 무조건 이어져 있다는 거다.
+- erdiagram은 테이블 기준으로 반대쪽 그림을 해석하는게 중요해 보인다. ex) student 와 membership을 보면 student 반대는 n + 0 이므로 학생은 membership 테이블에 없는 개체도 있고 여러개 있어도 된다는 의미, 반대로 membership 은 student와 (1,1) 이므로 student 요소와 무조건 이어져 있다는 거다.
 - erdiagram은 테이블 기준으로 직선에 반대쪽 끝만 생각을 잘하면 된다.
+- students 튜플 하나는 team 튜플들에 여러번 사용될 수도, 사용 안 할수도 있다.
+- students 튜플 하나는 membership 튜플들에 여러번 사용될 수도 사용이 안될 수 도 있다. 
+- 하지만 teams 는 여러번 사용 될 수는 있지만 없는 경우 는 없다. (n:m 은 조금 특수하게 해석해야한다, student가 없을때 teams도 없는 경우는 없다는 의미다.)
+- 이게 한쪽만 생각해야지 양사이드로 생각하니까 말이 안되는 같다
 
+***
+- 다시 정리해보자
+- students 는 teams 튜플들에 반복 연결된애도 있고 연결 안된 애도 있다
+- teams 는 students 튜플에 한번씩 연결되고  연결 안된 경우가 없다
+- students 튜플은 teams 튜플들에 중복 연결이 가능하고, 연결 안되는 경우도 있다
+- 하지만 teams 튜플은 students 튜플들에 중복 연결이 가능하지만,   연결 안 된 경우는 없다.
 
 
