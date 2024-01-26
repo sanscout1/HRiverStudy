@@ -138,7 +138,7 @@ on a.userid =  b.userid;
 
 ![img.png](p13.png)
 
-- 학생은 팀장을 속할 수 있지만 아닐수도 있기에 1:n (하나의 student가 여러명도 가능하다)에 n쪽에 madatory 를 제거해서 student student가 아에 팀에 해당 안되는 경우도 표현
+- 학생은 팀장을 속할 수 있지만 아닐수도 있기에 1:n (학생은 여러팀에 있을수도 0일수도 있다)에 n쪽에 madatory 를 제거해서 student student가 아에 팀에 해당 안되는 경우도 표현
 - membership 관계는 학생과 팀이 n:m으로 되어 있으며, 학생은 membership 에 없어도 된다 생각해서 mandatory 제거
 - 팀과 게임도 유사 guest도 위와 유사하다.
 - 
