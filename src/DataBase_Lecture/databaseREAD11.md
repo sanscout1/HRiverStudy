@@ -141,7 +141,8 @@ on a.userid =  b.userid;
 - 학생은 팀장을 속할 수 있지만 아닐수도 있기에 1:n (학생은 여러팀에 있을수도 0일수도 있다)에 n쪽에 madatory 를 제거해서 student student가 아에 팀에 해당 안되는 경우도 표현
 - membership 관계는 학생과 팀이 n:m으로 되어 있으며, 학생은 membership 에 없어도 된다 생각해서 mandatory 제거
 - 팀과 게임도 유사 guest도 위와 유사하다.
-- 
+- erdiagram은 테이블 기준으로 반대쪽 그림을 해석하는게 중요해 보인다. ex) student 와 membership을 보면 student 반대는 n + 0 이므로 학생은 membership 테이블에 없어도 되고 여러개 있어도 된다는 의미, 반대로 membership 은 student와 (1,1) 이므로 student 요소와 무조건 이어져 있다는 거다.
+- erdiagram은 테이블 기준으로 직선에 반대쪽 끝만 생각을 잘하면 된다.
 
 
 
