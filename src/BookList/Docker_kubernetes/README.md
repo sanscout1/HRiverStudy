@@ -66,3 +66,15 @@
    - hyper-v 는 윈도우에 포함되 있고, hyperkit은 도커 데스크톱 페키지 안에 포함되어 있음
     - 윈도우는 wsl2 라는 리눅스 지원이 내장되어서 도커 데스크톱에서 wsl2 혹은 도커 내장 리눅스 선택지가 존제
 
+
+
+## 도커 설치하기
+1. 프로그램 --> 프로그램 및 기능 켜기 끄기 --> linux용 windows 하위시스템, 가상 머신 플랫폼 키기
+2.  파워쉘 --> 
+3. `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+4. `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+5. wsl --install
+6. wsl --set-default-version 2 입력하기
+
+
+
