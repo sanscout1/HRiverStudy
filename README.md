@@ -40,7 +40,8 @@
 
 * [`5주차 BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
 * [`6주차 dfs 알고리즘 활용 문제풀이 `](https://youtu.be/WaxKKOj0B6U)
-
+* [`7주차 도커 및 알고리즘 문제풀이 `](https://youtu.be/iToXt1gfgeo)
+  
 
 ***
 ## 🏃‍♂이번 주 할 일
