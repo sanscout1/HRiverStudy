@@ -310,5 +310,11 @@
 ## [**procedure**](databaseREAD9.md)
 ## [**데이터 모델링**](databaseREAD10.md)
 ## [**DB튜닝**](databaseREAD11.md)
+
+
+*** 
+
+## [**Starbucks모델링**](DBAssignment%2FStarbucks)
+
 ***
 
