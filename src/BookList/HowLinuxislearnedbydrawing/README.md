@@ -165,7 +165,7 @@
 - `nice` (우선순위) 값에 따라 프로세스 실행 우선도 설정 가능 (nice 값이 낮을 수록 먼저 종료하기 위해 타임슬라이드 할당이 많이 된다.)
 
 
-![img.png](timeslice.png)
+![img.png](picture/timeslice.png)
 
 ## 컨텍스트 스위치
 - 논리 cpu 에서 동작하는 프소세스 전환
@@ -177,10 +177,10 @@
 ### 스루풋
 - 처리량, 단위 시간당 처리를 끝낸 개수
 
-![img.png](timeslice01.png)
+![img.png](picture/timeslice01.png)
 - cpu 개수에 비해 프로세스가 증가하면 평균 처리 시간만 증가, 처리량은 그대로.. 효율이 안 좋다.
 
-![img.png](timeslice02.png)
+![img.png](picture/timeslice02.png)
 - cpu 4개 기준일때 프로세스 개수가 4 일때 까지 효율이 좋은 것을 확인 가능하다.
 - smt는 무효로 만든상태로 테스트 했다 (smt 유효상태면 논리 cpu를 자동으로 증가 시킬 것이다.)
 
