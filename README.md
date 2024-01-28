@@ -48,4 +48,10 @@
 
 * [`HRiver Doing`](https://trello.com/b/XqfPmlF5/hriver-working)
 
+***
+
+## ⌛회고록
+
+* [`교육 회고록`](https://velog.io/@sanscout/series/%EC%8B%A0%EC%84%B8%EA%B3%84-JAVA-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%84%B1%EA%B3%B5%EC%9D%84-JAVA)
+
 
