@@ -77,4 +77,14 @@
 6. wsl --set-default-version 2 입력하기
 
 
+# 컨테이너 실행
+
+## 컨테이너 기본 사용 명령어
+- `docker container run -d penguin --mode=1`
+-  `container run` : 커맨드, 상위커맨드와 하위커맨드다 , 상위 커맨드는 대상의 종류 명시, 하위 커맨드는 어떤 행동을 할지 명시
+-  `-d, --mode=1` : 옵션, -d 는 백그라운드 실행, --mode=1 은 모드 1로 실행하라는 의미
+- 펭귄은 실행할 대상이다.
+
+
+
 
