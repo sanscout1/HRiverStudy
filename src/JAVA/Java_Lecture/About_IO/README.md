@@ -1,39 +1,39 @@
 # IO
 
-![img.png](inputoutput.png)
+![img.png](../../../picture/inputoutput.png)
 
 - 모든 데이터 입출력에는 입력스트림, 출력스트림이 정해져야 한다.
 - java.io 가 제공
 ## outputstream
 
-![img.png](output00.png)
+![img.png](../../../picture/output00.png)
 
-![img.png](output01.png)
+![img.png](../../../picture/output01.png)
 
 <br>
 
-![img.png](output02.png)
+![img.png](../../../picture/output02.png)
 - int 4바이트에서 마지막 1바이트 만 write
 
-![img.png](output03.png)
+![img.png](../../../picture/output03.png)
 - 바이트 배열로 데이터 출력, 길이 조절도 가능
 
 ## inputstream
 
-![img.png](input00.png)
+![img.png](../../../picture/input00.png)
 
 - read 함수는 리턴 값이 있다
 
-![img.png](input01.png)
+![img.png](../../../picture/input01.png)
 
 
 ## Writer 
 
-![img.png](writer.png)
+![img.png](../../../picture/writer.png)
 
 ## Reader
 
-![img.png](Reader.png)
+![img.png](../../../picture/Reader.png)
 
 
 ### 실습 1
@@ -78,6 +78,23 @@
  
 - save: 마지막 단계 쓰기작업을 하는 BufferedWriter와 FileWriter 호출하여 Memo 클래스에 있는 값을 ArrayList로 저장시킨다.
 ```
+
+
+## 보조 스트림
+- 보조스트림 변수 = new 보조스트림(입출력스트림);
+- 다른 스트림과 연결되어 여러 편리한 기능을 제공해주는 스트림
+![img.png](../../../picture/iostream01.png)
+
+
+
+## 직렬화와 역직렬화
+- 직렬화 : 메모리에 생성된 객체를 파일 또는 네트워크로 출력하기 위해 필드값을 일렬로늘어선 바이트로 변경하는 것
+- 역직렬화 :  직렬화된 바이트를 객체의 필드값으로 복원하는 것
+![img.png](../../../picture/ioimg01.png)
+
+- 직렬화 할 클래스에는 Serializable 인터페이스를 구현해놔야 한다.
+
+![img.png](../../../picture/serializable.png)
 
 
 
