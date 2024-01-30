@@ -187,7 +187,7 @@
 # 메모리 관리 시스템
 - 커널이 하는 것
 
-![img.png](free01.png)
+![img.png](picture/free01.png)
 ### used
 - 프로세스가 사용하는 메모리와 커널이 사용하는 메모리
 
@@ -196,13 +196,13 @@
 
 ## 메모리 재활용 처리
 
-![img.png](memory01.png)
+![img.png](picture/memory01.png)
 
 
 ### 프로세스 삭제와 메모리 강제 해제
 - 메모리가 부족한 out of memory 상태 를 피하기 위해 OOM killer 기능으로 메모리 공간 확보
 
-![img.png](oomkiller.png)
+![img.png](picture/oomkiller.png)
 
 
 ## 가상 메모리
@@ -212,7 +212,7 @@
 - 메모리 단편화
   - 할당된 메모리 사이에 공간들이 작게 작게 생겨서 큰 메모리 할당이 안되는 상황
 
-![img.png](memory02.png)
+![img.png](picture/memory02.png)
 
 - 멀티프로세스 구현 어려움
   - 프로세스들 끼리 할당된 메모리 주소 위치 관리가 필요함
@@ -224,16 +224,16 @@
   - 물리 주소 : 실제 주소
   - 주소 공강 : 접근 가능한 범위
 
-![img.png](memory03.png)
+![img.png](picture/memory03.png)
 
 
 ### 페이지 테이블
 - `페이지 테이블` : 페이지 테이블 엔트리들을 저장하며, 모든 메모리를 페이지 단위로 쪼개서 가상주소를 이용하여 관리
 
-![img.png](page01.png)
+![img.png](picture/page01.png)
 
 
-![img.png](page02.png)
+![img.png](picture/page02.png)
 
 - 존재 하지 않는 페이지에 접근 할려고 하면 페이지 폴트 라는 예외가 발생하고, 페이지 폴트 핸들러가 처리 실행됨
 - 페이지 테이블은 커널 공간에 저장되어 있다.
@@ -244,7 +244,7 @@
 
 ### 메모리 할당
 
-![img.png](memory07.png)
+![img.png](picture/memory07.png)
 - 확보해둔 가상 주소에 (물리메모리랑 연결 안되있는 상태) 프로세스가 접근하면 페이지 폴트 발생 후, 커널이 해당 가상주소의 물리주소에 메모리를 추가한다.
 
 
