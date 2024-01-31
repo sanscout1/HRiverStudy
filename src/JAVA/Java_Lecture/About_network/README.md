@@ -127,7 +127,7 @@
   <br>
 
 
-![img.png](network11.png)
+![img.png](../../../picture/network11.png)
 
 ### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
 - http 소통은 결국 소켓 통신
