@@ -85,7 +85,7 @@
 - 생성된 HTTP 응답은 브라우저에게 전송되고, 브라우저는 이를 받아들여 웹 페이지를 표시합니다
 <br>
 <br>
-- #### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
+- ### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
 <br>
 
 ![img_1.png](httpmethod.png)
