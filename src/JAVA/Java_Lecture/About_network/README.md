@@ -58,6 +58,28 @@
 
 - 소켓 라이브러리를 통해 데이터를 네트워크 통신 가능한 구조로 생성
 
+
+### 1. HTTP 프로토콜
+- http://user:password@www.cyber.co.kr:80/dir/file1.html
+- user: 사용자명 (생략 가능)
+- password: 패스워드 (생략 가능)
+- www.google.com: 웹 서버의 도메인명 
+- 80: 포트 번호 (생략 가능)
+- dir/file1.html: 파일의 경로명
+
+<br>
+<br>
+
+- HTTP 프로토콜은 클라이언트와 서버가 주고받는 메시지의 내용이나 순서를 정한 것
+- `'무엇을'에 해당하는 것이 URI`
+- URI(Uniform Resource Identifier)는 인터넷에서 자원을 식별하고 지칭하는 일반적인 방법
+  - URL(Uniform Resource Locator): 인터넷 상에서 특정 자원의 위치를 나타내는 문자열입니다. URL은 프로토콜(예: "http://", "https://"), 호스트 이름 또는 IP 주소, 포트 번호, 자원의 경로 등으로 구성
+  - URN(Uniform Resource Name): 리소스의 위치가 아니라 리소스의 이름을 나타내는 문자열입니다. URN은 리소스의 고유한 이름을 지정하며, 해당 이름을 통해 리소스에 접근할 수 있도록 합니다. 예를 들어, "urn:isbn:0451450523"은 특정 ISBN(국제 표준 도서 번호)에 대한 리소스를 가리키는 URN
+
+<br>
+<br>
+
+
 ### 클라이언트 서버간 tcp 연결
 
 ![img.png](tcpip07.png)
@@ -78,25 +100,6 @@
   3. 서버는 연결을 종료할 준비가 되면, 연결해지를 위한 준비가 되었음을 알리기 위해  클라이언트에게 FIN플래그를 전송한다. 이때 B서버의 상태는 `LAST-ACK`
   4. 클라이언트는 해지준비가 되었다는 ACK를 확인했다는 메시지를 보낸다. A클라이언트의 상태가 `FIN-WAIT ->TIME-WAIT` 으로 변경
 
-
-
-
-### 1. HTTP 프로토콜
-- http://user:password@www.cyber.co.kr:80/dir/file1.html
-- user: 사용자명 (생략 가능)
-- password: 패스워드 (생략 가능)
-- www.google.com: 웹 서버의 도메인명 
-- 80: 포트 번호 (생략 가능)
-- dir/file1.html: 파일의 경로명
-
-<br>
-<br>
-
-- HTTP 프로토콜은 클라이언트와 서버가 주고받는 메시지의 내용이나 순서를 정한 것
-- `'무엇을'에 해당하는 것이 URI`
-- URI(Uniform Resource Identifier)는 인터넷에서 자원을 식별하고 지칭하는 일반적인 방법
-  - URL(Uniform Resource Locator): 인터넷 상에서 특정 자원의 위치를 나타내는 문자열입니다. URL은 프로토콜(예: "http://", "https://"), 호스트 이름 또는 IP 주소, 포트 번호, 자원의 경로 등으로 구성
-  - URN(Uniform Resource Name): 리소스의 위치가 아니라 리소스의 이름을 나타내는 문자열입니다. URN은 리소스의 고유한 이름을 지정하며, 해당 이름을 통해 리소스에 접근할 수 있도록 합니다. 예를 들어, "urn:isbn:0451450523"은 특정 ISBN(국제 표준 도서 번호)에 대한 리소스를 가리키는 URN
 
 <br>
 <br>
