@@ -17,4 +17,10 @@
 
    - [`BookProject_Exception`](BookProject_Exception)
 
-4. 처음부터 리팩토링 (인터페이스 추가 및 자료구조 변경)  -- 진행중
+<br>
+<br>
+<br>
+
+4. 인터페이스 추가 및 자료구조 변경
+
+   - [`BookProject_4th`](BookProject_4th)
