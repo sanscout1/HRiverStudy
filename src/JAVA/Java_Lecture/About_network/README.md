@@ -86,6 +86,13 @@
   4. 클라이언트는 해지준비가 되었다는 ACK를 확인했다는 메시지를 보낸다. A클라이언트의 상태가 `FIN-WAIT ->TIME-WAIT` 으로 변경
 
 
+- #### mac 주소와 arp
+- mac 주소는 물리적 주소로, ip 주소를 통해 접근한 네트워크에서 단말기에 직접 접근하기 위한 주소다
+- arp(Address Resolution Protocol) 는 ip주소와 mac 주소를 1:1 매칭 시켜주는 프로토콜
+  - arp table 에 저장해두지만, 없는 경우 해당 ip 주소의 단말기들에 arp query 를 전송하여 mac 주소를 검색 하여 연결한다.
+
+![img.png](../../../picture/network10.png)
+
 
 ### 2. HTTP 프로토콜
 - http://user:password@www.cyber.co.kr:80/dir/file1.html
