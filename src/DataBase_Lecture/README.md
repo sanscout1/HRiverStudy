@@ -311,6 +311,7 @@
 ## [**데이터 모델링**](databaseREAD10.md)
 ## [**DB튜닝**](databaseREAD11.md)
 ## [**이상현상 과 정규화**](databaseREAD12.md)
+## [**트랜잭션**](databaseREAD13.md)
 
 
 *** 
