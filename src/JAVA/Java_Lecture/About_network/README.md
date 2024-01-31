@@ -7,7 +7,7 @@
 
 ## Port
 
-![img.png](network01.png)
+![img.png](../../../picture/network01.png)
 
 - 네트워크에서 프로세스가 통신을 위해 사용하는 논리적인 엔드포인트
 - 포트는 IP 주소와 함께 사용되어 네트워크 통신을 관리
@@ -26,24 +26,24 @@
 - tcp : 신뢰성 있는 데이터 전송을 보장하며, 데이터가 패킷으로 분할되어 네트워크를 통해 안전하게 전송 제어, 패킷단위로 저장
 - http 와 같은 application 은 패킷을 묶어 세그먼트로 저장
 
-![img.png](tcp03.png)
+![img.png](../../../picture/tcp03.png)
 - Source Port : 보내는 시스템의  애플리케이션 Port
 - Destination Port : 받는 시스템의 애플리케이션 Port
 - sequence number : 패킷의 송신 data 일련 번호
 - Acknowledgement Number : 패킷을 잘 수신 받았다는 대답
 
 
-![img.png](packetstructure.png)
+![img.png](../../../picture/packetstructure.png)
 
-![img.png](tcpip01.png)
+![img.png](../../../picture/tcpip01.png)
 - osi 7계층
 
-![img.png](tcpip02.png)
+![img.png](../../../picture/tcpip02.png)
 - 계층별 데이터 종류
 
-![img.png](tcpip04.png)
+![img.png](../../../picture/tcpip04.png)
 
-![img.png](tcpip05.png)
+![img.png](../../../picture/tcpip05.png)
 
 <br>
 <br>
@@ -67,7 +67,7 @@
 
 - 소켓 라이브러리를 통해 데이터를 네트워크 통신 가능한 구조로 생성
 
-![img.png](tcpip07.png)
+![img.png](../../../picture/tcpip07.png)
 - #### 3 way handshake : TCP의 연결을 초기화 할 때 사용
 
   1. 클라이언트가 연결요청 메시지(SYN)을 전송합니다. 클라이언트는 Synchronize Sequence Number(SYN)라는 임의의 랜덤 숫자를 함께 전송
@@ -78,7 +78,7 @@
 <br>
 <br>
 
-![img.png](tcpip08.png)
+![img.png](../../../picture/tcpip08.png)
 - #### 4-Way handshake : 세션을 종료하기 위해 수행되는 절차
   1. 클라이언트가 연결을 종료하겠다는 FIN플래그를 전송한다. 이때 A클라이언트는  `FIN-WAIT` 상태가 된다.
   2. 서버는 FIN플래그를 받고, 일단 확인메시지 ACK 보내고 자신의 통신이 끝날때까지 기다리는데 이 상태가 B서버의 `CLOSE_WAIT`상태
@@ -118,7 +118,7 @@
 
 <br>
 
-![img_1.png](httpmethod.png)
+![img_1.png](../../../picture/httpmethod.png)
 
 ### http 리퀘시트 메시지
 1) request message
@@ -146,7 +146,7 @@
 
 ### 4. DNS
 
-![img_1.png](tcpip06.png)
+![img_1.png](../../../picture/tcpip06.png)
 
 - 가장 가까운 local DNS 서버에게 물어보고 -> 가장 가까운 DNS 서버는 루트 도메인이 등록되어 있기 때문
 - 루트 도메인으로부터 받은 조회 메지를 전송한다. 이때, 루트 도메인이 www.google.com에서 .com 도메인의 DNS 서버의 IP 주소를 반송하고, 또 다시 가장 가까운 DNS 서버는 com 도메인의 DNS 서버에게 또 다시 메시지를 보낸다
