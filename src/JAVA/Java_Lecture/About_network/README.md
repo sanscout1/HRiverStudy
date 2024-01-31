@@ -56,14 +56,42 @@
 
 # www.google.com 입력시 과정
 
+
+
+
+<br>
+<br>
+
+
+### 1. 클라이언트 서버간 tcp 연결
+
 - 소켓 라이브러리를 통해 데이터를 네트워크 통신 가능한 구조로 생성
 
+![img.png](tcpip07.png)
+- #### 3 way handshake : TCP의 연결을 초기화 할 때 사용
 
-### 1. HTTP 프로토콜
+  1. 클라이언트가 연결요청 메시지(SYN)을 전송합니다. 클라이언트는 Synchronize Sequence Number(SYN)라는 임의의 랜덤 숫자를 함께 전송
+  2. 서버가 요청을 수락하며, 클라이언트에게도 들리냐는 연결요청 메시지를 전송합니다. 그 메시지에는 Acknowledgement number(ACK)를 포함하고 있으며, 이 번호는 받은 Synchronize Sequence Number(SYN)보다 +1한 값을 가집니다
+  3. 클라이언트가 그 질문이 잘들린다고 Acknowledgement number(ACK)에 받은 Sequence number +1해서 전송
+
+
+<br>
+<br>
+
+![img.png](tcpip08.png)
+- #### 4-Way handshake : 세션을 종료하기 위해 수행되는 절차
+  1. 클라이언트가 연결을 종료하겠다는 FIN플래그를 전송한다. 이때 A클라이언트는  `FIN-WAIT` 상태가 된다.
+  2. 서버는 FIN플래그를 받고, 일단 확인메시지 ACK 보내고 자신의 통신이 끝날때까지 기다리는데 이 상태가 B서버의 `CLOSE_WAIT`상태
+  3. 서버는 연결을 종료할 준비가 되면, 연결해지를 위한 준비가 되었음을 알리기 위해  클라이언트에게 FIN플래그를 전송한다. 이때 B서버의 상태는 `LAST-ACK`
+  4. 클라이언트는 해지준비가 되었다는 ACK를 확인했다는 메시지를 보낸다. A클라이언트의 상태가 `FIN-WAIT ->TIME-WAIT` 으로 변경
+
+
+
+### 2. HTTP 프로토콜
 - http://user:password@www.cyber.co.kr:80/dir/file1.html
 - user: 사용자명 (생략 가능)
 - password: 패스워드 (생략 가능)
-- www.google.com: 웹 서버의 도메인명 
+- www.google.com: 웹 서버의 도메인명
 - 80: 포트 번호 (생략 가능)
 - dir/file1.html: 파일의 경로명
 
@@ -79,12 +107,12 @@
 <br>
 <br>
 
-### 2. 브라우저에 구글 입력시 작동 시퀀스
+### 3. 브라우저에 구글 입력시 작동 시퀀스
 - 브라우저는 받은 IP 주소를 사용하여 웹 서버에 HTTP 요청을 보냅니다. 이 요청은 HTTP 프로토콜을 사용하며, 요청 메서드는 일반적으로 "GET"입니다
 - 웹 서버는 브라우저로부터 받은 요청을 처리하고, 요청된 웹 페이지(구글 홈페이지)를 포함한 HTTP 응답을 생성합니다.
 - 생성된 HTTP 응답은 브라우저에게 전송되고, 브라우저는 이를 받아들여 웹 페이지를 표시합니다
-<br>
-<br>
+  <br>
+  <br>
 
 ### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
 
@@ -111,31 +139,6 @@
 ```
 - 첫 번째 행은 status line으로, 응답 코드에 대한 내용
 - 공백까지는 마찬가지로 메시지 헤더고, 마지막 부분은 바디값으로 서버에서 클라이언트로 송신하는 데이터
-
-
-<br>
-<br>
-
-
-### 3. 클라이언트 서버간 tcp 연결
-
-![img.png](tcpip07.png)
-- #### 3 way handshake : TCP의 연결을 초기화 할 때 사용
-
-  1. 클라이언트가 연결요청 메시지(SYN)을 전송합니다. 클라이언트는 Synchronize Sequence Number(SYN)라는 임의의 랜덤 숫자를 함께 전송
-  2. 서버가 요청을 수락하며, 클라이언트에게도 들리냐는 연결요청 메시지를 전송합니다. 그 메시지에는 Acknowledgement number(ACK)를 포함하고 있으며, 이 번호는 받은 Synchronize Sequence Number(SYN)보다 +1한 값을 가집니다
-  3. 클라이언트가 그 질문이 잘들린다고 Acknowledgement number(ACK)에 받은 Sequence number +1해서 전송
-
-
-<br>
-<br>
-
-![img.png](tcpip08.png)
-- #### 4-Way handshake : 세션을 종료하기 위해 수행되는 절차
-  1. 클라이언트가 연결을 종료하겠다는 FIN플래그를 전송한다. 이때 A클라이언트는  `FIN-WAIT` 상태가 된다.
-  2. 서버는 FIN플래그를 받고, 일단 확인메시지 ACK 보내고 자신의 통신이 끝날때까지 기다리는데 이 상태가 B서버의 `CLOSE_WAIT`상태
-  3. 서버는 연결을 종료할 준비가 되면, 연결해지를 위한 준비가 되었음을 알리기 위해  클라이언트에게 FIN플래그를 전송한다. 이때 B서버의 상태는 `LAST-ACK`
-  4. 클라이언트는 해지준비가 되었다는 ACK를 확인했다는 메시지를 보낸다. A클라이언트의 상태가 `FIN-WAIT ->TIME-WAIT` 으로 변경
 
 
 <br>
