@@ -95,6 +95,8 @@
 
 ![img.png](../../../picture/network10.png)
 
+<br>
+<br>
 
 ### 2. HTTP 프로토콜
 - http://user:password@www.cyber.co.kr:80/dir/file1.html
@@ -113,6 +115,7 @@
   - URL(Uniform Resource Locator): 인터넷 상에서 특정 자원의 위치를 나타내는 문자열입니다. URL은 프로토콜(예: "http://", "https://"), 호스트 이름 또는 IP 주소, 포트 번호, 자원의 경로 등으로 구성
   - URN(Uniform Resource Name): 리소스의 위치가 아니라 리소스의 이름을 나타내는 문자열입니다. URN은 리소스의 고유한 이름을 지정하며, 해당 이름을 통해 리소스에 접근할 수 있도록 합니다. 예를 들어, "urn:isbn:0451450523"은 특정 ISBN(국제 표준 도서 번호)에 대한 리소스를 가리키는 URN
 
+  
 <br>
 <br>
 
@@ -123,7 +126,13 @@
   <br>
   <br>
 
+
+![img.png](network11.png)
+
 ### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
+- http 소통은 결국 소켓 통신
+- HTTP통신은 3-way,4-way handshake를 거치고 데이터 전송에도 동일한 소켓이 사용되는데, 이때 데이터전송에 사용되는 소켓의 통신방식이 TCP통신의 데이터전송에서 사용되는 소켓통신과는 다른 방식으로 사용이 된다.(애초에 TCP통신에서 사용되는 소켓은 4계층에서 사용되는것이고 HTTP통신의 데이터 전송에서 사용되는 소켓은 7계층에서 사용된다.)HTTP통신이 소켓 기반의 통신은 맞지만, 단방향으로 사용
+
 
 <br>
 
