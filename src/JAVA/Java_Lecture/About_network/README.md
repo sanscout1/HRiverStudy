@@ -267,7 +267,7 @@
   - `public interface BlockingQueue<E> extends Queue<E> ` 
     - ![img.png](blockingqueue.png)
     - ![img.png](linkedblockingqueue.png)
-
+      - blockingqueue 를 implements 중인 likendblockingqueue 를 사용중 (blockingqueue 는 thread - safe 를 지원 중이라고 한다.)
 
 
 
