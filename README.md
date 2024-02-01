@@ -10,7 +10,7 @@
 * [`주간 과제 목록`](src%2FJAVA%2FJava_assignments)
 * [`퀴즈`](src%2FJAVA%2FJava_Test)
 * [`재고관리 유스케이스`](src%2FJAVA%2FJava_assignments%2FHR_usecaseAssignment)
-* [`BoardProject 시험`](src%2FJAVA%2FJava_Test%2FBoardProject_2)
+* [`BoardProject`](src%2FJAVA%2FJava_Test%2FBoardProject_2)
 * [`Starbucks 모델링`](src%2FDataBase_Lecture%2FDBAssignment%2FStarbucks)
 #### Book Project
 - [`BookProjectList`](src%2FJAVA%2FJava_Test%2FBookProjectList)
