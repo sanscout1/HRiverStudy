@@ -1,13 +1,10 @@
 package JAVA.Java_Lecture.About_IO.ioex01;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class MemoDao {
     List<Memo> memoList = new ArrayList<Memo>();
@@ -17,7 +14,7 @@ public class MemoDao {
         StringBuilder sb = new StringBuilder();
 
         try {
-            Reader reader = new FileReader("C:/Temp/memo.dat");
+            Reader reader = new FileReader("src/JAVA/Java_Test/ioex01/memo.dat");
             while (true) {
                 int n = reader.read();
                 if (n == -1) break;
