@@ -127,7 +127,8 @@
   <br>
 
 
-![img.png](../../../picture/network11.png)
+
+<img src="../../../picture/network11.png" width="50%" height="50%">
 
 ### http 소통은 3 way handshake 이 후에 서로간의 데이터 요청과 응답 할 때 사용된다.
 - http 소통은 결국 소켓 통신
@@ -164,7 +165,8 @@
 
 ### 4. DNS
 
-![img_1.png](../../../picture/tcpip06.png){: width="400" height="400"}
+
+<img src="../../../picture/tcpip06.png" width="50%" height="50%">
 
 - 가장 가까운 local DNS 서버 (리졸버)에게 물어보고 -> 가장 가까운 DNS 서버는 루트 도메인이 등록되어 있기 때문
   - 리졸버는 웹 브라우저와 같이 DNS 클라이언트의 요청을 네임 서버로 전달하고 네임 서버로부터 정보(도메인 이름과 IP 주소)를 받아 클라이언트에게 제공하는 기능을 수행합니다.
