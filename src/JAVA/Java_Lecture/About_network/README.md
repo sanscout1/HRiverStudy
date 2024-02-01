@@ -233,6 +233,8 @@
 
 ***
 
+## api 뜯어보기
+
 ![img.png](executorapi.png)
 -  new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 - 매개변수로 5개 받음
