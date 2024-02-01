@@ -260,7 +260,7 @@
 - `Transparent Huge Page` 기능으로 huge page 생성 설정을 할 수 있다.
 
 ### 카피 온 라이트
-![img.png](cow.png)
+![img.png](picture/cow.png)
 
 - fork 함수 실행 시 자식프로세스와 부모 프로세스는 동일 가상주소의 페이지 테이블 각자 가지고 있다.
 - 두 프로세스 모두 쓰기 권한은 없어진 상태이며, 새로운 데이터를 갱신하려고 하면 페이지 폴트 발생, 새로운 메모리 공간을 할당 받는다.
@@ -274,7 +274,7 @@
 ## 프로세스 통신
 
 ### 공유메모리
-![img.png](sharedmemory.png)
+![img.png](picture/sharedmemory.png)
 
 - fork 함수로 자식프로세스에게 작업을 하고 (부모프로세스 대기상태로) 부모프로세스에서 값을 가져오면 다르게 출력되는 것을 볼 수 있다.
 - cow 기능으로 각자 동일 데이터여도 다른 메모리를 할당 받았기 때문이다.
@@ -285,7 +285,7 @@
 
 ### 파이프
 
-![img.png](pipe.png)
+![img.png](picture/pipe.png)
 
 
 ### 소켓
