@@ -8,7 +8,7 @@ import java.util.List;
 public class MemoDao {
     List<Memo> memoList = new ArrayList<Memo>();
     Memo memo;
-    static int ID = 0;
+    static int ID = 0;  // id 고유값 저장하게 수정할것
 
     private static volatile MemoDao instance;
     private MemoDao() {}
