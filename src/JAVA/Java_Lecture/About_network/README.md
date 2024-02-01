@@ -244,6 +244,7 @@
 
 ![img.png](executorServiceapi1.png)
 - `executor` 를 extend 하는 인터페이스
+- 주로 executor의 종료를 관리하는 방법을 가지고 있음
 
 ![img.png](executorapi.png)
 -  new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
