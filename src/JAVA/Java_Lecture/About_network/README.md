@@ -234,10 +234,23 @@
 ***
 
 ## api 뜯어보기
+![img.png](excutorapi2.png)
+- Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package. 
+  - `excutors` 는 `excutor` 와 `executorservice` 를 구현했다.
+
+![img.png](excutorapi.png)
+![img.png](excutorapi3.png)
+- 매개변수로 `runnable` 받아 쓰레드 실행
+
+![img.png](executorServiceapi1.png)
+- `executor` 를 extend 하는 인터페이스
 
 ![img.png](executorapi.png)
 -  new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 - 매개변수로 5개 받음
+- Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue. : 고정 개수의 쓰레드 생성, 공유하는 제한 없는 큐
+- when all threads are active, they will wait in the queue until a thread is available : 쓰레드가 다 작동 중 이라면,큐에서 대기 하고 있을거다
+- The threads in the pool will exist until it is explicitly shutdown. : 풀을 종료 할 때 까지는 쓰레드들은 존재 한다.
 ***
 ![img.png](executorapi2.png)
 - 1 : corePoolSize – the number of threads to keep in the pool, even if they are idle, unless allowCoreThreadTimeOut is set
