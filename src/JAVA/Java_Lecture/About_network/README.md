@@ -231,9 +231,26 @@
 ***
 - Executor 인터페이스  : execute 함수 존재 (Runnable run 을 받아서 쓰레드 생성함)--> ExecutorService 인터페이스 ,, Executors 클래스 : 쓰레드 풀 생성 클래스
 
+***
 
-
-
+![img.png](executorapi.png)
+-  new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
+- 매개변수로 5개 받음
+***
+![img.png](executorapi2.png)
+- 1 : corePoolSize – the number of threads to keep in the pool, even if they are idle, unless allowCoreThreadTimeOut is set
+  - allowCoreThreadTimeOut 설정이 되어 있지 않다면 coolpoolsize 쓰레드 수만큼 계속 작동중, idle 상태 유지하면서라도
+- 2 :maximumPoolSize – the maximum number of threads to allow in the pool 
+  - 쓰레드풀의 쓰레드 최대 갯수
+- 3 : keepAliveTime – when the number of threads is greater than the core, this is the maximum time that excess idle threads will wait for new tasks before terminating.
+  - 쓰레드 갯수가 코어보다 많을 때, 초과된 쓰레드들이 종료 전까지 새 작업을 기다리는 최대 시간
+- 4 : unit – the time unit for the keepAliveTime argument
+  - 위의 시간 단위 설정
+- 5 : workQueue – the queue to use for holding tasks before they are executed. This queue will hold only the Runnable tasks submitted by the execute method.
+  - 실행전 runnable 들을 저장하고 있는 큐 ,, excutors 에서는 ` new LinkedBlockingQueue<Runnable>()` 을 사용
+  - `public interface BlockingQueue<E> extends Queue<E> ` 
+    - ![img.png](blockingqueue.png)
+    - ![img.png](linkedblockingqueue.png)
 
 
 
