@@ -218,6 +218,21 @@
 ### [`news 예제`](news)
 
 
+## 서버 동시 요청 처리
+
+
+![img.png](threadpool.png)
+- 스레드풀을 이용하여 스레드 수 제한을 통해 조절
+- 스레들풀은 이미 스레드를 그 갯 수만 큼 생성해두고 필요할 때 그 내용을 채워서 실행 하는 것
+
+![img.png](execute.png)
+***
+![img.png](execute01.png)
+***
+- Executor 인터페이스  : execute 함수 존재 (Runnable run 을 받아서 쓰레드 생성함)--> ExecutorService 인터페이스 ,, Executors 클래스 : 쓰레드 풀 생성 클래스
+
+
+
 
 
 
