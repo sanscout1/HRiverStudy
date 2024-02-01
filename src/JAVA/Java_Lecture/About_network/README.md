@@ -194,13 +194,13 @@
 
 1. 서버는 서버 소켓 객체를 생성(포트번호 할당)
 
-![img.png](serversocket.png)
+![img.png](../../../picture/serversocket.png)
 - 3가지 방법
 - InetSocketAddress()  : ip 와 포트번호 저장 객체
 
 2. 클라이언트는 연결 하기 위한 소켓 생성
 
-![img.png](clientsocket.png)
+![img.png](../../../picture/clientsocket.png)
 - 3가지 방법
 
 ### [**예제**](serversocket%2Fex01)
@@ -221,39 +221,39 @@
 ## 서버 동시 요청 처리
 
 
-![img.png](threadpool.png)
+![img.png](../../../picture/threadpool.png)
 - 스레드풀을 이용하여 스레드 수 제한을 통해 조절
 - 스레들풀은 이미 스레드를 그 갯 수만 큼 생성해두고 필요할 때 그 내용을 채워서 실행 하는 것
 
-![img.png](execute.png)
+![img.png](../../../picture/execute.png)
 ***
-![img.png](execute01.png)
+![img.png](../../../picture/execute01.png)
 ***
 - Executor 인터페이스  : execute 함수 존재 (Runnable run 을 받아서 쓰레드 생성함)--> ExecutorService 인터페이스 ,, Executors 클래스 : 쓰레드 풀 생성 클래스
 
 ***
 
 ## api 뜯어보기
-![img.png](excutorapi2.png)
+![img.png](../../../picture/excutorapi2.png)
 - Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package. 
   - `excutors` 는 `excutor` 와 `executorservice` 를 구현했다.
 
-![img.png](excutorapi.png)
-![img.png](excutorapi3.png)
+![img.png](../../../picture/excutorapi.png)
+![img.png](../../../picture/excutorapi3.png)
 - 매개변수로 `runnable` 받아 쓰레드 실행
 
-![img.png](executorServiceapi1.png)
+![img.png](../../../picture/executorServiceapi1.png)
 - `executor` 를 extend 하는 인터페이스
 - 주로 executor의 종료를 관리하는 방법을 가지고 있음
 
-![img.png](executorapi.png)
+![img.png](../../../picture/executorapi.png)
 -  new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 - 매개변수로 5개 받음
 - Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue. : 고정 개수의 쓰레드 생성, 공유하는 제한 없는 큐
 - when all threads are active, they will wait in the queue until a thread is available : 쓰레드가 다 작동 중 이라면,큐에서 대기 하고 있을거다
 - The threads in the pool will exist until it is explicitly shutdown. : 풀을 종료 할 때 까지는 쓰레드들은 존재 한다.
 ***
-![img.png](executorapi2.png)
+![img.png](../../../picture/executorapi2.png)
 - 1 : corePoolSize – the number of threads to keep in the pool, even if they are idle, unless allowCoreThreadTimeOut is set
   - allowCoreThreadTimeOut 설정이 되어 있지 않다면 coolpoolsize 쓰레드 수만큼 계속 작동중, idle 상태 유지하면서라도
 - 2 :maximumPoolSize – the maximum number of threads to allow in the pool 
@@ -265,8 +265,8 @@
 - 5 : workQueue – the queue to use for holding tasks before they are executed. This queue will hold only the Runnable tasks submitted by the execute method.
   - 실행전 runnable 들을 저장하고 있는 큐 ,, excutors 에서는 ` new LinkedBlockingQueue<Runnable>()` 을 사용
   - `public interface BlockingQueue<E> extends Queue<E> ` 
-    - ![img.png](blockingqueue.png)
-    - ![img.png](linkedblockingqueue.png)
+    - ![img.png](../../../picture/blockingqueue.png)
+    - ![img.png](../../../picture/linkedblockingqueue.png)
       - blockingqueue 를 implements 중인 likendblockingqueue 를 사용중 (blockingqueue 는 thread - safe 를 지원 중이라고 한다.)
 
 
