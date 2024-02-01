@@ -166,7 +166,8 @@
 
 ![img_1.png](../../../picture/tcpip06.png)
 
-- 가장 가까운 local DNS 서버에게 물어보고 -> 가장 가까운 DNS 서버는 루트 도메인이 등록되어 있기 때문
+- 가장 가까운 local DNS 서버 (리졸버)에게 물어보고 -> 가장 가까운 DNS 서버는 루트 도메인이 등록되어 있기 때문
+  - 리졸버는 웹 브라우저와 같이 DNS 클라이언트의 요청을 네임 서버로 전달하고 네임 서버로부터 정보(도메인 이름과 IP 주소)를 받아 클라이언트에게 제공하는 기능을 수행합니다.
 - 루트 도메인으로부터 받은 조회 메지를 전송한다. 이때, 루트 도메인이 www.google.com에서 .com 도메인의 DNS 서버의 IP 주소를 반송하고, 또 다시 가장 가까운 DNS 서버는 com 도메인의 DNS 서버에게 또 다시 메시지를 보낸다
 - root nameserver -> top level domain nameserver (com,org ...) -> second-level domain (authoritative nameserver) (google)
 
