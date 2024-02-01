@@ -174,9 +174,58 @@
 <br>
 <br>
 
+### ipconfig
+
+- ip 주소 : ipconfig, ifconfig ens32
+- 서브넷마스크
+- 게이트웨이 주소 : iproute
+- dns주소 서버
 
 <br>
 <br>
+
+## TCP 네트워킹
+1. 서버에서 서버 소켓을 만든다
+2. 클라이언트의 소켓으로 서버에 연결 요청을 한다
+3. 서버에서 accept 하여 소켓을 만들고, 클라이언트와 바인딩하여 통신
+
+### 순서
+#### 서버
+
+1. 서버는 서버 소켓 객체를 생성(포트번호 할당)
+
+![img.png](serversocket.png)
+- 3가지 방법
+- InetSocketAddress()  : ip 와 포트번호 저장 객체
+
+2. 클라이언트는 연결 하기 위한 소켓 생성
+
+![img.png](clientsocket.png)
+- 3가지 방법
+
+### [**예제**](serversocket%2Fex01)
+### [**쓰레드 활용 예제**](serverSocketRealEX)
+
+<br>
+<br>
+<br>
+
+## UDP 통신
+- serversocket 처럼 accept 로 소켓을 기다리지 않는다.
+- 데이타그램패킷을 받을 준비만 하고 있는다. 그래서 받으면 바로 처리
+### datagrampacket 은 socket 처럼 연결이 안되어 있어서, 패킷을 보낼때마다 ip 와 포트번호를 명시해서 보내는 send, receive 함수를 사용한다!
+
+### [`news 예제`](news)
+
+
+
+
+
+
+
+
+
+
 
 
 
