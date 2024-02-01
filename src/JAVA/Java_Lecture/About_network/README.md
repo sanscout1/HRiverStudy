@@ -259,7 +259,7 @@
 - 2 :maximumPoolSize – the maximum number of threads to allow in the pool 
   - 쓰레드풀의 쓰레드 최대 갯수
 - 3 : keepAliveTime – when the number of threads is greater than the core, this is the maximum time that excess idle threads will wait for new tasks before terminating.
-  - 쓰레드 갯수가 코어보다 많을 때, 초과된 쓰레드들이 종료 전까지 새 작업을 기다리는 최대 시간
+  - 쓰레드 갯수가 코어보다 많을 때, 초과된 쓰레드들이 종료 전까지 새 작업을 기다리는 최대 시간 (쓰레드들이 쉬고 있을 때, 큐에서 새로운 작업이 있어도 대기하는 시간 : 기본값 0)
 - 4 : unit – the time unit for the keepAliveTime argument
   - 위의 시간 단위 설정
 - 5 : workQueue – the queue to use for holding tasks before they are executed. This queue will hold only the Runnable tasks submitted by the execute method.
