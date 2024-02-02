@@ -20,7 +20,7 @@ public class Menu {
             String menuInput = sc.nextLine();  // 메뉴 선택
 
             switch (menuInput) {
-                case "1" -> memoDao.writeMemo("이한강");  // 메모 추가
+                case "1" -> memoDao.writeMemo("이한강");  // 메모 추가   : 클라이언트에서 사용자명 입력해서 들어가게하자
                 case "2" -> {               // 읽을 메모
                     System.out.println("확인할 메모 번호를 입력하세요");
                     System.out.print("번호 입력 : ");
