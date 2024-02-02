@@ -31,7 +31,7 @@ public class Menu {
                     memoDao.getMemoList();
                 }
                 case "4" -> {
-                    memoDao.getMemoList();
+                    memoDao.partMemolist();
                     System.out.println("삭제할  메모 번호를 입력하세요");
                     System.out.print("번호 입력 : ");
                     int choice = Integer.parseInt(sc.nextLine());

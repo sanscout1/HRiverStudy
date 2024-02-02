@@ -5,8 +5,11 @@ import lombok.Getter;
 public class Memo {
     @Getter
     private int id;
+    @Getter
     private String name;
+    @Getter
     private String content;
+    @Getter
     private String date;
     private String nice;
 
@@ -31,4 +34,5 @@ public class Memo {
     public String memoInfo(){
         return String.valueOf(id)+','+name+','+content+','+date+','+nice;
     }
+
 }

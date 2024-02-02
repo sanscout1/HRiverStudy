@@ -4,11 +4,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class MemoDao {
     List<Memo> memoList = new ArrayList<Memo>();
     Memo memo;
-    static int ID = 0;  // id 고유값 저장하게 수정할것
 
     private static volatile MemoDao instance;
     private MemoDao() {}
@@ -25,7 +25,7 @@ public class MemoDao {
         String content = "\"" + reader.readLine() + "\"";
         System.out.println("중요도를 입력해주세요 0~9");
         String nice = reader.readLine();
-        memo = new Memo(ID++, name, content, getDate(), nice);
+        memo = new Memo(nowID(), name, content, getDate(), nice);
         System.out.println("메모를 작성했습니다.");
         System.out.println(memo.toString());
         memoList.add(memo);
@@ -49,7 +49,6 @@ public class MemoDao {
             if(memo1.getId() == choice){
                 memoList.remove(memo1.getId());
                 System.out.println("메모 삭제를 했습니다.");
-                System.out.println(memoList.toString());
                 break;
             }
         }
@@ -61,6 +60,36 @@ public class MemoDao {
         }
 
         System.out.println("-------------------------------------------------------------------");
+    }
+
+    public int nowID(){
+        int maxID = 0;
+        for (Memo memo1 : memoList) {
+             maxID = memo1.getId();
+        }
+        return maxID+1;
+    }
+
+    public void partMemolist(){
+        System.out.println("------------------------------------------------------------------");
+        for (Memo memo1 : memoList) {
+            System.out.println("ID : "+ memo1.getId() + "| Nanme : "+memo1.getName() + "| Contnet :" + getContentPart(memo1.getId()) + "| Date : "+memo1.getDate());
+        }
+
+        System.out.println("-------------------------------------------------------------------");
+    }
+    private String getContentPart(int ID){
+        String tmpContent = memoList.get(ID).getContent();
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(tmpContent," ");
+        int countWord = 0;
+        while(st.hasMoreTokens()){
+            if(countWord==3) break;
+            sb.append(st.nextToken()).append(" ");
+            countWord++;
+        }
+        sb.append("...");
+        return sb.toString();
     }
     public void getMemo(int choice) {
         System.out.println(memoList.get(choice).toString());
