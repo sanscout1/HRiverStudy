@@ -19,7 +19,16 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jsonfile/json-20231013.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/mysql-connector-java-8.0.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/json-20231013.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
