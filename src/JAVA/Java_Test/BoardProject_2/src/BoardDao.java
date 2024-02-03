@@ -3,29 +3,50 @@ package JAVA.Java_Test.BoardProject_2.src;
 import JAVA.Java_Test.BoardProject_2.src.BoardException.BoardException;
 import JAVA.Java_Test.BoardProject_2.src.BoardException.BoardExceptionList;
 import JAVA.Java_Test.BoardProject_2.src.BoardException.ErrorCodeBoard;
+import lombok.Getter;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class BoardDao {
     Scanner in = new Scanner(System.in);
-    private List<Board> boardList = new ArrayList<Board>();
+    @Getter
+    private  List<Board> boardList = new ArrayList<>();
     private Board board;
 
-    public static int bno = 1;
+    BoardDB boardDB = BoardDB.getInstance();
+    private int bno ;
 
-    public List<Board> getBoardList() {
-        return boardList;
+    private  BoardDao() {
+        boardDB.connectDB();
+        this.boardList = boardDB.readDB();
+        try {
+            if(!this.boardList.isEmpty()) {
+                this.bno = this.boardList.get(boardList.size()-1).getBno()+1;
+            }
+            else {
+                this.bno =1;
+            }
+
+            boardDB.closeDB();
+        } catch (Exception e) {}
+    }
+    private static volatile BoardDao instance;
+
+    public static BoardDao getInstance() {  //싱글톤
+        if (instance == null) {
+            instance = new BoardDao();
+        }
+        return instance;
     }
 
-
     public void list() {
-        // 이 부분 boarddao 에서 게시물 출력 하는거 따로 뽑자
         System.out.println("[게시물 목록]");
         System.out.println("---------------------------------------------");
-        System.out.printf("%-4s%-12s%-16s%-40s\n", "no", "writer", "date", "title");
+        System.out.printf("%-4s%-12s%-40s%-25s%-30s\n", "no", "writer","content", "date", "title");
         ReadAll();
         System.out.println("---------------------------------------------");
 
@@ -44,8 +65,8 @@ public class BoardDao {
         System.out.print("작성자: ");
         board.setBwriter(in.nextLine());
         board.setDate();
+        
 
-        // 1,2 아닌 경우 예외처리
         System.out.println("--------------------------------------------------------");
         System.out.println("보조 메뉴: 1.OK | 2.Cancel");
         System.out.println("메뉴 선택: ");
@@ -55,7 +76,9 @@ public class BoardDao {
                 int choice = Integer.parseInt(tmp);
                 if (choice == 1) {
                     boardList.add(board);
-
+                    boardDB.connectDB();
+                    boardDB.writeDB(board);
+                    boardDB.closeDB();
                 } else {
                     System.out.println("생성을 취소 했습니다.");
                 }
@@ -131,7 +154,7 @@ public class BoardDao {
         // 예외처리
         if (!boardList.isEmpty()) {
             for (Board board1 : boardList) {
-                System.out.printf("%-4s%-12s%-16s%-40s\n", board1.getBno(), board1.getBwriter(), board1.getDate(), board1.getBtitle());
+                System.out.printf("%-4s%-12s%-40s%-25s%-30s\n", board1.getBno(), board1.getBwriter(),board1.getBcontent(), board1.getDate(), board1.getBtitle());
             }
         }
         System.out.println();
@@ -160,6 +183,9 @@ public class BoardDao {
                     board.setBtitle(tmpBtitle);
                     board.setBcontent(tmpBcontent);
                     board.setBwriter(tmpBwriter);
+                    boardDB.connectDB();
+                    boardDB.updateDB(board);
+                    boardDB.closeDB();
                     System.out.println("게시물 수정 성공!");
                 }
             } else {
@@ -173,14 +199,16 @@ public class BoardDao {
     }
 
 
-    public void Delete(Board board) {// 예외처리
-
+    public void Delete(Board board) throws SQLException {// 예외처리
+        boardDB.connectDB();
+        boardDB.deleteBoard(board);
+        boardDB.closeDB();
         boardList.remove(board);
         System.out.println("삭제 완료");
 
     }
 
-    public void Clear() {  //예외처리
+    public void clear()  {  //예외처리
         System.out.println("[게시물 전체 삭제]");
         System.out.println("--------------------------------------------");
         System.out.println("보조 메뉴: 1. OK | 2. Cancel");
@@ -191,6 +219,10 @@ public class BoardDao {
                 if (menuNo.equals("1")) {
                     boardList.clear();
                     System.out.println("게시물 전체 삭제 성공!");
+                    boardDB.connectDB();
+                    boardDB.clearBoard();
+                    boardDB.closeDB();
+                    this.bno = 1;
                 }
             } else {
                 throw new BoardException(ErrorCodeBoard.IS_NOT_RIGHT_CHOICE);

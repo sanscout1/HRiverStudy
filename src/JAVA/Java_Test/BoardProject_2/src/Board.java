@@ -1,14 +1,20 @@
 package JAVA.Java_Test.BoardProject_2.src;
 
+import lombok.Getter;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Board {
+    @Getter
     private int bno;
+    @Getter
     private String btitle;
+    @Getter
     private String bcontent;
+    @Getter
     private String bwriter;
-    private String date;
+    private String Bdate;
 
     public Board() {
     }
@@ -18,35 +24,19 @@ public class Board {
         this.btitle = btitle;
         this.bcontent = bcontent;
         this.bwriter = bwriter;
-        this.date = date;
-    }
-
-    public int getBno() {
-        return bno;
+        this.Bdate =  date;
     }
 
     public void setBno(int bno) {
         this.bno = bno;
     }
 
-    public String getBtitle() {
-        return btitle;
-    }
-
     public void setBtitle(String btitle) {
         this.btitle = btitle;
     }
 
-    public String getBcontent() {
-        return bcontent;
-    }
-
     public void setBcontent(String bcontent) {
         this.bcontent = bcontent;
-    }
-
-    public String getBwriter() {
-        return bwriter;
     }
 
     public void setBwriter(String bwriter) {
@@ -54,7 +44,7 @@ public class Board {
     }
 
     public String getDate() {
-        return date;
+        return Bdate;
     }
 
     @Override
@@ -64,15 +54,15 @@ public class Board {
                 ", btitle='" + btitle + '\'' +
                 ", bcontent='" + bcontent + '\'' +
                 ", bwriter='" + bwriter + '\'' +
-                ", date='" + date + '\'' +
+                ", date='" + Bdate + '\'' +
                 '}';
     }
 
-
-
     public void setDate(){
-        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = date.format(new Date());
-        this.date = dateString;
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        this.Bdate = date.format(new Date());
+    }
+    public void pickDate(String date){
+        this.Bdate = date;
     }
 }
