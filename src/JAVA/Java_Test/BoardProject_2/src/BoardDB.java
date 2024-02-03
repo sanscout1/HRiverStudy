@@ -8,8 +8,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class BoardDB {
 
+
+        /*
+    오호 아까 봤떤 싱글톤 패턴이 또 있지요
+    이해하고 있다면 그런가보다 합시다.
+     */
     private static volatile BoardDB instance;
 
     public static BoardDB getInstance() {  //싱글톤
@@ -20,6 +27,14 @@ public class BoardDB {
     }
 
     private Connection conn = null;
+
+    /*
+    잘 보면 우리가 실습한 코드내용에서, 잘 쪼개서 함수로 만든게 보이죠?
+    네 이게 오류나기 시작하면서 멘탈이 나가는거지 사실 배운거 잘 조립하면 된다는 것을 볼 수 있습니다.
+    하지만 저도 4시간이나 걸려서 해결 했네요
+    모든 건 경험의 차이지 실력의 차이가 아니랍니다.
+    그 다음은 우리가 열심히 해온 sql 문을 잘 작성하면 모든게 해결! 여기까지 설명입니다.
+     */
 
     public void connectDB() {
 
@@ -63,27 +78,29 @@ public class BoardDB {
         }
     }
 
-    public void updateDB(Board board) throws SQLException {
-        String sql = "update boards set btitle =?, bcontent =?, bwriter= ? " +
-                "where bno =?";
+    public void updateDB(Board board) {
+        try {
+            String sql = "update boards set btitle =?, bcontent =?, bwriter= ? " +
+                    "where bno =?";
 
-        //PreparedStatement 얻기 및 값 지정
-        PreparedStatement pstmt = conn.prepareStatement(sql); // bno 값 가져오는거 연구하자
-        pstmt.setString(1, board.getBtitle());
-        pstmt.setString(2, board.getBcontent());
-        pstmt.setString(3, board.getBwriter());
-        pstmt.setInt(4, board.getBno());
+            //PreparedStatement 얻기 및 값 지정
+            PreparedStatement pstmt = conn.prepareStatement(sql); // bno 값 가져오는거 연구하자
+            pstmt.setString(1, board.getBtitle());
+            pstmt.setString(2, board.getBcontent());
+            pstmt.setString(3, board.getBwriter());
+            pstmt.setInt(4, board.getBno());
 
 
-        //SQL문 실행
-        int rows = pstmt.executeUpdate();
+            //SQL문 실행
+            int rows = pstmt.executeUpdate();
 
-        //PreparedStatement 닫기
+            //PreparedStatement 닫기
 
-        pstmt.close();
+            pstmt.close();
+        } catch (Exception e) {}
     }
 
-    public void deleteBoard(Board board) throws SQLException {
+    public void deleteBoard(Board board) {
         try {
             String sql = "delete from boards " +
                     "where bno =?";
