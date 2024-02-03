@@ -45,6 +45,7 @@
 * [`5주차 BoardException 발표`](https://youtu.be/yyB2QkMpuAU)
 * [`6주차 dfs 알고리즘 활용 문제풀이 `](https://youtu.be/WaxKKOj0B6U)
 * [`7주차 도커 및 알고리즘 문제풀이 `](https://youtu.be/iToXt1gfgeo)
+* [`8주차 게시판 프로그램 DB 연동 설명 `](https://youtu.be/6k1prYFnjiI)
   
 
 ***
