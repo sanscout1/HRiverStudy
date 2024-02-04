@@ -9,7 +9,7 @@
 - JDBC 을 이용하여 MYSQL 연동 
 
 ## 2. 제약 조건
-![img.png](board_DB_SeqDiagram.png)
+![img.png](../../../picture/boardDBSerqDiagram.png)
 - DB 연동 후 시퀀스 다이어그램
 
 ## 3. 플로우 차트
