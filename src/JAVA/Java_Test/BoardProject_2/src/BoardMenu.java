@@ -5,13 +5,6 @@ import java.sql.SQLException;
 
 public class BoardMenu {
 
-    /*
-    boarddao 가 이상하게 객체 생성 new 가아닌 .getInstanche를 합니다. 싱글톤 패턴을 사용해서 그런데요
-    자세한 내용은 boardDao에 작성하겠습니다.
-
-    이 클래스에서는 간단한 메뉴 함수만 있습니다. boarddao로 넘어가 설명을 이어 가겠습니다.
-     */
-
     BoardDao boardDao= BoardDao.getInstance();
 
     public void mainMenu() {
