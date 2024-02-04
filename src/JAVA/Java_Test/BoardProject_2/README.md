@@ -12,8 +12,15 @@
 ![img.png](board_DB_SeqDiagram.png)
 - DB 연동 후 시퀀스 다이어그램
 
+## 3. 플로우 차트
 ![img.png](board_DB_Flow.png)
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
