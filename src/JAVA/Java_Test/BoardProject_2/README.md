@@ -7,6 +7,7 @@
 ### Bottom-up
 - 게시판 시스템을 만들기 위한 자바 객체 생성 구조 분석 및 Exception 패키지 분석
 - JDBC 을 이용하여 MYSQL 연동 
+- MYSQL 쿼리문 실행을 batch 로 처리
 
 ## 2. 제약 조건
 ![img.png](../../../picture/boardDBSerqDiagram.png)
