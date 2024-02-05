@@ -318,11 +318,11 @@
 - 하지만 하나의 스레드 오류가 모든 스레드에 영향,  배타적 제어를 해야 하는 곳인지 아닌지 잘 판단해야 함
 
 ## 커널 스레드와 유저 스레드
-![img.png](threadkerneluser.png)
+![img.png](picture/threadkerneluser.png)
 
 - 커널 스레드는 커널이 관리, 유저 스레드는 프로세스가 관리
 
-![img.png](threadkerneluser02.png)
+![img.png](picture/threadkerneluser02.png)
 
 - 커널 스레드는 프로세스 스레드 0 과 1 을 동등 취급
 - 사용자 스레드는 프로세스 0과 1을 구분 못함
@@ -330,7 +330,7 @@
 
 # 디바이스
 
-![img.png](device01.png)
+![img.png](picture/device01.png)
 
 - 장치 마다 디바이스 파일 존재 (/dev/sda)
 - 프로세스가 디바이스 파일을 조작 -> 커널 내부의 디바이스 드라이버가 장치에 접근
@@ -346,7 +346,7 @@
 
 ## 디바이스 드라이버
 
-![img.png](devicecontrol.png)
+![img.png](picture/devicecontrol.png)
 - 프로세스가 디바이스 파일에 요청
 - cpu가 커널모드로 전환 후 디바이스 드라이버가 레지스터를 사용해 장치에 요청
 - 장치가 요청 처리 후 드라이버가 처리 완료를 확인 후 결과 받음
@@ -354,11 +354,11 @@
 
 ### 메모리 맵 입출력 (MMIO)
 
-![MMIO.png](MMIO.png)
+![MMIO.png](picture/MMIO.png)
 
-![img.png](mmio01.png)
+![img.png](picture/mmio01.png)
 
-![img.png](mmio02.png)
+![img.png](picture/mmio02.png)
 
 - 처리 완료를 확인 하기 위하여 `폴링` 또는 `인터럽트` 사용
 
