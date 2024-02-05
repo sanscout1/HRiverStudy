@@ -365,12 +365,12 @@
 
 #### 폴링
 
-![img.png](polling.png)
+![img.png](picture/polling.png)
 - 장치에서의 신호를 주기적으로 검사함
 
 #### 인터럽트
 
-![img.png](interrupt.png)
+![img.png](picture/interrupt.png)
 - 장치쪽에서 인터럽트로 처리 완료 신호를 보냄
 
 ## 디바이스 파일면 변경 문제
