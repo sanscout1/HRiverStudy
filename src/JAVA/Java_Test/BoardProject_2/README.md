@@ -11,6 +11,11 @@
 ## 2. 제약 조건
 ![img.png](../../../picture/boardDBSerqDiagram.png)
 - DB 연동 후 시퀀스 다이어그램
+<br>
+<br>
+<br>
+
+![img.png](boardClassDiagram.png)
 
 ## 3. 플로우 차트
 ![img.png](board_DB_Flow.png)
