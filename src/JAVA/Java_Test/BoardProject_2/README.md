@@ -15,7 +15,7 @@
 <br>
 <br>
 
-![img.png](boardClassDiagram.png)
+![img_1.png](boardClassDiagram.png)
 
 ## 3. 플로우 차트
 ![img.png](board_DB_Flow.png)
