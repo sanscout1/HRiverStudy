@@ -19,6 +19,10 @@
 #### Book Project
 - [`BookProjectList`](src%2FJAVA%2FJava_Test%2FBookProjectList)
 
+### 1차 미니 프로젝트 (WMS 시스템)
+
+- [`Warehouse Management System`](https://github.com/sanscout1/SSGLandersMini1)
+
 ***
 
 ## CS 공부
