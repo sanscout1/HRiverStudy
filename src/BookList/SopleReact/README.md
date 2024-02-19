@@ -1,6 +1,6 @@
 ![img.png](react01.png)
 
-# HTML
+# Frontend
 ### SPA
 - 한 페이지에서 동적으로 body 태그 내부를 바꿔서 출력하는 것
 
