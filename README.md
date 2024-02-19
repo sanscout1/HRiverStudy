@@ -4,7 +4,8 @@
 
 * [`JAVA`](src%2FJAVA%2FJava_Lecture)
 * [`DataBase`](src%2FDataBase_Lecture)
-* [`Frontend`](src%2FFrontend)
+* [`Frontend 기본`](src%2FFrontend)
+* [`Vue`](src%2FFrontend%2FVUE)
 
 ### ⌨️ 실습 과제
 

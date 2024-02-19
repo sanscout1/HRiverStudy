@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input type="text" name="text1" value="text" /><br />
+      <input type="password" name="pwd1" value="password" /><br />
+      <input type="file" name="file1" value="file" /><br />
+      <input type="checkbox" name="ck1" value="checkbox" /><br />
+      <input type="radio" name="rd1" value="radio" /><br />
+      <input type="hidden" name="hidden" value="hidden" /><br />
+      <input type="button" value="button" /><br />
+      <input type="reset" value="reset" /><br />
+      <input type="image" src="http://via.placeholder.com/100x100" /><br />
+      <input type="submit" />
+    </form>
+    <br /><br />
+
+    <form action="">
+      <table>
+        <tr>
+          <td><label for="username">이름</label></td>
+          <td><input type="text" name="username" id="username" /></td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td>
+            <input type="radio" id="man" name="gender" value="man" />
+            <!-- name 이 같기 때문에 같은 라디오박스로 파악 -->
+            <label for="man">남자</label>
+            <input type="radio" id="woman" name="gender" value="woman" />
+            <label for="woman">여자</label>
+          </td>
+        </tr>
+      </table>
+      <input type="submit" value="가입" />
+    </form>
+
+    <form action="">
+      <select>
+        <option value="">김밥</option>
+        <option value="">떡볶이</option>
+        <option value="">순대</option>
+      </select>
+    </form>
+    <br />
+
+    <form action="">
+      <select multiple="multiple">
+        <option value="">김밥</option>
+        <option value="">떡볶이</option>
+        <option value="">순대</option>
+      </select>
+    </form>
+    <br />
+
+    <form action="">
+      <select name="" id="">
+        <optgroup label="분식">
+          <option value="">김밥</option>
+          <option value="">떡볶이</option>
+          <option value="">순대</option>
+        </optgroup>
+        <optgroup label="한식">
+          <option value="">된장찌개</option>
+          <option value="">순두부찌개</option>
+          <option value="">비빔밥</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <br>
+
+    <textarea name="" id="" cols="30" rows="10">
+      textarea태그
+    </textarea>
+  </body>
+</html>
