@@ -1,0 +1,70 @@
+:root{
+    --body-bg : crimson;
+    --hamburger-bg: black;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-title {
+  color: white;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.hamburger-container {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: var(--hamburger-bg);
+}
+
+.hamburger {
+  top:50%;
+}
+.hamburger::before {
+  top: -30px;
+}
+
+.hamburger::after {
+  top: 30px;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  transition: 0.7s;
+  background: white;
+}
+
+.hamburger::before, .hamburger::after {
+  content: "";
+}
+
+.toggle:checked ~ .hamburger::before {
+  top:0;
+  transform: rotate(-405deg);
+}
+
+.toggle:checked ~ .hamburger::after {
+  top:0;
+  transform: rotate(585deg);
+}
+
+.toggle:checked ~ .hamburger {
+  background: var(--hamburger-bg);
+}
+.toggle {
+  opacity: 0;
+}

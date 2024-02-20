@@ -1,0 +1,27 @@
+div {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+}
+
+#second {
+  background-color: green;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* 축을 세로로 바꿈, 세로축 기준으로 중앙에 배치 */
+
+
+  
+  /* align-items: flex-start;   */
+  /* 세로축 */
+  /* justify-content: center; */
+  /* 가로축 */
+}

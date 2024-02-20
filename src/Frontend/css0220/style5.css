@@ -1,0 +1,34 @@
+body{
+  height: 1000vh;
+
+}
+
+.test1 div {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+#second {
+  background-color: orange;
+  position: fixed;
+}
+
+.test2 .up {
+  background-color: magenta;
+  width: 100px;
+  height: 100px;
+}
+.test2 .down {
+  background-color: indigo;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 20px;
+}
+
+/* 
+static : 기본
+fixed : 고정
+relative : 상대적으로 배치
+*/

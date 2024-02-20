@@ -349,3 +349,57 @@ function fetchData() {
 
 
 
+// https://joshua1988.github.io/vue-camp/js/this.html#%E1%84%8E%E1%85%A5%E1%86%BA-%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2-this
+
+
+
+console.log(this); // window
+// window는 자바스크립트의 최상위 객체
+
+
+var obj = {
+  num: 10,
+  printNum: function() {
+    console.log(this.num);
+  }
+};
+
+
+obj.printNum(); // 10
+
+
+
+
+function Developer() {
+  console.log(this);
+}
+var dev = new Developer();
+// Developer {}
+// 함수를 이용해 새 인스턴스를 선언하는 함수
+//생성자 함수의 this는 함수의 내부를 가리킨다는 것
+
+
+// 네 번째로 살펴볼 this는 실제로 웹 개발을 할 때 가장 많이 마주하게 되는 this입니다
+function fetchData() {
+  axios.get('domain.com/products').then(function() {
+    console.log(this);
+  });
+}
+
+fetchData(); // window
+// axios 는 npm install 로 가져와야함
+// HTTP 요청과 같은 비동기 처리 코드는 전역 컨텍스트를 갖습니다. 정리해서 비동기 처리 코드의 콜백 함수는 전역 컨텍스트를 가리킨다
+
+
+
+
+
+
+
+// 자바스크립트는 프로토타입 기반 언어(prototype-based language) 입니다. 
+// 프로토타입 기반 언어에서는 어떤 객체를 원형(prototype)으로 삼고 이를 참조함으로써 상속과 비슷한 효과를 얻습니다.
+
+
+
+
+
