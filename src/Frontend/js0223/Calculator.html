@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // function add(x, y) {
+      //   return x + y;
+      // }
+      // function multi(x, y) {
+      //   return x * y;
+      // }
+      // function calculator(callback, x, y) {
+      //   return callback(x, y);
+      // }
+
+      // console.log(calculator(add, 1, 3));
+
+      // console.log(calculator(multi, 3, 5));
+
+      // let obj = {
+      //   vals : [1,2,3],
+      //     logValues : function(value,i){
+      //       console.log(this,value,i);
+      //     }
+      // };
+      // obj.logValues(1,2);
+
+      // let obj = {
+      //   name : 'obj1',
+      //   func : function(){
+      //     let self = this;
+      //     return function(){
+      //       console.log(self.name);
+      //     };
+      //   }
+      // }
+      // let callback = obj.func();
+      // setTimeout(callback,100);
+
+      // let count = 0;
+      // let timer = function() {
+      //   console.log(count);
+      //   if(++count > 5) clearInterval(alarm);
+      // }
+
+      // let alarm = setInterval(timer,1000);
+
+
+      let array = [10,20,30].map(function(currentValue,index){
+        console.log(currentValue,index);
+        return currentValue + 10;
+      });
+      console.log(array);
+
+    </script>
+  </head>
+  <body>
+    <!-- 콜백함수로 계산기 구현 -->
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+      // 이벤트를 연결합니다.
+      $(document).ready(function () {
+        // 1 속성 값을 입력해 속성 지정하기
+        // 속성을 지정합니다.
+        // $("img").attr("alt", "jQuery 라이브러리를 사용한 속성 지정");
+        // $("img").attr("src", "http://via.placeholder.com/100x100");
+        // $("img").attr("width", "100");
+
+        // 2 객체를 입력해 속성 지정하기
+        $("img").attr({
+          alt: "jQuery 라이브러리를 사용한 속성 지정",
+          src: "http://via.placeholder.com/100x100",
+          width: 100,
+        });
+
+        // 3 함수를 이용해 속성 지정하기
+        // $("img").attr({
+        //   alt: "jQuery 라이브러리를 사용한 속성 지정",
+        //   src: function (index) {
+        //     // 변수를 선언합니다.
+        //     let size = (index + 1) * 100;
+        //     // 반환합니다.
+        //     return "http://via.placeholder.com/" + size + "x100";
+        //   },
+        // });
+
+        // 메서드 체이닝 가능
+      //   $("img")
+      //     .attr("alt", "jQuery 라이브러리를 사용한 속성 지정")
+      //     .attr("src", "http://via.placeholder.com/100x100")
+      //     .attr("width", "100");
+      // });
+    </script>
+  </head>
+  <body>
+    <img />
+    <img />
+    <img />
+  </body>
+</html>

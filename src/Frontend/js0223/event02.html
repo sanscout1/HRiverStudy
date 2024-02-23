@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Object</title>
+    <script>
+      window.onload = function (event) {
+        alert(event);
+      };
+
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let button = document.getElementById("button");
+        // 이벤트를 연결합니다.
+        button.onclick = function () {
+          // 기본 이벤트를 제거합니다.
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <a id="button" href="https://www.naver.com">버튼</a>
+  </body>
+</html>

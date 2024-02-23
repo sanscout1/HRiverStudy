@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+            //       let product = {
+            //         제품명: "7D 건조 망고",
+            //         유형: "당절임",
+            //         성분: "망고, 설탕, 메타중아황산나트륨, 치자황색소",
+            //         원산지: "필리핀",
+            //       };
+
+            //       // 출력합니다.
+            // for (let i in product) {
+            // alert(i + ':' + product[i]);
+            // }
+
+            // // 객체를 선언합니다.
+            // let object = {
+            //   "with space": 273,
+            //   "with ~!@#$%^&*()_+": 52,
+            // };
+            // // 출력합니다.
+            // alert(object["with space"]);
+            // alert(object["with ~!@#$%^&*()_+"]);
+              // 객체를 선언합니다.
+      let person = {
+          name: '한강',
+          eat: function (callback) {
+          
+          alert(this.name + '씨가 ' + callback + '을/를 먹습니다.');
+      }
+      };
+      let week = {
+        월 : "만두",
+        화 : "햄버거",
+        수 : "봉구스",
+        목 : "한솥",
+        금 : "피자",
+        day: function (day){
+        return day+'요일에 '+week[day];
+      }
+      };
+
+      person.eat(week.day('화'));
+      // 기본적으로 키값을 가져온다, 그래서 value 가져올려면 개 자체를 불러와야한다.
+      
+      
+      // 메서드를 호출합니다.
+    
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+  $(document).ready(function () {
+        //   1 속성 값을 입력해 스타일 속성 지정하기
+        // // 스타일을 적용합니다.
+        // $('.box').css('float', 'left');
+        // $('.box').css('margin', 10);
+        // $('.box').css('width', 100);
+        // $('.box').css('height', 100);
+        // $('.box').css('backgroundColor', 'red');
+
+        $('.box').css('float', 'left').css('margin', 10).css('width', 100).css('height', 100).css('backgroundColor', 'red');
+
+        // 2 객체를 입력해 스타일 속성 지정하기
+          //   $('.box').css({
+          // float: 'left',
+          // margin: 10,
+          // width: 100,
+          // height: 100,
+          // backgroundColor: 'red'
+          // }); 
+
+      //     3 함수를 이용해 스타일 속성 지정하기
+      //     let output = '';
+      // for (let i = 0; i < 256; i++) {
+      // output += '<div></div>';
+      // }
+      // document.body.innerHTML = output;
+      // // 스타일을 적용합니다.
+      // $('div').css({
+      // height: 2,
+      // backgroundColor: function (i) {
+      // return 'rgb(' + i + ',' + i + ',' + i + ')';
+      // }
+      // }); 
+  });
+  </script>
+  <body>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  </body>
+</html>

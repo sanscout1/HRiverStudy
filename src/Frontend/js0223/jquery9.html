@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Basic</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+      // 이벤트를 연결합니다.
+      $(document).ready(function () {
+        // 이벤트를 연결합니다.
+        //  event 매개변수를 통하여 이벤트 통제를 밑에서 처럼 할 수 있음
+        $("form").submit(function (event) {
+          // input 태그의 값을 추출합니다.
+          // val -- 값을 가져오는 함수
+          let value = $("input").val();
+          // 유효성을 검사합니다.
+
+          // 정규 표현식 [가-힣]을 사용하여 한글 문자 범위를 지정하고, replace 메서드로 이 범위에 해당하는 모든 한글 문자를 빈 문자열("")로 대체합니다. 
+          // 그런 다음, 대체 결과의 길이가 0인지 확인하여 모든 문자가 한글이었는지 검사
+          // g 플래그는 전역 검색을 의미하며, 문자열 전체에서 해당하는 모든 문자를 찾습니다.
+          if (value.replace(/[가-힣]/g, "").length == 0) {
+            // 유효성 검사 통과
+            alert("과정을 진행합니다.");
+          } else {
+            // 유효성 검사 실패
+            alert("한글 이름을 입력해주세요.");
+            // event.preventDefault(); 호출은 폼이 서버로 제출되는 것을 막습니다.
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>이름</label>
+      <input type="text" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+/* body의 스타일 태그입니다. 배경색과 정렬 등을 담당합니다. */
+body {
+  background-color: rgb(106, 44, 44);
+  padding-top: 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* card의 스타일 태그입니다. 배경색과 정렬, 크기 등을 담당합니다. */
+.card {
+  background-color: white;
+  max-width: 360px;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0px 1rem .5rem rgba(0, 0, 0, 0.5);
+}
+
+/* banner의 스타일 태그입니다. 배너 이미지 및 정렬 등을 담당합니다. */
+.banner {
+ display: flex;
+ justify-content: center;
+ background-position: -33% 20%;
+ background-image: url(data:image/png;base64,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);
+}
+/* profile의 스타일 태그입니다. 프로필 크기와 사진 등을 담당합니다. */
+.profile {
+  
+  /* 크기 변형 적용 */
+  width: 8rem;
+  height: 8rem;
+  background-image: url(me_resized.webp);
+  background-size: 130px;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+  transform: translateY(50%);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  
+}
+
+/* profile의 크기 변형 값 */
+.profile:hover {
+  transform: translateY(50%) scale(1.3);
+}
+
+/* name의 스타일 태그입니다. 글자 정렬과 간격을 담당합니다. */
+.name {
+  text-align: center;
+  padding-top: 60px;
+}
+
+/* follow button의 스타일 태그입니다. 버튼의 정렬 및 간격을 담당합니다 */
+.follow-btn {
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* follow button의 자식 스타일 태그입니다. 버튼 디자인을 담당합니다. */
+.follow-btn button {
+  color: whitesmoke;
+  font-size: medium;
+  font-weight: bold;
+  background-color: rgb(144, 76, 76);
+  border: none;
+  padding: 0.15rem;
+  width: 90%;
+  outline: none;
+  border-radius: 50px;
+}
+
+/* 버튼의크기 변형 값 */
+.follow-btn button:hover {
+  color: black;
+  background-color: rgb(209, 186, 186);
+}
+
+/* description의 스타일 태그입니다. 자기소개 간격을 결정합니다. */
+.desc {
+  padding: 1.5rem;
+}

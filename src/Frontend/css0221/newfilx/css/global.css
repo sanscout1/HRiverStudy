@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+/* @import "./reset.css";  */
+/* reset css로 리셋해두기 */
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import "./nevigation-bar.css";
+@import "./variable.css";
+* {
+  font-family: "Song Myung", serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--background-purple);
+  color: white;
+}
+.display-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.position-relative {
+  position: relative;
+}
+input {
+  
+}

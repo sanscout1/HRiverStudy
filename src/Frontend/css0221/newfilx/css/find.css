@@ -1,0 +1,77 @@
+@import "./global.css";
+
+.find-search-bar-form {
+  padding: 0 25px;
+}
+
+.find-search-bar-form div {
+  width: 100%;
+ }
+.find-search-bar {
+  margin-top: 60px;
+  background-color: var(--darkpurple);
+  border-radius: 25px;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.find-search-bar:focus {
+  
+}
+.find-search-bar-form span {
+  position: absolute;
+  font:1rem;
+  bottom: 0.5rem;
+  right: 25px;
+}
+
+.best-movie__img-container {
+  padding: 0 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.best-movie__img {
+  width: 22rem;
+  height: 12rm;
+  border-radius: 25px;
+}
+.best-movie__img-container span {
+  position: absolute;  
+  /* absoltue는 부모가 relative 일때 부모 기준으로 자리 지정하는 것 */
+  background-color: var(--purple);
+  border-radius: 50%;
+  left: calc(50% + 5rem);
+  bottom: 3rem;
+  font-size: 5rem;
+}
+.best-movie__title {
+ padding-left: 25px;
+}
+.best-movie__promotion-title {
+ font-size: 16px;
+}
+.best-movie__movie-name {
+  color: var(--purple);
+ font-size: 40px;
+ font-weight: bold;
+}
+
+.movie-recommendation {
+  margin: 25px 0;
+  padding: 0 25px;
+  }
+.movie-recommendation__imges {
+  margin-top: 15px;
+  list-style: none;
+  display: flex;
+  overflow-x: scroll;
+}
+.movie-recommendation__imges li {
+  margin-left: 5px;
+}
+.movie-recommendation__imges img {
+  width: 180px;
+  border-radius: 15px;
+}

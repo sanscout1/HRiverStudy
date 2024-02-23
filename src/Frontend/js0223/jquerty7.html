@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+      // 이벤트를 연결합니다.
+      $(document).ready(function () {
+        // 이벤트를 연결합니다.
+        $("h1").hover(
+          //  이거는 그냥 그런가보다 해야한다.
+          function () {
+            // 색상을 변경합니다.
+            $(this).css({
+              background: "red",
+              color: "white",
+            });
+          },
+          function () {
+            // 색상을 제거합니다.
+            $(this).css({
+              background: "",
+              color: "",
+            });
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Click</h1>
+  </body>
+</html>
