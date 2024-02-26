@@ -215,7 +215,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ```agsl
 
-	implementation 'org.springframework.boot:spring-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'mysql:mysql-connector-java'
 
 ```
